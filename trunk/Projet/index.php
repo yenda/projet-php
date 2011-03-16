@@ -162,7 +162,7 @@
 	<tr><td>
 		<table border="0">
 		<tr>
-		    <td width="70" valign="top "align="left"> &Eacute;lèves : </td>
+		    <td width="70" valign="top" align="left"> &Eacute;lèves : </td>
 		    <td width="100">
 <?php
 	$query = "SELECT * FROM ELEVE";

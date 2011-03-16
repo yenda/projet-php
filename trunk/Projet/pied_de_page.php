@@ -4,6 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 	<body>
-		GNU GPL V3 Créateurs Eric Dvorsak, Mael Clesse
+	<?php
+		echo "GNU GPL V3 Créateurs Eric Dvorsak, Mael Clesse";
+	?>
 	</body>
 </html>
