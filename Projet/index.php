@@ -21,7 +21,6 @@
   // --> utile si le résultat d'une interrogation doit être parcouru plusieurs fois
   //     (comme c'est le cas pour la liste des élèves et des matières
 
-  
 ?>
 
 	
@@ -176,7 +175,7 @@
 
 			
 		    </td>
-		    <td width="80" valign="top align="left"> Matières : </td>
+		    <td width="80" valign="top" align="left"> Matières : </td>
 		    <td width="150">
 <?php
 	$query = "SELECT * FROM MATIERE";
