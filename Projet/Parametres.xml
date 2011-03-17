@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+
+<Parametres>
+	<ListeProduits>
+		<Produit>
+			<Propriete nom = "Libelle">La barre de faire</Propriete>
+			<Propriete nom = "Prix">29.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">BarreDeFaire.jpg</Propriete>
+		</Produit>
+	</ListeProduits>
+</Parametres>
