@@ -9,7 +9,7 @@
 
 
 <?php
-
+	echo "mael pue";
 		$connect = mysql_connect("localhost","root","root")
 			or die(mysql_error());
 		
