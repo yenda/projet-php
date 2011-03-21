@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
 
 <Parametres>
+
 	<ListeProduits>
+	
 		<Produit>
 			<Propriete nom = "Libelle">La barre de faire</Propriete>
 			<Propriete nom = "Prix">29.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">BarreDeFaire.jpg</Propriete>
 		</Produit>
+		
 	</ListeProduits>
+	
 	<ListeRubriques>
+	
 		<Rubrique>
-			Accessoire_de_gymnastique
-			<Rubriques_supérieures>
-				Gymnastique
-				Accessoires
-			</Rubriques_supérieures>
+			<Nom>Accessoire de gymnastique</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Gymnastique</Rubrique>
+				<Rubrique>Accessoires</Rubrique>
+			</RubriquesSuperieures>
 		</Rubrique>
+		
 		<Rubrique>
-			Gymnastique
-			<Rubriques_supérieures>Sport_d_intérieur</Rubriques_supérieures>
+			<Nom>Gymnastique</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Sport d'intérieur'</Rubrique>
+			</RubriquesSuperieures>
 		</Rubrique>
+		
 	</ListeRubriques>
+	
 </Parametres>
