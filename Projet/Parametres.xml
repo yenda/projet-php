@@ -11,18 +11,15 @@
 	</ListeProduits>
 	<ListeRubriques>
 		<Rubrique>
-			<Accessoire_de_gymnastique></Accessoire_de_gymnastique>
+			Accessoire_de_gymnastique
 			<Rubriques_supérieures>
-				<Gymnastique></Gymnastique>
-				<Accessoires></Accessoires>
+				Gymnastique
+				Accessoires
 			</Rubriques_supérieures>
 		</Rubrique>
 		<Rubrique>
-			<Gymnastique></Gymnastique>
-			<Rubriques_supérieures>
-				<Sport_d_intérieur>
-				</Sport_d_intérieur>
-			</Rubriques_supérieures>
+			Gymnastique
+			<Rubriques_supérieures>Sport_d_intérieur</Rubriques_supérieures>
 		</Rubrique>
 	</ListeRubriques>
 </Parametres>
