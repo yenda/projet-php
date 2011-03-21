@@ -6,7 +6,7 @@
               <select name="eleve" size="1">
 				
 <?php
-	$query = "SELECT * FROM ELEVE";
+	$query = "SELECT * FROM PRODUITS";
 	$result = mysql_query($query);
 
 	while ($row = mysql_fetch_assoc($result)){

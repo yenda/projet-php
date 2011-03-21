@@ -1,3 +1,3 @@
 <table border="3">
-	<p align="center"><h1>GeekProducts</h1></p>
+	<div align="center"><h1>GeekProducts</h1></div>
 </table>
