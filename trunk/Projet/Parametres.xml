@@ -9,33 +9,31 @@
 			<Propriete nom = "Prix">29.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">BarreDeFaire.jpg</Propriete>
-			<Descriptif>Barre mutli-usage</Descriptif>
-			
+			<Descriptif>Barre mutli-usage</Descriptif>			
 			<Rubriques>
-				<Rubrique>Accessoire de gymnastique</Rubrique>
-				
+				<Rubrique>Accessoire de gymnastique</Rubrique>				
 			</Rubriques>
 		</Produit>
+		
 		
 		<Produit>
 			<Propriete nom = "Libelle">Vibromasseur rotatif 4 têtes</Propriete>
 			<Propriete nom = "Prix">36.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">Vibro.jpg</Propriete>
-			<Descriptif>Idéal pour les petites fêtes entre amis</Descriptif>
-			
+			<Descriptif>Idéal pour les petites fêtes entre amis</Descriptif>		
 			<Rubriques>
 				<Rubrique>Accessoires de gymnastique</Rubrique>
 			</Rubriques>
 		</Produit>
 		
-				<Produit>
+		
+		<Produit>
 			<Propriete nom = "Libelle">Kalashnikov</Propriete>
 			<Propriete nom = "Prix">699.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">AK47.jpg</Propriete>
-			<Descriptif>Marre de votre voisin ? Voilà un produit qui pourrait vous intéresser. Penser à acheter une pelle pour vous débarrasser du corps</Descriptif>
-			
+			<Descriptif>Marre de votre voisin ? Voilà un produit qui pourrait vous intéresser. Penser à acheter une pelle pour vous débarrasser du corps</Descriptif>			
 			<Rubriques>
 				<Rubrique>Objets létaux</Rubrique>
 			</Rubriques>
