@@ -10,27 +10,27 @@
 		$connect = mysql_connect("localhost","root","root")
 			or die(mysql_error());
 		
-		$result = mysql_query("DROP DATABASE IF EXISTS partiel")
+		$result = mysql_query("DROP DATABASE IF EXISTS GeekProduct")
 			or die(mysql_error());
 		if (!$result)
 			echo("La base a été supprimée <br>");
 		else
 			echo("Aucune base supprimée<br>");
 			
-		$result = mysql_query("CREATE DATABASE partiel") 
+		$result = mysql_query("CREATE DATABASE GeekProduct") 
 			or die(mysql_error());
 		if (!$result)
 			echo("La base n'a pas été créée<br>");
 		else
 			echo("La base a été créée<br>");
 			
-		$result = mysql_select_db("partiel",$connect);
+		$result = mysql_select_db("GeekProduct",$connect);
 		if ($result)
 			echo("Connection réussie<br>");
 		else
 			echo("Connection échouée<br>");		
 					
-		$query = "CREATE TABLE `Partiel`.`RESULTAT` (
+		$query = "CREATE TABLE `GeekProduct`.`RESULTAT` (
 					`eleve` VARCHAR( 15 ) NOT NULL ,
 					`matiere` VARCHAR( 25 ) NOT NULL ,
 					`note` FLOAT( 4, 2 ) NOT NULL ,
@@ -39,11 +39,11 @@
 		$result = mysql_query($query)
 			or die("$query : ".mysql_error()) ;
 		if (!$result)
-			echo("La table partiel n'a pas été créée<br>");
+			echo("La table GeekProduct n'a pas été créée<br>");
 		else
-			echo("La table partiel a été créée<br>");
+			echo("La table GeekProduct a été créée<br>");
 			
-		$query = "CREATE TABLE `Partiel`.`MATIERE` (
+		$query = "CREATE TABLE `GeekProduct`.`MATIERE` (
 					`intitule` VARCHAR( 25 ) NOT NULL ,
 					PRIMARY KEY ( `intitule` )
 				) ENGINE = MYISAM ;" ;
@@ -54,7 +54,7 @@
 		else
 			echo("La table matiere a été créée<br>");
 					
-		$query = "CREATE TABLE `Partiel`.`ELEVE` (
+		$query = "CREATE TABLE `GeekProduct`.`ELEVE` (
 					`prenom` VARCHAR( 15 ) NOT NULL ,
 					PRIMARY KEY ( `prenom` )
 				) ENGINE = MYISAM ;" ;
