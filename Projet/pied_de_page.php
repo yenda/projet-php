@@ -5,7 +5,7 @@
     </head>
 	<body>
 	<?php
-		echo "GNU GPL V3 CrŽateurs Eric Dvorsak, Mael Clesse";
+		echo "GNU GPL V3 CréŽateurs Eric Dvorsak, Maël Clesse";
 	?>
 	</body>
 </html>
