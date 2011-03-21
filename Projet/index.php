@@ -23,7 +23,7 @@
 ?>
 
 	
-<h1 align="center">Gestion des résultats de partiels</h1>
+<!--  <h1 align="center">Gestion des résultats de partiels</h1> -->
 	
 
 	
