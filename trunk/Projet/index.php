@@ -25,7 +25,7 @@
 	
 <!--  <h1 align="center">Gestion des résultats de partiels</h1> -->
 	
-<?php include('entete.php') ?>
+<?php include ('entete.php') ?>
 	
 <h2>Fonctionnalités d'accès</h2>
 		
