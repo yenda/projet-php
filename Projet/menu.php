@@ -2,7 +2,7 @@
 	<tr><td>
 		<table border="0">
 		<tr>
-		    <td width="170" align="left"> &Eacute;lève : 
+		    <td width="170" align="left"> &Eacute;lï¿½ve : 
               <select name="eleve" size="1">
 				
 <?php
@@ -13,6 +13,8 @@
 		echo "<option value=\"".$row["prenom"]."\">".$row["prenom"]."</option>";
 	}
 ?>
-
+	
 			</select>
-		   </td>
+		   </td></tr></table>
+		  </table>
+		  
