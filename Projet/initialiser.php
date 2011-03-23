@@ -30,40 +30,21 @@
 		else
 			echo("Connection échouée<br>");		
 					
-		$query = "CREATE TABLE `GeekProduct`.`RESULTAT` (
-					`eleve` VARCHAR( 15 ) NOT NULL ,
-					`matiere` VARCHAR( 25 ) NOT NULL ,
-					`note` FLOAT( 4, 2 ) NOT NULL ,
-					PRIMARY KEY ( `eleve` , `matiere` )
-				) ENGINE = MYISAM ;" ;
+		$query = "CREATE TABLE `GeekProduct`.`Produit` (
+					`Reference` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+					`Libelle` VARCHAR( 255 ) NOT NULL ,
+					`Prix` INT NOT NULL ,
+					`UniteDeVente` TINYINT NOT NULL ,
+					`Photo` VARCHAR( 255 ) NOT NULL ,
+					`Descriptif` TEXT NOT NULL ,
+					`DateAjout` DATETIME NOT NULL
+					) ENGINE = MYISAM ;" ;
 		$result = mysql_query($query)
 			or die("$query : ".mysql_error()) ;
 		if (!$result)
-			echo("La table GeekProduct n'a pas été créée<br>");
+			echo("La table Produit n'a pas été créée<br>");
 		else
-			echo("La table GeekProduct a été créée<br>");
-			
-		$query = "CREATE TABLE `GeekProduct`.`MATIERE` (
-					`intitule` VARCHAR( 25 ) NOT NULL ,
-					PRIMARY KEY ( `intitule` )
-				) ENGINE = MYISAM ;" ;
-		mysql_query($query)
-			or die("$query : ".mysql_error()) ;
-		if (!$result)
-			echo("La table matiere n'a pas été créée<br>");
-		else
-			echo("La table matiere a été créée<br>");
-					
-		$query = "CREATE TABLE `GeekProduct`.`ELEVE` (
-					`prenom` VARCHAR( 15 ) NOT NULL ,
-					PRIMARY KEY ( `prenom` )
-				) ENGINE = MYISAM ;" ;
-		if (!$result)
-			echo("La table eleve n'a pas été créée<br>");
-		else
-			echo("La table eleve a été créée<br>");
-		mysql_query($query)
-			or die("$query : ".mysql_error()) ;
+			echo("La table Produit a été créée<br>");
 
 	?>
 
