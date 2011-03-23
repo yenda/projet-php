@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -24,11 +25,10 @@
 	
 <?php include ('entete.php') ?>
 
-<style>
-	@import "style.css";
-</style>
-	
+<div align="center"><a href="#"><h3 class="lien"><u>Entrer sur le site</u></h3></a></div>
 
+	
+<?php include ('pied_de_page.php') ?>
 
 
 
