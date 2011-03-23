@@ -1,0 +1,2 @@
+- faire passer tout les encodages en UTF-8 (projet -> propriétés -> encodage UTF-8 pour eclipse) (charset UTF-8 pour les fichiers)
+- laisser le fichier enregistrer.php tel quel je suis en train de le modifier j'ai compris comment lire un fichier xml

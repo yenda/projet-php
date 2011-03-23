@@ -1,16 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>Enregistrement d'un résultat</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-</head>
+	<head>
+		<title>enregistrement de la bdd</title>
+		<meta http-equiv="Content-Type" content="text/html ; charset=UTF-8"/>
+	</head>
 
 <body>
 
 <?php
 	function AjouterProduitBase($Produit)
 	{
-	    echo ("Produit ajouté<br>");
+		foreach($Produit as $Attribut){
+			if ($Attribut->getname() == "Propriete"){
+				$banane = $Attribut->attributes();
+				echo "$banane : $Attribut<br>";
+			}
+		}
+		
 	}
 	
 	//$eleve = $_POST['eleve'];
@@ -57,9 +64,9 @@
 		or die(mysql_error());
 	
 	if(mysql_affected_rows()==1)
-		echo "La  a été ajoutée";
+		echo "La  a ï¿½tï¿½ ajoutï¿½e";
 	else
-		echo "La  a été modifiée";*/
+		echo "La  a ï¿½tï¿½ modifiï¿½e";*/
 ?>
 
 </body>
