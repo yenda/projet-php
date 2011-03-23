@@ -7,7 +7,6 @@
 <body>
 
 
-
 <?php
 		$connect = mysql_connect("localhost","root","root")
 			or die(mysql_error());
@@ -24,6 +23,10 @@
 
 	
 <?php include ('entete.php') ?>
+
+<style>
+	@import "style.css";
+</style>
 	
 
 
