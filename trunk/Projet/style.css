@@ -1,5 +1,21 @@
 @CHARSET "ISO-8859-1";
 
 body {
-	background-color:blue;
+	background-color:grey;
+}
+
+h1 {
+	color:green;
+	font-style:bold;
+	font-size:84pt;
+}
+
+h3.lien {
+	color:blue;
+	font-size:40pt;
+}
+
+.footer {
+	align:center;
+	margin-botton:3px;
 }
