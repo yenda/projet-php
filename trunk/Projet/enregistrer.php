@@ -29,12 +29,12 @@
 	
 	$result = mysql_select_db("GeekProduct",$connect)
 		or die(mysql_error());
-		
-	$xmlParametres = simplexml_load_file("Parametres.xml");
 	
 ?>
 
 <?php
+	$xmlParametres = simplexml_load_file("Parametres.xml");
+	
 	if (!sizeof($xmlParametres))
 		echo ("Le document est vide<br>");
 		
