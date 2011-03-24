@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
 
 <Parametres>
 
@@ -7,7 +7,7 @@
 		<Produit>
 			<Propriete nom = "Libelle">La barre de faire</Propriete>
 			<Propriete nom = "Prix">29.90</Propriete>
-			<Propriete nom = "UniteDeVente">l'unitÃ©</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">BarreDeFaire.jpg</Propriete>
 			<Descriptif>Barre mutli-usage</Descriptif>			
 			<Rubriques>
@@ -17,11 +17,11 @@
 		
 		
 		<Produit>
-			<Propriete nom = "Libelle">Vibromasseur rotatif 4 tÃªtes</Propriete>
+			<Propriete nom = "Libelle">Vibromasseur rotatif 4 têtes</Propriete>
 			<Propriete nom = "Prix">36.90</Propriete>
-			<Propriete nom = "UniteDeVente">l'unitÃ©</Propriete>
+			<Propriete nom = "UniteDeVente">vendus par 4 !!!!</Propriete>
 			<Propriete nom = "Photo">Vibro.jpg</Propriete>
-			<Descriptif>IdÃ©al pour les petites fÃªtes entre amis</Descriptif>		
+			<Descriptif>Idéal pour les petites fêtes entre amis</Descriptif>		
 			<Rubriques>
 				<Rubrique>Accessoires de gymnastique</Rubrique>
 			</Rubriques>
@@ -31,11 +31,11 @@
 		<Produit>
 			<Propriete nom = "Libelle">Kalashnikov</Propriete>
 			<Propriete nom = "Prix">699.90</Propriete>
-			<Propriete nom = "UniteDeVente">l'unitÃ©</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">AK47.jpg</Propriete>
-			<Descriptif>Marre de votre voisin ? VoilÃ  un produit qui pourrait vous intÃ©resser. Penser Ã  acheter une pelle pour vous dÃ©barrasser du corps</Descriptif>			
+			<Descriptif>Marre de votre voisin ? Voilà un produit qui pourrait vous intéresser. Penser à acheter une pelle pour vous débarrasser du corps</Descriptif>			
 			<Rubriques>
-				<Rubrique>Objets lÃ©taux</Rubrique>
+				<Rubrique>Objets létaux</Rubrique>
 			</Rubriques>
 		</Produit>
 
@@ -52,7 +52,7 @@
 		</Rubrique>
 		
 		<Rubrique>
-			<Nom>Objets lÃ©taux</Nom>
+			<Nom>Objets létaux</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Accessoires</Rubrique>
 			</RubriquesSuperieures>
@@ -61,7 +61,7 @@
 		<Rubrique>
 			<Nom>Gymnastique</Nom>
 			<RubriquesSuperieures>
-				<Rubrique>Sport d'intÃ©rieur</Rubrique>
+				<Rubrique>Sport d'intérieur</Rubrique>
 			</RubriquesSuperieures>
 		</Rubrique>
 		

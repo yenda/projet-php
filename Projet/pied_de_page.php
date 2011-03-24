@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <title></title>
     </head>
 	<body>
 	<div class="footer">
 	
-		 GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
+		 GNU GPL V3 Crï¿½ateurs Eric Dvorsak, Maï¿½l Clesse
 		
 	</div>
 	</body>
