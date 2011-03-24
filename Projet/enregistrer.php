@@ -10,8 +10,8 @@
 <?php
 //fonctionnel mais ne marche pas à cause des putain d'accents
 echo ("$test");
-	//PossibilitÃ© d'ajouter ici des conditions si le xml contient des unitÃ©s de vente particuliÃ¨res
-	//ici sont reconnu l'unitÃ© et tout ce qui contient un nombre, ce nombre Ã©tant l'unitÃ© de vente
+	//Possibilité d'ajouter ici des conditions si le xml contient des unités de vente particulières
+	//ici sont reconnu l'unité et tout ce qui contient un nombre, ce nombre étant l'unité de vente
 	function ConvertirUniteDeVente($Attribut){
 		if ($Attribut == "l'unité")
 			$UniteDeVente = "1";
@@ -28,9 +28,9 @@ echo ("$test");
 		return $Prix;
 	}
 	
-	/**Cette fonction parcourt l'ensemble des Attributs d'un produit et les place dans des variables Ã©ponymes
-	 * Une fois la collecte terminÃ©e il effectue une requÃªte INSERT INTO pour ajouter le produit Ã  la base
-	 * REPLACE INTO est inutile dans la mesure oÃ¹ on fait ici le remplissage initial de la base avec une rÃ©fÃ©rence diffÃ©rente
+	/**Cette fonction parcourt l'ensemble des Attributs d'un produit et les place dans des variables éponymes
+	 * Une fois la collecte terminée il effectue une requàªte INSERT INTO pour ajouter le produit à  la base
+	 * REPLACE INTO est inutile dans la mesure oà¹ on fait ici le remplissage initial de la base avec une référence différente
 	 * pour chaque nouveau produit
 	 */
 	function AjouterProduitBase($Produit){
