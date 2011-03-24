@@ -78,8 +78,15 @@
 	
 	$result = mysql_select_db("GeekProduct",$connect)
 		or die(mysql_error());
+
+	//on parcourt les rubriques
+	if (!sizeof($xmlRubriques))
+		echo ("aucune rubrique<br>");	
+	else{
+		echo ("il y a des rubriques<br>");
+	}
 	
-	//on parcours les produits
+	//on parcourt les produits
 	if (!sizeof($xmlProduits))
 		echo ("aucun produit<br>");
 	else{
@@ -87,11 +94,7 @@
 			AjouterProduitBase($Produit);
 		}
 	}
-	if (!sizeof($xmlRubriques))
-		echo ("aucune rubrique<br>");	
-	else{
-		echo ("il y a des rubriques<br>");
-	}
+
 
 ?>
 
