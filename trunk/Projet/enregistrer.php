@@ -7,7 +7,6 @@
 	</head>
 
 <body>
-
 <?php
 //fonctionnel mais ne marche pas à cause des putain d'accents
 echo ("$test");
@@ -38,8 +37,9 @@ echo ("$test");
 		foreach($Produit as $Attribut){
 			if ($Attribut->getname() == "Propriete"){
 				$Propriete = $Attribut->attributes();
+				$Attribut = utf8_decode($Attribut);
 				if ($Propriete == "Libelle")
-					$Libelle=html_entity_decode($Attribut);
+					$Libelle=($Attribut);
 				elseif ($Propriete == "Prix")
 					$Prix=ConvertirPrix($Attribut);
 				elseif ($Propriete == "UniteDeVente")
@@ -50,7 +50,7 @@ echo ("$test");
 					echo ("La propriété $Attribut est inconnue est ne peut être ajoutée à la base<br>");																			
 			}
 			elseif ($Attribut->getname() == "Descriptif")
-				$Descriptif = html_entity_decode($Attribut);
+				$Descriptif = $Attribut;
 		}
 		$query = "INSERT INTO Produit VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '2011-03-23 16:18:58');";
 		$result = mysql_query($query)
