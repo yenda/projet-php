@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 
 <Parametres>
 
@@ -10,6 +10,17 @@
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">BarreDeFaire.jpg</Propriete>
 			<Descriptif>Barre mutli-usage</Descriptif>			
+			<Rubriques>
+				<Rubrique>Accessoire de gymnastique</Rubrique>				
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Barette de RAM Corsair Dominator</Propriete>
+			<Propriete nom = "Prix">75.99</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/RamCorsair.jpg</Propriete>
+			<Descriptif>2 Barrettes de 2Go de RAM Corsair Dominator</Descriptif>			
 			<Rubriques>
 				<Rubrique>Accessoire de gymnastique</Rubrique>				
 			</Rubriques>
