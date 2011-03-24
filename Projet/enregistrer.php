@@ -9,9 +9,7 @@
 <body>
 
 <?php
-$test = "p�de";
-echo ("$test");
-html_entity_decode($test);
+//fonctionnel mais ne marche pas � cause des putain d'accents
 echo ("$test");
 	//Possibilité d'ajouter ici des conditions si le xml contient des unités de vente particulières
 	//ici sont reconnu l'unité et tout ce qui contient un nombre, ce nombre étant l'unité de vente
