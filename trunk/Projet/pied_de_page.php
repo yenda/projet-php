@@ -8,7 +8,7 @@
 	<body>
 	<div class="footer">
 	
-		 GNU GPL V3 Crï¿½ateurs Eric Dvorsak, Maï¿½l Clesse
+		 GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
 		
 	</div>
 	</body>
