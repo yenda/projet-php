@@ -106,6 +106,49 @@
 			</Rubriques>
 		</Produit>
 		
+		<Produit>
+			<Propriete nom = "Libelle">Disque SSD Corsair Performance 3 256 Go SATA Revision 3.0</Propriete>
+			<Propriete nom = "Prix">598.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/ssdcorsair256.jpg</Propriete>
+			<Descriptif>L'expérience ultime du SSD en SATA Revision 3.0</Descriptif>			
+			<Rubriques>
+				<Rubrique>Disques SSD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Disque SSD Crucial RealSSD C300 128 Go SATA Revision 3.0</Propriete>
+			<Propriete nom = "Prix">215.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/crucialssd128.jpg</Propriete>
+			<Descriptif>Le premier SSD en SATA Revision 3.0 !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Disques SSD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Disque dur 3.5 pouces Western Digital Caviar Black 2 To - 64 Mo</Propriete>
+			<Propriete nom = "Prix">148.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/caviar2To.jpg</Propriete>
+			<Descriptif>2 To de pure performance !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Disques durs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Disque dur 3.5 pouces Western Digital Caviar Black SATA Revision 3.0 - 640 Go - 64 Mo</Propriete>
+			<Propriete nom = "Prix">57.89</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/caviar2To.jpg</Propriete>
+			<Descriptif>Redécouvrez le Caviar Black, maintenant en SATA Revision 3.0 !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Disques durs</Rubrique>
+			</Rubriques>
+		</Produit>
 		
 
 	</ListeProduits>
