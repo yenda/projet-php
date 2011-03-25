@@ -16,6 +16,8 @@ h3.lien {
 }
 
 .footer {
-	align:center;
-	margin-botton:3px;
+	width: 70%;
+	right: 15%;
+	left: 15%;
+	position: absolute;
 }
