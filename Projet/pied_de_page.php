@@ -6,7 +6,7 @@
         <title></title>
     </head>
 	<body>
-	<div class="footer">
+	<div align="center">
 	
 		 GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
 		
