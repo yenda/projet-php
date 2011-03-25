@@ -16,7 +16,7 @@
 		</Produit>
 		
 		<Produit>
-			<Propriete nom = "Libelle">Barette de RAM Corsair Dominator</Propriete>
+			<Propriete nom = "Libelle">Barettes de RAM Corsair Dominator</Propriete>
 			<Propriete nom = "Prix">75.99</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">images/RAMCorsair.jpg</Propriete>
