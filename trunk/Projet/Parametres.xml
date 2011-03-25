@@ -94,6 +94,19 @@
 			</Rubriques>
 		</Produit>
 		
+		
+		<Produit>
+			<Propriete nom = "Libelle">Disque SSD Corsair Force 240 Go S-ATA II</Propriete>
+			<Propriete nom = "Prix">459.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/ssdcorsair240.jpg</Propriete>
+			<Descriptif>Equipé d'un contrôleur Sandforce !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Disques SSD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		
 
 	</ListeProduits>
 	
@@ -137,6 +150,20 @@
 		
 		<Rubrique>
 			<Nom>Cartes graphiques</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Disques SSD</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Disques durs</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Informatique</Rubrique>
 			</RubriquesSuperieures>
