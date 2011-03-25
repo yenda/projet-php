@@ -19,7 +19,7 @@
 			<Propriete nom = "Libelle">Barette de RAM Corsair Dominator</Propriete>
 			<Propriete nom = "Prix">75.99</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/RamCorsair.jpg</Propriete>
+			<Propriete nom = "Photo">images/RAMCorsair.jpg</Propriete>
 			<Descriptif>2 Barrettes de 2Go de RAM Corsair Dominator</Descriptif>			
 			<Rubriques>
 				<Rubrique>Informatique</Rubrique>				
@@ -49,6 +49,51 @@
 				<Rubrique>Objets létaux</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Processeur socket AM3 AMD Phenom II X6 1090T Black Edition</Propriete>
+			<Propriete nom = "Prix">189.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/PhenomX6.jpg</Propriete>
+			<Descriptif>6 coeurs pour un maximum de performances !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Processeurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Processeur socket 1156 Intel Core i7 870</Propriete>
+			<Propriete nom = "Prix">269.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/i7.jpg</Propriete>
+			<Descriptif>6 coeurs pour un maximum de performances !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Processeurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Carte graphique Club 3D Radeon HD 6850 1Go</Propriete>
+			<Propriete nom = "Prix">139.99</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/radeonhd6850.jpg</Propriete>
+			<Descriptif>La nouvelle génération de chez ATI en action !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Cartes graphiques</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Carte graphique NVIDIA GeForce 3D Vision</Propriete>
+			<Propriete nom = "Prix">449.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">images/geforce3d.jpg</Propriete>
+			<Descriptif>Vivez l'action en 3D !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Cartes graphiques</Rubrique>
+			</Rubriques>
+		</Produit>
+		
 
 	</ListeProduits>
 	
@@ -76,6 +121,26 @@
 			</RubriquesSuperieures>
 		</Rubrique>
 		
+		<Rubrique>
+			<Nom>Informatique</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Accessoires</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Processeurs</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Cartes graphiques</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
 	</ListeRubriques>
 	
 </Parametres>
