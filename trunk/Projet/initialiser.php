@@ -7,12 +7,12 @@
 
 <body>
 	<?php
-		$connect = mysql_connect("127.0.0.1","root","root")
+		$connect = mysql_connect("localhost","root","root")
 			or die(mysql_error());
 		
 		$result = mysql_query("DROP DATABASE IF EXISTS geekproduct")
 			or die(mysql_error());
-		if (!$result)
+		if ($result)
 			echo("La base a été supprimée <br />");
 		else
 			echo("Aucune base n'a été supprimée<br />");
@@ -29,8 +29,15 @@
 			echo("Connection réussie<br />");
 		else
 			echo("Connection échouée<br />");		
-					
-		$sql = "CREATE TABLE `geekProduct`.`produits` (`produits_Reference` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,`produits_Libelle` VARCHAR( 255 ) NOT NULL ,`produits_Prix` INT NOT NULL ,`produits_UniteDeVente` VARCHAR(100) NOT NULL ,`produits_Photo` VARCHAR( 255 ) NOT NULL ,`produits_Descriptif` TEXT NOT NULL ,`produits_DateAjout` DATETIME NOT NULL) ENGINE = MYISAM ;" ;
+	
+		$sql = "CREATE TABLE `geekproduct`.`produits` (
+					`produits_Reference` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+					`produits_Libelle` VARCHAR( 255 ) NOT NULL ,
+					`produits_Prix` INT NOT NULL ,
+					`produits_UniteDeVente` VARCHAR( 100 ) NOT NULL ,
+					`produits_Photo` VARCHAR( 255 ) NOT NULL ,
+					`produits_Descriptif` TEXT NOT NULL ,
+					`produits_DateAjout` DATETIME NOT NULL) ENGINE = MYISAM ;";
 		$result = mysql_query($sql)
 			or die("$sql : ".mysql_error()) ;
 		if (!$result)
@@ -38,7 +45,9 @@
 		else
 			echo("La table Produits a été créée<br />");
 			
-		$sql = "CREATE TABLE `geekproduct`.`rubriques` (`rubrique_id` INT NOT NULL AUTO_INCREMENT, `rubrique_nom` VARCHAR(60) NOT NULL, PRIMARY KEY (`rubrique_id`)) ENGINE = MyISAM;";
+		$sql = "CREATE TABLE `geekproduct`.`rubriques` (
+					`rubrique_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY , 
+					`rubrique_nom` VARCHAR(60) NOT NULL) ENGINE = MyISAM;";
 		$result = mysql_query($sql)
 			or die("$sql : ".mysql_error()) ;
 		if (!$result)
@@ -46,7 +55,12 @@
 		else
 			echo("La table Rubriques a été créée<br />");
 			
-		$sql = "INSERT INTO `geekproduct`.`rubriques` (`rubrique_id`, `rubrique_nom`) VALUES ('1', 'Divers');";
+		$sql = "INSERT INTO `geekproduct`.`rubriques` (
+						`rubrique_id`, 
+						`rubrique_nom`) 
+				VALUES (
+						'1', 
+						'Divers');";
 		$result = mysql_query($sql)
 			or die("$sql : ".mysql_error()) ;
 		if (!$result)
@@ -54,27 +68,51 @@
 		else
 			echo("La rubrique Divers a été ajoutée à la table Rubrique<br />");
 			
-		$sql = "CREATE TABLE `geekproduct`.`rubrique_rubriquesup` (`ID_rubrique` INT NOT NULL, `ID_rubriquesup` INT NOT NULL) ENGINE = MyISAM;";		$result = mysql_query($sql)
+		$sql = "CREATE TABLE `geekproduct`.`rubrique_rubriquesup` (
+					`ID_rubrique` INT NOT NULL, 
+					`ID_rubriquesup` INT NOT NULL) ENGINE = MyISAM;";		
+		$result = mysql_query($sql)
 			or die("$sql : ".mysql_error()) ;
 		if (!$result)
 			echo("La table Rubriques_RubriqueSup n'a pas été créée<br />");
 		else
 			echo("La table Rubriques_RubriqueSup a été créée<br />");
 									
-		$sql = "CREATE TABLE `geekproduct`.`produit_rubrique` (`ID_produit` INT NOT NULL, `ID_rubrique` INT NOT NULL) ENGINE = MyISAM;";		$result = mysql_query($sql)
+		$sql = "CREATE TABLE `geekproduct`.`produit_rubrique` (
+					`ID_produit` INT NOT NULL, 
+					`ID_rubrique` INT NOT NULL) ENGINE = MyISAM;";		
+		$result = mysql_query($sql)
 			or die("$sql : ".mysql_error()) ;
 		if (!$result)
 			echo("La table Produit_Rubrique n'a pas été créée<br />");
 		else
 			echo("La table Produit_Rubrique a été créée<br />");
 			
-		$sql = "CREATE TABLE `geekproduct`.`clients` (`client_login` VARCHAR(20) NOT NULL, `client_mdp` VARCHAR(20) NOT NULL, `client_nom` VARCHAR(30) NOT NULL, `client_prenom` VARCHAR(30) NOT NULL, `client_datenaissance` DATE NOT NULL, `num` SMALLINT NOT NULL, `client_rue` INT NOT NULL, `client_codepostal` INT NOT NULL, `bancaire` BIGINT NOT NULL, `client_telephone` VARCHAR(10) NOT NULL, `client_mail` VARCHAR(50) NOT NULL) ENGINE = MyISAM;";
+		$sql = "CREATE TABLE `geekproduct`.`clients` (
+					`client_login` VARCHAR(20) NOT NULL, 
+					`client_mdp` VARCHAR(20) NOT NULL, 
+					`client_nom` VARCHAR(30) NOT NULL, 
+					`client_prenom` VARCHAR(30) NOT NULL, 
+					`client_datenaissance` DATE NOT NULL, 
+					`client_num` SMALLINT NOT NULL, 
+					`client_rue` INT NOT NULL, 
+					`client_codepostal` INT NOT NULL, 
+					`client_bancaire` BIGINT NOT NULL, 
+					`client_telephone` VARCHAR(10) NOT NULL, 
+					`client_mail` VARCHAR(50) NOT NULL) ENGINE = MyISAM;";
 		$result = mysql_query($sql)
 			or die("$sql : ".mysql_error()) ;
 		if (!$result)
 			echo("La table Clients n'a pas été créée<br />");
 		else
 			echo("La table Clients a été créée<br />");
+			
+		$result = mysql_close($connect)
+			or die("$sql : ".mysql_error()) ;
+		if ($result)
+			echo("Fermeture de la connection<br />");
+		else
+			echo("Echec de la fermeture de connection<br />");
 	?>
 
 </body>
