@@ -57,19 +57,15 @@
 	 */
 	
 	function AjouterRubriqueBase($Rubrique){
-		foreach($Rubrique as $Attribut){
-			if($Attribut->getname() == "Nom"){
-				$Nom = utf8_decode(mysql_real_escape_string($Attribut));
-				echo ("Rubrique : $Nom<br />");
-			}
-			else{
-				foreach($Attribut as $RubriqueSup){
-					$NomSup = utf8_decode(mysql_real_escape_string($RubriqueSup));
-					echo ("Rubrique Sup : $NomSup<br />");
-				}
-					
-				}
-			}
+		$NomRubrique = $Rubrique->Nom;
+		$NomsRubriquesSup = $Rubrique->RubriquesSuperieures;
+				$NomRubrique = utf8_decode(mysql_real_escape_string($NomRubrique));
+				echo ("Rubrique : $NomRubrique<br />");
+		
+		foreach($NomsRubriquesSup as $RubriqueSup){
+				$RubriqueSup = utf8_decode(mysql_real_escape_string($RubriqueSup));
+				echo ("Rubrique Sup : $RubriqueSup<br />");
+		}
 				
 		
 	}
