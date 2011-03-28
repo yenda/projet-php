@@ -8,6 +8,7 @@
 
 <body>
 <?php
+///blablablabla
 	//Possibilité d'ajouter ici des conditions si le xml contient des unités de vente particulières
 	//ici sont reconnu l'unité et tout ce qui contient un nombre, ce nombre étant l'unité de vente
 	function ConvertirUniteDeVente($Attribut){
@@ -26,7 +27,7 @@
 		return $Prix;
 	}
 	
-	/**Cette fonction parcourt l'ensemble des Attributs d'un produit et les place dans des variables éponymes
+	/**Cette fonction parcourt l'ensemble des attributs d'un produit et les place dans des variables éponymes
 	 * Une fois la collecte terminée il effectue une requàªte INSERT INTO pour ajouter le produit à  la base
 	 * REPLACE INTO est inutile dans la mesure oà¹ on fait ici le remplissage initial de la base avec une référence différente
 	 * pour chaque nouveau produit
