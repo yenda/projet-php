@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>enregistrement de la bdd</title>
+		<title>Remplir la base à partir d'un fichier XML</title>
 		<meta http-equiv="Content-Type" content="text/html ; charset=iso-8859-1"/>
 	</head>
 
@@ -14,7 +14,7 @@
 		return $Prix;
 	}
 	
-	/**Cette fonction parcourt l'ensemble des attributs d'un produit et les place dans des variables éponymes
+	/*Cette fonction parcourt l'ensemble des attributs d'un produit et les place dans des variables éponymes
 	 * Une fois la collecte terminée il effectue une requête INSERT INTO pour ajouter le produit à  la base
 	 * REPLACE INTO est inutile dans la mesure où on fait ici le remplissage initial de la base avec une référence différente
 	 * pour chaque nouveau produit
@@ -40,13 +40,16 @@
 				
 		}
 		
-		$query = "INSERT INTO Produits VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '2011-03-23 16:18:58');";
+		$query = "INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '2011-03-23 16:18:58');";
 		$result = mysql_query($query)
 			or die(mysql_error());
-			
+		$ID = mysql_insert_id();
+					
 		echo("<br />L'objet suivant a été ajouté à la base : $Libelle<br />");
 		echo("&nbsp;&nbsp;&nbsp;- $Prix centimes<br />");
 		echo("&nbsp;&nbsp;&nbsp;- vendu par lots de $UniteDeVente<br />");
+		echo "&nbsp;&nbsp;&nbsp;- $ID<br />";
+		
 		
 	}
 	
@@ -58,9 +61,10 @@
 	
 	function AjouterRubriqueBase($Rubrique){
 		$NomRubrique = $Rubrique->Nom;
-		$NomsRubriquesSup = $Rubrique->RubriquesSuperieures;
-				$NomRubrique = utf8_decode(mysql_real_escape_string($NomRubrique));
-				echo ("Rubrique : $NomRubrique<br />");
+		$NomsRubriquesSup = $Rubrique->RubriquesSuperieures->children();
+				
+		$NomRubrique = utf8_decode(mysql_real_escape_string($NomRubrique));
+		echo ("Rubrique : $NomRubrique<br />");
 		
 		foreach($NomsRubriquesSup as $RubriqueSup){
 				$RubriqueSup = utf8_decode(mysql_real_escape_string($RubriqueSup));
@@ -83,10 +87,10 @@
 	$xmlProduits = $xmlListeProduits->children();
 	$xmlRubriques = $xmlListeRubriques->children();
 	
-	$connect = mysql_connect("127.0.0.1","root","root")
+	$connect = mysql_connect("localhost","root","root")
 		or die(mysql_error());
 	
-	$result = mysql_select_db("GeekProduct",$connect)
+	$result = mysql_select_db("geekproduct",$connect)
 		or die(mysql_error());
 
 	//on parcourt les rubriques
@@ -107,7 +111,12 @@
 		}
 	}
 
-
+	$result = mysql_close($connect)
+			or die("$sql : ".mysql_error()) ;
+	if ($result)
+		echo("Fermeture de la connection<br />");
+	else
+		echo("Echec de la fermeture de connection<br />");
 ?>
 
 </body>
