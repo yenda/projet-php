@@ -165,6 +165,13 @@
 		</Rubrique>
 		
 		<Rubrique>
+			<Nom>Bricolage</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Accessoires</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
 			<Nom>Objets létaux</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Accessoires</Rubrique>
