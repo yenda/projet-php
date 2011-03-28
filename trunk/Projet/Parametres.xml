@@ -20,7 +20,7 @@
 			<Propriete nom = "Libelle">Barettes de RAM Corsair Dominator</Propriete>
 			<Propriete nom = "Prix">75.99</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/RAMCorsair.jpg</Propriete>
+			<Propriete nom = "Photo">RAMCorsair.jpg</Propriete>
 			<Descriptif>2 Barrettes de 2Go de RAM Corsair Dominator</Descriptif>			
 			<Rubriques>
 				<Rubrique>Informatique</Rubrique>				
@@ -55,7 +55,7 @@
 			<Propriete nom = "Libelle">Processeur socket AM3 AMD Phenom II X6 1090T Black Edition</Propriete>
 			<Propriete nom = "Prix">189.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/PhenomX6.jpg</Propriete>
+			<Propriete nom = "Photo">PhenomX6.jpg</Propriete>
 			<Descriptif>6 coeurs pour un maximum de performances !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Processeurs</Rubrique>
@@ -66,7 +66,7 @@
 			<Propriete nom = "Libelle">Processeur socket 1156 Intel Core i7 870</Propriete>
 			<Propriete nom = "Prix">269.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/i7.jpg</Propriete>
+			<Propriete nom = "Photo">i7.jpg</Propriete>
 			<Descriptif>6 coeurs pour un maximum de performances !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Processeurs</Rubrique>
@@ -77,7 +77,7 @@
 			<Propriete nom = "Libelle">Carte graphique Club 3D Radeon HD 6850 1Go</Propriete>
 			<Propriete nom = "Prix">139.99</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/radeonhd6850.jpg</Propriete>
+			<Propriete nom = "Photo">radeonhd6850.jpg</Propriete>
 			<Descriptif>La nouvelle génération de chez ATI en action !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Cartes graphiques</Rubrique>
@@ -88,7 +88,7 @@
 			<Propriete nom = "Libelle">Carte graphique NVIDIA GeForce 3D Vision</Propriete>
 			<Propriete nom = "Prix">449.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/geforce3d.jpg</Propriete>
+			<Propriete nom = "Photo">geforce3d.jpg</Propriete>
 			<Descriptif>Vivez l'action en 3D !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Cartes graphiques</Rubrique>
@@ -100,7 +100,7 @@
 			<Propriete nom = "Libelle">Disque SSD Corsair Force 240 Go S-ATA II</Propriete>
 			<Propriete nom = "Prix">459.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/ssdcorsair240.jpg</Propriete>
+			<Propriete nom = "Photo">ssdcorsair240.jpg</Propriete>
 			<Descriptif>Equipé d'un contréleur Sandforce !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Disques SSD</Rubrique>
@@ -111,7 +111,7 @@
 			<Propriete nom = "Libelle">Disque SSD Corsair Performance 3 256 Go SATA Revision 3.0</Propriete>
 			<Propriete nom = "Prix">598.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/ssdcorsair256.jpg</Propriete>
+			<Propriete nom = "Photo">ssdcorsair256.jpg</Propriete>
 			<Descriptif>L'expérience ultime du SSD en SATA Revision 3.0</Descriptif>			
 			<Rubriques>
 				<Rubrique>Disques SSD</Rubrique>
@@ -122,7 +122,7 @@
 			<Propriete nom = "Libelle">Disque SSD Crucial RealSSD C300 128 Go SATA Revision 3.0</Propriete>
 			<Propriete nom = "Prix">215.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/crucialssd128.jpg</Propriete>
+			<Propriete nom = "Photo">crucialssd128.jpg</Propriete>
 			<Descriptif>Le premier SSD en SATA Revision 3.0 !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Disques SSD</Rubrique>
@@ -133,7 +133,7 @@
 			<Propriete nom = "Libelle">Disque dur 3.5 pouces Western Digital Caviar Black 2 To - 64 Mo</Propriete>
 			<Propriete nom = "Prix">148.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/caviar2To.jpg</Propriete>
+			<Propriete nom = "Photo">caviar2To.jpg</Propriete>
 			<Descriptif>2 To de pure performance !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Disques durs</Rubrique>
@@ -144,7 +144,7 @@
 			<Propriete nom = "Libelle">Disque dur 3.5 pouces Western Digital Caviar Black SATA Revision 3.0 - 640 Go - 64 Mo</Propriete>
 			<Propriete nom = "Prix">57.89</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo">images/caviar2To.jpg</Propriete>
+			<Propriete nom = "Photo">caviar2To.jpg</Propriete>
 			<Descriptif>Redécouvrez le Caviar Black, maintenant en SATA Revision 3.0 !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Disques durs</Rubrique>
