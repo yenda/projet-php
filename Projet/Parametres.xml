@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
 
 <Parametres>
 
@@ -28,11 +28,11 @@
 		
 		
 		<Produit>
-			<Propriete nom = "Libelle">Vibromasseur rotatif 4 têtes</Propriete>
+			<Propriete nom = "Libelle">Vibromasseur rotatif 4 tétes</Propriete>
 			<Propriete nom = "Prix">36.90</Propriete>
 			<Propriete nom = "UniteDeVente">vendus par 4 !!!!</Propriete>
 			<Propriete nom = "Photo">Vibro.jpg</Propriete>
-			<Descriptif>Idéal pour les petites fêtes entre amis</Descriptif>		
+			<Descriptif>Idéal pour les petites fétes entre amis</Descriptif>		
 			<Rubriques>
 				<Rubrique>Accessoires de gymnastique</Rubrique>
 			</Rubriques>
@@ -44,7 +44,7 @@
 			<Propriete nom = "Prix">699.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">AK47.jpg</Propriete>
-			<Descriptif>Marre de votre voisin ? Voilà un produit qui pourrait vous intéresser. Penser à acheter une pelle pour vous débarrasser du corps</Descriptif>			
+			<Descriptif>Marre de votre voisin ? Voilé un produit qui pourrait vous intéresser. Penser é acheter une pelle pour vous débarrasser du corps</Descriptif>			
 			<Rubriques>
 				<Rubrique>Objets létaux</Rubrique>
 			</Rubriques>
@@ -100,7 +100,7 @@
 			<Propriete nom = "Prix">459.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">images/ssdcorsair240.jpg</Propriete>
-			<Descriptif>Equipé d'un contrôleur Sandforce !</Descriptif>			
+			<Descriptif>Equipé d'un contréleur Sandforce !</Descriptif>			
 			<Rubriques>
 				<Rubrique>Disques SSD</Rubrique>
 			</Rubriques>

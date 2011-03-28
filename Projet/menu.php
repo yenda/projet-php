@@ -6,6 +6,8 @@
               <select name="eleve" size="1">
 				
 <?php
+
+		// créer le menu à partir de la base
 	$query = "SELECT * FROM PRODUITS";
 	$result = mysql_query($query);
 
