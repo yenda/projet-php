@@ -37,10 +37,12 @@
 			}
 			elseif ($Attribut->getname() == "Descriptif")
 				$Descriptif = utf8_decode(mysql_real_escape_string($Attribut));;
+			
 				
 		}
+		$Date = date("Y-m-d");
 		
-		$query = "INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '2011-03-23 16:18:58');";
+		$query = "INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '$Date');";
 		$result = mysql_query($query)
 			or die(mysql_error());
 		$ID = mysql_insert_id();
@@ -53,26 +55,64 @@
 		
 	}
 	
+	/**Cette fonction prend le nom d'une rubrique en paramètre
+	 * Si cette rubrique est déjà dans la base elle retourne son id
+	 * Sinon elle l'ajoute et elle retourne l'id de la rubrique. 
+	 */
+	
+	function RubriqueID($rubrique_nom){
+		//on cherche si cette rubrique est déjà dans la base
+		//le cas où la rubrique serait plusieurs fois dans la base n'est pas prévu puisque cette fonction d'ajout ne le permet pas
+		$query = "SELECT rubrique_id FROM rubriques WHERE rubrique_nom = '$rubrique_nom'";		
+		$result = mysql_query($query)
+			or die("$query : ".mysql_error()) ;			
+		
+		//si elle n'y est pas on la rajoute dans la base et on récupère son id
+		if (mysql_num_rows($result)==0){
+					$query = "INSERT INTO `geekproduct`.`rubriques` VALUES (NULL,'$rubrique_nom');";					
+					$result = mysql_query($query)
+						or die("$query : ".mysql_error()) ;
+					
+			echo ("<br />Rubrique : $rubrique_nom ajoutée à la base<br />");
+			return mysql_insert_id();
+		}
+		//sinon on se contente de récupérer son id
+		else{
+			return mysql_result($result, 0,"rubrique_id");
+			
+		}
+	}
+
+
 	/**Cette fonction prend les noms des rubriques et les ajoute dans la base rubrique
 	 * Elle associe les rubriques qu'elle ajoute à leurs rubriques supérieures dans la base
 	 * rubrique_rubriquesup.
 	 * Le remplissage se fait toujours avec INSERT INTO comme pour les produits
-	 */
-	
+	 */	
 	function AjouterRubriqueBase($Rubrique){
-		$NomRubrique = $Rubrique->Nom;
-		$NomsRubriquesSup = $Rubrique->RubriquesSuperieures->children();
+		$rubrique_nom = $Rubrique->Nom;
+		$rubriquessup_noms = $Rubrique->RubriquesSuperieures->children();
 				
-		$NomRubrique = utf8_decode(mysql_real_escape_string($NomRubrique));
-		echo ("Rubrique : $NomRubrique<br />");
+		$rubrique_nom = utf8_decode(mysql_real_escape_string($rubrique_nom));
+
+
+		$rubrique_id = RubriqueID($rubrique_nom);
+
 		
-		foreach($NomsRubriquesSup as $RubriqueSup){
-				$RubriqueSup = utf8_decode(mysql_real_escape_string($RubriqueSup));
-				echo ("Rubrique Sup : $RubriqueSup<br />");
+			foreach($rubriquessup_noms as $rubriquesup_nom){
+				$rubriquesup_nom = utf8_decode(mysql_real_escape_string($rubriquesup_nom));
+				$rubriquesup_id = RubriqueID($rubriquesup_nom);
+				//La condition suivante vérifie si la pair de rubrique / rubrique supérieure n'est pas déjà dans la base et l'ajoute si elle n'y est pas
+				if(mysql_num_rows(mysql_query("SELECT * FROM rubrique_rubriquesup WHERE (rubrique_id = '$rubrique_id' AND rubriquesup_id = '$rubriquesup_id')"))==0){		
+					$query = "INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','$rubriquesup_id');";
+					$result = mysql_query($query)
+						or die("$query : ".mysql_error()) ;
+					echo ("$rubriquesup_nom	ajoutée en tant que rubrique supérieure de $rubrique_nom<br />");
+				}
 		}
 				
-		
 	}
+	
 	//on charge le fichier xml
 	$xmlParametres = simplexml_load_file("Parametres.xml");
 	
@@ -111,8 +151,7 @@
 		}
 	}
 
-	$result = mysql_close($connect)
-			or die("$sql : ".mysql_error()) ;
+	$result = mysql_close($connect);
 	if ($result)
 		echo("Fermeture de la connection<br />");
 	else
