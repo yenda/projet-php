@@ -2,7 +2,7 @@
 	<tr><td>
 		<table border="0">
 		<tr>
-		    <td width="170" align="left"> &Eacute;lï¿½ve : 
+		    <td width="170" align="left"> &Eacute;lève : 
               <select name="eleve" size="1">
 				
 <?php
