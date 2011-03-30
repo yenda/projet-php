@@ -8,6 +8,13 @@
 
 <body>
 <?php
+	/**Améliorations a apporter : 
+	*  Stockage du prix en décimale propre
+	*  Supprimer les echos et remplacer par du texte final de type :
+	*  X Produits et X catégories parcourus
+	*  X Produits et X Catégories ajoutés
+	*  Les produits X X et X et les catégories X, X et X sont incomplets et n'ont pas pu être ajoutés
+	*/
 	function ConvertirPrix($Attribut){
 		preg_match("/([0-9]+)[;.,]([0-9]{2})/", $Attribut,$regs);
 		$Prix = $regs[1]*100+$regs[2];
