@@ -20,7 +20,8 @@
 	 * pour chaque nouveau produit
 	 */
 	function AjouterProduitBase($Produit){
-		foreach($Produit as $Attribut){
+		foreach($Produit as $Attribut){			
+			
 			if ($Attribut->getname() == "Propriete"){
 				$Propriete = $Attribut->attributes();
 				$Attribut = utf8_decode(mysql_real_escape_string($Attribut));
@@ -33,25 +34,47 @@
 				elseif ($Propriete == "Photo")
 					$Photo=$Attribut;
 				else
-					echo ("La propriété $Attribut est inconnue est ne peut être ajoutée à la base<br />");																			
-			}
+					echo ("La propriété $Attribut est inconnue et ne peut être ajoutée à la base<br />");
+			}																			
 			elseif ($Attribut->getname() == "Descriptif")
-				$Descriptif = utf8_decode(mysql_real_escape_string($Attribut));;
-			
-				
+				$Descriptif = utf8_decode(mysql_real_escape_string($Attribut));
+			//on regarde si le produit appartient a des rubriques, si une rubrique n'est pas dans la base elle est ajoutée, dans tout les cas on revoit l'ID de la rubrique
+			//et on la stocke dans un tableau
+			elseif ($Attribut->getname() == "Rubriques"){
+				foreach($Attribut as $rubrique_nom){
+					$rubrique_id[] = RubriqueID(utf8_decode(mysql_real_escape_string($rubrique_nom)));					
+				}
+			}				
 		}
-		$Date = date("Y-m-d");
 		
-		$query = "INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '$Date');";
-		$result = mysql_query($query)
-			or die(mysql_error());
-		$ID = mysql_insert_id();
-					
-		echo("<br />L'objet suivant a été ajouté à la base : $Libelle<br />");
-		echo("&nbsp;&nbsp;&nbsp;- $Prix centimes<br />");
-		echo("&nbsp;&nbsp;&nbsp;- vendu par lots de $UniteDeVente<br />");
-		echo "&nbsp;&nbsp;&nbsp;- $ID<br />";
-		
+		if(empty($Libelle)||empty($Prix)||empty($UniteDeVente))
+			echo "Champs obligatoire manquant, le produit n'a pas été ajouté à la base<br />";
+		else{
+			$Date = date("Y-m-d");
+			
+			if (!isset($Photo))
+				$Photo = "defaut.jpg";
+			if (!isset($Descriptif))
+				$Descriptif = '';
+	
+			$query = "INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '$Date');";
+			$result = mysql_query($query)
+				or die(mysql_error());
+			$produit_id = mysql_insert_id();
+			
+			if (!isset($rubrique_id))
+				$rubrique_id[] = 1;
+			foreach ($rubrique_id as $rubrique_id){
+				$query = "INSERT INTO `geekproduct`.`produit_rubrique` VALUES ('$produit_id','$rubrique_id');";
+				$result = mysql_query($query)
+					or die(mysql_error());			
+			}
+						
+			echo("<br />$Libelle a été ajouté à la base<br />");
+			/*echo("&nbsp;&nbsp;&nbsp;- $Prix centimes<br />");
+			echo("&nbsp;&nbsp;&nbsp;- dans les catégories<br />");*/
+		}
+
 		
 	}
 	
@@ -73,7 +96,7 @@
 					$result = mysql_query($query)
 						or die("$query : ".mysql_error()) ;
 					
-			echo ("<br />Rubrique : $rubrique_nom ajoutée à la base<br />");
+			echo ("Rubrique : $rubrique_nom ajoutée à la base<br />");
 			return mysql_insert_id();
 		}
 		//sinon on se contente de récupérer son id
@@ -107,7 +130,7 @@
 					$query = "INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','$rubriquesup_id');";
 					$result = mysql_query($query)
 						or die("$query : ".mysql_error()) ;
-					echo ("$rubriquesup_nom	ajoutée en tant que rubrique supérieure de $rubrique_nom<br />");
+					echo ("$rubriquesup_nom	ajoutée en tant que rubrique supérieure de $rubrique_nom");
 				}
 		}
 				
@@ -139,6 +162,7 @@
 	else{
 		foreach ($xmlRubriques as $Rubrique){
 			AjouterRubriqueBase($Rubrique);
+			echo "<br />";
 		}
 	}
 	
@@ -151,6 +175,18 @@
 		}
 	}
 
+	//on détermine les rubrique de plus haut niveau dans la hierarchie et on leur attribue 0 comme id de rubrique supérieure dans la table rubrique_rubriquesup
+	$query = "SELECT rubriques.rubrique_id FROM rubriques LEFT JOIN rubrique_rubriquesup ON rubriques.rubrique_id = rubrique_rubriquesup.rubrique_id WHERE rubrique_rubriquesup.rubrique_id IS NULL";
+	$result = mysql_query($query)
+		or die("$query :".mysql_error());
+		
+	while ($row=mysql_fetch_assoc($result)){
+		$rubrique_id = $row["rubrique_id"];
+		$query = "INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');";
+		mysql_query($query)
+			or die("$query : ".mysql_error());
+	}
+	
 	$result = mysql_close($connect);
 	if ($result)
 		echo("Fermeture de la connection<br />");
