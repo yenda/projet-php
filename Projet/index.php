@@ -13,7 +13,7 @@
 		$connect = mysql_connect("localhost","root","root")
 			or die(mysql_error());
 		
-		$result = mysql_select_db("GeekProduct",$connect);	
+		$result = mysql_select_db("geekproduct",$connect);	
 
   // Remarques :
   // L'utilisation de mysql_data_seek($resultat,0) permet de repositionner un "pointeur"
