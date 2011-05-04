@@ -150,6 +150,17 @@
 			</Rubriques>
 		</Produit>
 		
+		<Produit>
+			<Propriete nom = "Libelle">ASUS EeeTop PC ET2400INT LCD 23.6" Tactile Lecteur Blu-ray/Graveur DVD Wi-Fi N Webcam Windows 7 Premium 64 bits</Propriete>
+			<Propriete nom = "Prix">1150</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">asusallinone.jpg</Propriete>
+			<Descriptif>Le divertissement de salon en pleine révolution</Descriptif>			
+			<Rubriques>
+				<Rubrique>Ordinateurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
 
 	</ListeProduits>
 	
@@ -214,6 +225,13 @@
 		
 		<Rubrique>
 			<Nom>Disques durs</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Ordinateurs</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Informatique</Rubrique>
 			</RubriquesSuperieures>
