@@ -161,6 +161,28 @@
 			</Rubriques>
 		</Produit>
 		
+		<Produit>
+			<Propriete nom = "Libelle">HP - G5320fr - Intel Core i3 550 - 1 To - RAM 4096 Mo - Windows 7 - Carte graphique Nvidia G405</Propriete>
+			<Propriete nom = "Prix">478</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">hpg5320.jpg</Propriete>
+			<Descriptif>Un PC compétitif et évolutif</Descriptif>			
+			<Rubriques>
+				<Rubrique>Ordinateurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">HP - G5360fr-m</Propriete>
+			<Propriete nom = "Prix">576.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">hpg5360.jpg</Propriete>
+			<Descriptif>Ordinateur de bureau Bundle 21,5" - Intel Core i3 550 - 1 To - RAM 4096 Mo - Windows 7 - Carte graphique Nvidia G210</Descriptif>			
+			<Rubriques>
+				<Rubrique>Ordinateurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
 
 	</ListeProduits>
 	
