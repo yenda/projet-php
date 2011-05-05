@@ -252,6 +252,71 @@
 				<Rubrique>Blu-ray</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Thor</Propriete>
+			<Propriete nom = "Prix">19.99</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">thor.jpg</Propriete>
+			<Descriptif>Au royaume d'Asgard, Thor un guerrier aussi puissant qu'arrogant dont les actes téméraires déclenchent une guerre ancestrale. 
+			Banni et envoyé sur Terre, par son père Odin, il est condamné à vivre parmi les humains. Mais lorsque les forces du mal de son royaume s'apprêtent à se déchaîner sur la Terre, 
+			Thor va apprendre à se comporter en véritable héros... </Descriptif>
+			<Rubriques>
+				<Rubrique>DVD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Sex friends</Propriete>
+			<Propriete nom = "Prix">15.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">sexfriends.jpg</Propriete>
+			<Descriptif>Entre "Sex Friends", il faut respecter quelques règles de base : Ne jamais s'offrir de cadeaux. 
+			Ne pas dîner en tête à tête. Accepter la concurrence. Oublier le mot "chéri(e)". Toujours partir avant le petit-déjeuner. Et surtout, ne jamais tomber amoureux !
+			Est-ce bien clair pour Emma et Adam ?</Descriptif>
+			<Rubriques>
+				<Rubrique>DVD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle"></Propriete>
+			<Propriete nom = "Prix">15.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">sexfriends.jpg</Propriete>
+			<Descriptif>Entre "Sex Friends", il faut respecter quelques règles de base : Ne jamais s'offrir de cadeaux. 
+			Ne pas dîner en tête à tête. Accepter la concurrence. Oublier le mot "chéri(e)". Toujours partir avant le petit-déjeuner. Et surtout, ne jamais tomber amoureux !
+			Est-ce bien clair pour Emma et Adam ?</Descriptif>
+			<Rubriques>
+				<Rubrique>DVD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Sex friends</Propriete>
+			<Propriete nom = "Prix"></Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">sexfriends.jpg</Propriete>
+			<Descriptif>Entre "Sex Friends", il faut respecter quelques règles de base : Ne jamais s'offrir de cadeaux. 
+			Ne pas dîner en tête à tête. Accepter la concurrence. Oublier le mot "chéri(e)". Toujours partir avant le petit-déjeuner. Et surtout, ne jamais tomber amoureux !
+			Est-ce bien clair pour Emma et Adam ?</Descriptif>
+			<Rubriques>
+				<Rubrique>DVD</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Sex friends</Propriete>
+			<Propriete nom = "Prix">15.98</Propriete>
+			<Propriete nom = "UniteDeVente"></Propriete>
+			<Propriete nom = "Photo">sexfriends.jpg</Propriete>
+			<Descriptif>Entre "Sex Friends", il faut respecter quelques règles de base : Ne jamais s'offrir de cadeaux. 
+			Ne pas dîner en tête à tête. Accepter la concurrence. Oublier le mot "chéri(e)". Toujours partir avant le petit-déjeuner. Et surtout, ne jamais tomber amoureux !
+			Est-ce bien clair pour Emma et Adam ?</Descriptif>
+			<Rubriques>
+				<Rubrique>DVD</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
@@ -267,6 +332,13 @@
 		
 		<Rubrique>
 			<Nom>Blu-ray</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Vidéos</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>DVD</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Vidéos</Rubrique>
 			</RubriquesSuperieures>
