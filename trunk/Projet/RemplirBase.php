@@ -8,21 +8,16 @@
 
 <body>
 <?php
-	/**Améliorations a apporter : 
-	*  Stockage du prix en décimale propre
+	/**Améliorations a apporter :
 	*  Supprimer les echos et remplacer par du texte final de type :
 	*  X Produits et X catégories parcourus
 	*  X Produits et X Catégories ajoutés
 	*  Les produits X X et X et les catégories X, X et X sont incomplets et n'ont pas pu être ajoutés
 	*/
-	function ConvertirPrix($Attribut){
-		preg_match("/([0-9]+)[;.,]([0-9]{2})/", $Attribut,$regs);
-		$Prix = $regs[1]*100+$regs[2];
-		return $Prix;
-	}
-	
+
+
 	/*Cette fonction parcourt l'ensemble des attributs d'un produit et les place dans des variables éponymes
-	 * Une fois la collecte terminée il effectue une requête INSERT INTO pour ajouter le produit à  la base
+	 * Une fois la collecte terminée il effectue une requête INSERT INTO pou*r ajouter le produit à  la base
 	 * REPLACE INTO est inutile dans la mesure où on fait ici le remplissage initial de la base avec une référence différente
 	 * pour chaque nouveau produit
 	 */
@@ -33,9 +28,9 @@
 				$Propriete = $Attribut->attributes();
 				$Attribut = utf8_decode(mysql_real_escape_string($Attribut));
 				if ($Propriete == "Libelle")
-					$Libelle=($Attribut);
+					$Libelle=$Attribut;
 				elseif ($Propriete == "Prix")
-					$Prix=ConvertirPrix($Attribut);
+					$Prix=$Attribut;
 				elseif ($Propriete == "UniteDeVente")
 					$UniteDeVente=$Attribut;
 				elseif ($Propriete == "Photo")
@@ -54,8 +49,12 @@
 			}				
 		}
 		
-		if(empty($Libelle)||empty($Prix)||empty($UniteDeVente))
+		if(empty($Libelle))
 			echo "Champs obligatoire manquant, le produit n'a pas été ajouté à la base<br />";
+		elseif (empty($Prix))
+			echo "prout";
+		elseif (empty($UniteDeVente))
+			echo "prout2";
 		else{
 			$Date = date("Y-m-d");
 			
@@ -139,7 +138,7 @@
 						or die("$query : ".mysql_error()) ;
 					echo ("$rubriquesup_nom	ajoutée en tant que rubrique supérieure de $rubrique_nom");
 				}
-		}
+			}
 				
 	}
 	

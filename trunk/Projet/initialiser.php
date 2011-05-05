@@ -33,7 +33,7 @@
 		$query = "CREATE TABLE `geekproduct`.`produits` (
 					`produits_Reference` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 					`produits_Libelle` VARCHAR( 255 ) NOT NULL ,
-					`produits_Prix` INT NOT NULL ,
+					`produits_Prix` FLOAT NOT NULL ,
 					`produits_UniteDeVente` VARCHAR( 100 ) NOT NULL ,
 					`produits_Photo` VARCHAR( 255 ) NOT NULL ,
 					`produits_Descriptif` TEXT NOT NULL ,
