@@ -182,6 +182,65 @@
 			</Rubriques>
 		</Produit>
 		
+		<Produit>
+			<Propriete nom = "Libelle">Sony - VPC-L14M1E</Propriete>
+			<Propriete nom = "Prix">1085.27</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">sonyvpc.jpg</Propriete>
+			<Descriptif>Ordinateur tout en un 24" - Intel Core 2 Duo E7500 - 1 To - RAM 4096 Mo - Windows 7 - Carte graphique Nvidia - Noir</Descriptif>			
+			<Rubriques>
+				<Rubrique>Ordinateurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Dell - Inspiron 580</Propriete>
+			<Propriete nom = "Prix">494.40</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">dellinspiron580.jpg</Propriete>
+			<Descriptif>Ordinateur de bureau - 500 Go - 4096 Mo - Windows 7 - Noir</Descriptif>			
+			<Rubriques>
+				<Rubrique>Ordinateurs</Rubrique>
+			</Rubriques>
+		</Produit>
+
+		<Produit>
+			<Propriete nom = "Libelle">Machete [Blu-ray]</Propriete>
+			<Propriete nom = "Prix">19.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">machete.jpg</Propriete>
+			<Descriptif>Un film de Robert Rodriguez, à ne pas manquer!</Descriptif>			
+			<Rubriques>
+				<Rubrique>Blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">RED [Blu-ray]</Propriete>
+			<Propriete nom = "Prix">18.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">RED.jpg</Propriete>
+			<Descriptif>L'heure de la retraite a sonné ! Mais dans certaines professions, la transition peut s'avérer difficile :
+			 Franck ne supporte pas l'inactivité, son collègue Joe végète en maison de retraite, Marvin use d'amphétamines et Victoria fait des petits boulots. 
+			 Pas facile de décrocher quand on a été... agents de la CIA toute sa vie ! Pourtant, quand leur ancien employeur décide d'éliminer pour de bon ces agents un peu trop compromettants, 
+			 il va découvrir qu'en dépit de leur âge, ce sont encore de redoutables adversaires... </Descriptif>			
+			<Rubriques>
+				<Rubrique>Blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
+
+		<Produit>
+			<Propriete nom = "Libelle">Bienvenue à Zombieland [Blu-ray]</Propriete>
+			<Propriete nom = "Prix">10.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">Zombieland.jpg</Propriete>
+			<Descriptif>Colombus a pris l'habitude de fuir de ce qui lui fait peur. À l'inverse, Tallahassee n'a peur de rien. Et si, d'aventure, 
+			il tombait sur quelque chose qui lui fasse peur, il s'arrangerait pour le liquider immédiatement. Dans un monde peuplé uniquement de zombies, 
+			ces deux-là sont les survivants parfaits. Mais maintenant, ils sont sur le point de réaliser qu'une seule chose les terrifie : eux !...  </Descriptif>			
+			<Rubriques>
+				<Rubrique>Blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
@@ -192,6 +251,13 @@
 			<RubriquesSuperieures>
 				<Rubrique>Gymnastique</Rubrique>
 				<Rubrique>Accessoires</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Blu-ray</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Vidéos</Rubrique>
 			</RubriquesSuperieures>
 		</Rubrique>
 		
