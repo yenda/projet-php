@@ -5,10 +5,11 @@
 	<ListeProduits>
 	
 		<Produit>
-			<Propriete nom = "Libelle"></Propriete>
+			<Propriete nom = "Libelle">Barre de faire</Propriete>
 			<Propriete nom = "Prix">29.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-
+			<Propriete nom = "Photo">barredefaire.jpg</Propriete>
+			<Descriptif>La barre de faire pour les sportifs</Descriptif>
 			<Rubriques>
 				<Rubrique>Accessoire de gymnastique</Rubrique>
 				<Rubrique>Bricolage</Rubrique>				
@@ -25,19 +26,6 @@
 				<Rubrique>Informatique</Rubrique>				
 			</Rubriques>
 		</Produit>
-		
-		
-		<Produit>
-			<Propriete nom = "Libelle">Vibromasseur rotatif 4 tétes</Propriete>
-			<Propriete nom = "Prix">36.90</Propriete>
-			<Propriete nom = "UniteDeVente">vendus par 4 !!!!</Propriete>
-			<Propriete nom = "Photo">Vibro.jpg</Propriete>
-			<Descriptif>Idéal pour les petites fétes entre amis</Descriptif>		
-			<Rubriques>
-				<Rubrique>Accessoires de gymnastique</Rubrique>
-			</Rubriques>
-		</Produit>
-		
 		
 		<Produit>
 			<Propriete nom = "Libelle">Kalashnikov</Propriete>
@@ -178,6 +166,17 @@
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">hpg5360.jpg</Propriete>
 			<Descriptif>Ordinateur de bureau Bundle 21,5" - Intel Core i3 550 - 1 To - RAM 4096 Mo - Windows 7 - Carte graphique Nvidia G210</Descriptif>			
+			<Rubriques>
+				<Rubrique>Ordinateurs</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Asus - EB1501P-B031E</Propriete>
+			<Propriete nom = "Prix">439.37</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">asuseb1501p.jpg</Propriete>
+			<Descriptif>Ordinateur de bureau - 250 Go - 2048 Mo - Windows 7</Descriptif>			
 			<Rubriques>
 				<Rubrique>Ordinateurs</Rubrique>
 			</Rubriques>
