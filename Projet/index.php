@@ -26,7 +26,9 @@
 	
 <?php include ('entete.php') ?>
 
-<div align="center"><a href="#"><h3 class="lien"><u>Entrer sur le site</u></h3></a></div>
+<?php include ('menu.php') ?>
+
+
 
 	
 <?php include ('pied_de_page.php') ?>
