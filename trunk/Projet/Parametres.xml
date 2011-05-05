@@ -317,6 +317,17 @@
 				<Rubrique>DVD</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Kalashnikov</Propriete>
+			<Propriete nom = "Prix">699.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">AK47.jpg</Propriete>
+			<Descriptif>Marre de votre voisin ? Voilé un produit qui pourrait vous intéresser. Penser é acheter une pelle pour vous débarrasser du corps</Descriptif>			
+			<Rubriques>
+				<Rubrique>Bla bla</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
