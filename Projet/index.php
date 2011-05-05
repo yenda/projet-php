@@ -8,7 +8,6 @@
 
 <body>
 
-
 <?php
 		$connect = mysql_connect("localhost","root","root")
 			or die(mysql_error());
@@ -24,15 +23,15 @@
 ?>
 
 	
-<?php include ('entete.php') ?>
+<div align="center"><h1>GeekProducts : la boutique en ligne</h1></div>
 
 <?php include ('menu.php') ?>
 
 
 
 	
-<?php include ('pied_de_page.php') ?>
 
+GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
 
 
 </body>
