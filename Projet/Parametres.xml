@@ -328,6 +328,21 @@
 				<Rubrique>Bla bla</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Harry Potter et les Reliques de la Mort - 1ère partie - Ultimate collector Edition Blu-ray + DVD + copie digitale [Blu-ray]</Propriete>
+			<Propriete nom = "Prix">21.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">harrypoter.jpg</Propriete>
+			<Descriptif>Harry, Ron et Hermione quittent tout pour mener à bien leur périlleuse mission : trouver et détruire le secret de l'immortalité et de l'anéantissement de Voldemort
+			 - les Horcruxes. Seuls et en fuite, les trois amis doivent plus que jamais compter l'un sur l'autre. Mais les forces du mal qui les entourent menacent de les séparer. Au même moment, 
+			 le monde des sorciers est devenu dangereux. La guerre, longtemps crainte, a commencé et le Seigneur des Ténèbres contrôle désormais le Ministère de la Magie et même Poudlard, 
+			 terrorisant et arrêtant tous ceux qui pourraient s'opposer à lui. L'Élu est dorénavant le traqué, les Mangemorts cherchant Harry ayant reçu l'ordre de le ramener à Voldemort... vivant... </Descriptif>			
+			<Rubriques>
+				<Rubrique>Blu-ray</Rubrique>
+				<Rubrique>DVD</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
