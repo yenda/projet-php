@@ -22,6 +22,7 @@
 	 * pour chaque nouveau produit
 	 */
 	function AjouterProduitBase($Produit){
+		global $nbProduitsAjoutes; global $nbProduitsParcourus;
 		foreach($Produit as $Attribut){			
 			
 			if ($Attribut->getname() == "Propriete"){
@@ -50,11 +51,11 @@
 		}
 		
 		if(empty($Libelle))
-			echo "Champs obligatoire manquant, le produit n'a pas été ajouté à la base<br />";
+			echo "Le produit n°$nbProduitsParcourus n'a pas de Libellé et n'a pas pu être ajouté à la base<br />";
 		elseif (empty($Prix))
-			echo "prout";
+			echo "Le prix du produit n°$nbProduitsParcourus : $Libelle n'est pas défini, il n' a pas pu être ajouté à la base<br />";
 		elseif (empty($UniteDeVente))
-			echo "prout2";
+			echo "L'unité de vente du produit n°$nbProduitsParcourus : $Libelle n'est pas définie, il n'a pas pu être ajouté à la base<br />";
 		else{
 			$Date = date("Y-m-d");
 			
@@ -73,14 +74,11 @@
 			foreach ($rubrique_id as $rubrique_id){
 				$query = "INSERT INTO `geekproduct`.`produit_rubrique` VALUES ('$produit_id','$rubrique_id');";
 				$result = mysql_query($query)
-					or die(mysql_error());			
+					or die(mysql_error());		
 			}
-						
-			echo("<br />$Libelle a été ajouté à la base<br />");
-			/*echo("&nbsp;&nbsp;&nbsp;- $Prix centimes<br />");
-			echo("&nbsp;&nbsp;&nbsp;- dans les catégories<br />");*/
+			$nbProduitsAjoutes++;	
 		}
-
+		$nbProduitsParcourus++;
 		
 	}
 	
@@ -90,6 +88,7 @@
 	 */
 	
 	function RubriqueID($rubrique_nom){
+		global $nbRubriquesAjoutes;
 		//on cherche si cette rubrique est déjà dans la base
 		//le cas où la rubrique serait plusieurs fois dans la base n'est pas prévu puisque cette fonction d'ajout ne le permet pas
 		$query = "SELECT rubrique_id FROM rubriques WHERE rubrique_nom = '$rubrique_nom'";		
@@ -101,8 +100,7 @@
 					$query = "INSERT INTO `geekproduct`.`rubriques` VALUES (NULL,'$rubrique_nom');";					
 					$result = mysql_query($query)
 						or die("$query : ".mysql_error()) ;
-					
-			echo ("Rubrique : $rubrique_nom ajoutée à la base<br />");
+			$nbRubriquesAjoutes++;
 			return mysql_insert_id();
 		}
 		//sinon on se contente de récupérer son id
@@ -136,13 +134,13 @@
 					$query = "INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','$rubriquesup_id');";
 					$result = mysql_query($query)
 						or die("$query : ".mysql_error()) ;
-					echo ("$rubriquesup_nom	ajoutée en tant que rubrique supérieure de $rubrique_nom");
 				}
 			}
 				
 	}
 	
 	//on charge le fichier xml
+	$nbProduitsParcourus = 0 ; $nbProduitsAjoutes = 0 ; $nbRubriquesAjoutes = 0;
 	$xmlParametres = simplexml_load_file("Parametres.xml");
 	
 	if (!sizeof($xmlParametres))
@@ -168,7 +166,6 @@
 	else{
 		foreach ($xmlRubriques as $Rubrique){
 			AjouterRubriqueBase($Rubrique);
-			echo "<br />";
 		}
 	}
 	
@@ -193,11 +190,13 @@
 			or die("$query : ".mysql_error());
 	}
 	
-	$result = mysql_close($connect);
-	if ($result)
-		echo("Fermeture de la connection<br />");
-	else
-		echo("Echec de la fermeture de connection<br />");
+	echo "$nbProduitsParcourus produits ont été parcourus<br />";
+	echo "$nbProduitsAjoutes produits ont été ajoutés à la base<br />";
+	echo $nbProduitsParcourus-$nbProduitsAjoutes." produits n'ont pas pu être ajoutés car le description était incomplète<br />";
+	echo "$nbRubriquesAjoutes rubriques ont été ajoutés à la base";
+	
+	$result = mysql_close($connect)
+		or die(mysql_error());
 ?>
 
 </body>

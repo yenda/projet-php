@@ -26,9 +26,9 @@
 			
 		$result = mysql_select_db("geekproduct",$connect);
 		if ($result)
-			echo("Connection réussie<br />");
+			echo("Connection à la base réussie<br />");
 		else
-			echo("Connection échouée<br />");		
+			echo("Connection à la base échouée<br />");		
 	
 		$query = "CREATE TABLE `geekproduct`.`produits` (
 					`produits_Reference` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
