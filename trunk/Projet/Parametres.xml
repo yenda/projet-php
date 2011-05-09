@@ -475,6 +475,39 @@
 				<Rubrique>Clés USB wifi</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">ASUS SBW-06C1S-U</Propriete>
+			<Propriete nom = "Prix">168.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">asusbluray.jpg</Propriete>
+			<Descriptif>Graveur Blu-ray / DVD Super Multi Slim externe (USB 2.0)</Descriptif>			
+			<Rubriques>
+				<Rubrique>Graveurs blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Buffalo BR-X816U2-EU</Propriete>
+			<Propriete nom = "Prix">179.96</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">buffalobluray.jpg</Propriete>
+			<Descriptif>Graveur Blu-ray 8x et DVD Super Multi DL externe</Descriptif>			
+			<Rubriques>
+				<Rubrique>Graveurs blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">LG BH10LS30</Propriete>
+			<Propriete nom = "Prix">89.99</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">lgbluray.jpg</Propriete>
+			<Descriptif>Graveur Blu-ray et DVD Super Multi DL LightScribe - Serial ATA</Descriptif>			
+			<Rubriques>
+				<Rubrique>Graveurs blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
@@ -576,6 +609,13 @@
 			<Nom>Clés USB wifi</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Clés USB</Rubrique>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Graveurs Blu-ray</Nom>
+			<RubriquesSuperieures>
 				<Rubrique>Informatique</Rubrique>
 			</RubriquesSuperieures>
 		</Rubrique>
