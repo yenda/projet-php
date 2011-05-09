@@ -343,6 +343,138 @@
 				<Rubrique>DVD</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Corsair 32Go</Propriete>
+			<Propriete nom = "Prix">68</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">corsair32.jpg</Propriete>
+			<Descriptif>Fiabilité à toute épreuve et 4x plus rapide</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Sony Micro Vault Click 4Go</Propriete>
+			<Propriete nom = "Prix">11.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">sony4.jpg</Propriete>
+			<Descriptif>Tout simplement brillante</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Kingston DataTraveler 100 G2 8 Go</Propriete>
+			<Propriete nom = "Prix">12.75</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">kingston8.jpg</Propriete>
+			<Descriptif>Un support de stockage qui ne vous laissera pas tomber</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">LG Mobile 4 Go chargeur de téléphone</Propriete>
+			<Propriete nom = "Prix">27.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">lgmobile.jpg</Propriete>
+			<Descriptif>Rechargez votre mobile depuis votre clé USB !</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Sony Micro Vault Style - Clé USB 2.0 8 Go - Coloris vert (édition limitée)</Propriete>
+			<Propriete nom = "Prix">16.98</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">sonyvault.jpg</Propriete>
+			<Descriptif>Emportez-la partout grâce à son design plat et élégant</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB</Rubrique>
+			</Rubriques>
+		</Produit>
+
+		<Produit>
+			<Propriete nom = "Libelle">D-Link DWA-131 - Clé USB nano Wireless N 300 Mbps</Propriete>
+			<Propriete nom = "Prix">19.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">dlink300.jpg</Propriete>
+			<Descriptif>Repoussez les limites de la connectivité sans fil!</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
+	
+		<Produit>
+			<Propriete nom = "Libelle">D-Link DWL-G122FR - Clé USB sans fil 54Mbps avec station d'accueil</Propriete>
+			<Propriete nom = "Prix">13.99</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">dlink54.jpg</Propriete>
+			<Descriptif>Connectez-vous aux réseaux sans fil ultra rapidement</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
+
+		<Produit>
+			<Propriete nom = "Libelle">Hercules HWNU-LB-150 - Mini Clé USB Wi-Fi N 150 Mbps blanche</Propriete>
+			<Propriete nom = "Prix">14.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">hercules150.jpg</Propriete>
+			<Descriptif>Connexion sans fil simple et rapide via une clé USB compacte</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Hercules HWNUp-150 - Pico Clé USB WiFi N 150 Mbps</Propriete>
+			<Propriete nom = "Prix">14.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">herculespico150.jpg</Propriete>
+			<Descriptif>Connexion sans fil simple et discrète</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Linksys WUSB600N-EU - Adaptateur USB sans fil N 300Mbps DualBand</Propriete>
+			<Propriete nom = "Prix">32.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">lynksis.jpg</Propriete>
+			<Descriptif>Puissance, souplesse et connexion instantanée</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Netgear WNA1000M - Clé USB nano Wireless N 150 Mbps</Propriete>
+			<Propriete nom = "Prix">19.90</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">netgearnano150.jpg</Propriete>
+			<Descriptif>Parfait pour vous connecter à vos hotspots préférés</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">TP-LINK TL-WN321G - Clé USB Wi-Fi G (54 Mbps)</Propriete>
+			<Propriete nom = "Prix">7.91</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">tplink.jpg</Propriete>
+			<Descriptif>Installez vous n'importe où chez vous pour surfer</Descriptif>			
+			<Rubriques>
+				<Rubrique>Clés USB wifi</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
@@ -429,6 +561,21 @@
 		<Rubrique>
 			<Nom>Ordinateurs</Nom>
 			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Clés USB</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>Clés USB wifi</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Clés USB</Rubrique>
 				<Rubrique>Informatique</Rubrique>
 			</RubriquesSuperieures>
 		</Rubrique>
