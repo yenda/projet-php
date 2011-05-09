@@ -508,6 +508,17 @@
 				<Rubrique>Graveurs blu-ray</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Plextor PX-LB950UE</Propriete>
+			<Propriete nom = "Prix">199.96</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">plextorbluray.jpg</Propriete>
+			<Descriptif>Graveur Blu-ray et DVD Super Multi DL LightScribe externe (USB 3.0/eSATA) - Version boîte</Descriptif>			
+			<Rubriques>
+				<Rubrique>Graveurs blu-ray</Rubrique>
+			</Rubriques>
+		</Produit>
 
 	</ListeProduits>
 	
