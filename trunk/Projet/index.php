@@ -23,16 +23,27 @@
 ?>
 
 	
-<div align="center"><h1>GeekProducts : la boutique en ligne</h1></div>
+<div align="center"><h2>GeekProducts : la boutique en ligne</h2></div>
 
-<?php include ('menu.php') ?>
+<div id="menu">
+	<li><a href="#">Accueil</a></li>
+	<ul>
+		<li>blabla
+			<ul>Catégorie 1</ul>
+			<ul>Catégorie 2</ul>
+		</li>
+	</ul>
+</div>
 
+<div id="contenu">
+	<!--  ici vient le contenu dynamique de la page -->
+</div>
 
 
 	
-
-GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
-
+<div id="bas">
+	<div align="center">GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse</div>
+</div>
 
 </body>
 </html>
