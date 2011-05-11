@@ -45,6 +45,7 @@ $(document).ready( function () {
 
 <body>
 
+
 <?php
 		include 'fonctions.php';
 		include 'fonctions_menu.php';
