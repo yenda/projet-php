@@ -46,6 +46,6 @@
 	</div>
 </div>
 </div>
-	<?php DeconnexionDB($connect)?>
+	<?php DeconnexionDB($connect);?>
 </body>
 </html>
