@@ -65,7 +65,7 @@ $(document).ready( function () {
 <div id="haut">
 	<a href="index.php"></a><img src="images/logo.jpg" height="101px" width="200px"></a>
 	<input type="text" value=Recherche /> 
-	<input type="submit" name="lien1" value="Ok" onclick="self.location.href='lien.html'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
+	<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
 </div>
 
 
@@ -78,7 +78,7 @@ $(document).ready( function () {
 </div>
 
 	
-	<div id="bas">
+	<div id="bas" align="center">
 		GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
 	</div>
 </div>
