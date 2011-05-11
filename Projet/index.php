@@ -26,7 +26,7 @@
 <div align="center"><h2>GeekProducts : la boutique en ligne</h2></div>
 
 <div id="menu">
-	<li><a href="#">Accueil</a></li>
+	<a href="#">Accueil</a>
 	<ul>
 		<li>blabla
 			<ul>Catégorie 1</ul>
