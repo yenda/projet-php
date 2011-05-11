@@ -1,11 +1,17 @@
 @CHARSET "ISO-8859-1";
 
-body {
-	background-color:grey;
-	margin:0;
-	padding:0;
-	height:100%;
-	width:100%;
+html, body {
+	background-color:white;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#page {
+	width: 60%;
+	margin: 0 auto;
+	min-height: 100%;
+	position:relative;
 }
 
 h2 {
@@ -17,12 +23,11 @@ h3.lien {
 	font-size:40pt;
 }
 
-
 #menu {
 	border: 12px solid #000;
 	border-width: 1px;
 	color: black;
-	background-color:white;
+	background-color:#F5F5DC;
 	padding:5px;
 	margin-left:3px;
 	width:200px;
@@ -36,7 +41,7 @@ h3.lien {
 	border: 12px solid #000;
 	border-width: 1px;
 	color: black;
-	background-color:white;
+	background-color:#F5F5DC;
 	padding:5px;
 	margin-left:230px;	
 	margin-right:3px;
@@ -46,8 +51,16 @@ h3.lien {
 }
 
 #bas {
-	border: none;
-	background-color:white;
-	padding:0px;
+	border: 12px solid #000;
+	border-width:1px;
+	border-radius: 10px;
+	background-color:#F5F5DC;
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	width: 100%;
+	
 }
+
+
 
