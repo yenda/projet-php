@@ -1,13 +1,17 @@
 <?php
-	include 'fonctions.php';
-	
-	$connect = ConnexionDB();
-	
-	$result = RequeteSQL("SELECT `rubrique_nom` FROM `rubriques` WHERE `rubrique_id` in (SELECT `rubrique_id` FROM `rubrique_rubriquesup` WHERE `rubriquesup_id` = 0) ORDER BY `rubrique_nom`");
-	while ($row=mysql_fetch_assoc($result)){
-		$rubrique_nom = $row["rubrique_nom"];
-		echo "$rubrique_nom<br />";
+	function ConstruireMenu(&$menu,$rubrique_id){	
+		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` in (SELECT `rubrique_id` FROM `rubrique_rubriquesup` WHERE `rubriquesup_id` = ".$rubrique_id.") ORDER BY `rubrique_nom`");
+		$menu .= "<ul>";
+		while ($row=mysql_fetch_assoc($result)){
+			$menu .= "<li>".$row["rubrique_nom"]."</li>";
+			ConstruireMenu($menu,$row["rubrique_id"]);
+		}
+		$menu .= "</ul>";
 	}
 	
-	DeconnexionDB($connect);
+	function Menu(){
+		$menu = "";
+		ConstruireMenu($menu,0);
+		return $menu;
+	}
 ?>
