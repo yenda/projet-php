@@ -319,17 +319,6 @@
 		</Produit>
 		
 		<Produit>
-			<Propriete nom = "Libelle">Kalashnikov</Propriete>
-			<Propriete nom = "Prix">699.90</Propriete>
-			<Propriete nom = "UniteDeVente">l'unité</Propriete>
-			<Propriete nom = "Photo"></Propriete>
-			<Descriptif>Marre de votre voisin ? Voilà un produit qui pourrait vous intéresser. Penser à acheter une pelle pour vous débarrasser du corps</Descriptif>			
-			<Rubriques>
-				<Rubrique>Bla bla</Rubrique>
-			</Rubriques>
-		</Produit>
-		
-		<Produit>
 			<Propriete nom = "Libelle">Harry Potter et les Reliques de la Mort - 1ère partie - Ultimate collector Edition Blu-ray + DVD + copie digitale [Blu-ray]</Propriete>
 			<Propriete nom = "Prix">21.98</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
