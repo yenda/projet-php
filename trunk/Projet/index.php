@@ -36,7 +36,7 @@
 </div>
 
 <div id="contenu">
-	<!--  ici vient le contenu dynamique de la page -->
+	Voici le contenu du site. Nous vendons des produits informatique
 </div>
 
 
