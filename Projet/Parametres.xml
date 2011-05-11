@@ -585,6 +585,17 @@
 				<Rubrique>GPS</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">TomTom GO LIVE 1000 Europe</Propriete>
+			<Propriete nom = "Prix">299.96</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">tomtomgolive1000.jpg</Propriete>
+			<Descriptif>GPS 45 pays d'Europe Ecran 4.3" avec TMC - 1 an de services offerts</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
 	
 
 	</ListeProduits>
