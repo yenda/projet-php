@@ -1,16 +1,51 @@
 @CHARSET "ISO-8859-1";
 
-body {
-	background-color:white;
+html, body {
+	height: 100%;
 }
 
-h1 {
+body {
+	background-color:white;
+	margin:0;
+	padding:0;
+}
+
+h2 {
 	color:blue;
-	font-size:84pt;
 }
 
 h3.lien {
 	color:blue;
 	font-size:40pt;
+}
+
+
+#menu {
+	border: 12px solid #000;
+	border-width: 2px 2px 2px;
+	color: black;
+	background-color:white;
+	padding:5px;
+	margin:auto;
+	
+}
+
+#contenu {
+	border: 12px solid #000;
+	border-width: 2px 2px 2px;
+	color: black;
+	background-color:white;
+	padding:5px;
+	margin:auto;	
+	
+}
+
+#bas {
+	border: 12px solid #000;
+	border-width: 2px 2px 2px;
+	color: black;
+	background-color:white;
+	padding:5px;
+	margin:auto;
 }
 
