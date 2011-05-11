@@ -47,10 +47,11 @@ h3.lien {
 	border: 12px solid #000;
 	border-width: 1px;
 	color: black;
+	width:590px;
 	background-color:#F5F5DC;
 	padding:5px;
 	margin-left:230px;	
-	margin-right:3px;
+	margin-right:0px;
 	margin-top:3px;
 	border-radius: 10px;
 	margin-bottom: 0; 
