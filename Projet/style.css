@@ -34,6 +34,7 @@ h3.lien {
 	background-color:#F5F5DC;
 	padding:5px;
 	margin-left:3px;
+	margin-top:3px;
 	width:200px;
 	position:relative;
 	float:left; 
@@ -50,6 +51,7 @@ h3.lien {
 	margin-left:230px;	
 	margin-right:3px;
 	margin-bottom:30px;
+	margin-top:3px;
 	border-radius: 10px; 
 	
 }
