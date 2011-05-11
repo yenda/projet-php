@@ -10,11 +10,9 @@
 
 <?php
 		include 'fonctions.php';
-		include 'fonctions_menu.php'
-		$connect = mysql_connect("localhost","root","")
-			or die(mysql_error());
-		
-		$result = ConnexionDB();	
+		include 'fonctions_menu.php';
+
+		$connect = ConnexionDB();	
 
   // Remarques :
   // L'utilisation de mysql_data_seek($resultat,0) permet de repositionner un "pointeur"
@@ -48,5 +46,6 @@
 	</div>
 </div>
 </div>
+	<?php DeconnexionDB($connect)?>
 </body>
 </html>
