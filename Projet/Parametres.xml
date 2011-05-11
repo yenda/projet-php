@@ -597,6 +597,17 @@
 			</Rubriques>
 		</Produit>
 	
+		<Produit>
+			<Propriete nom = "Libelle">TomTom Start (France)</Propriete>
+			<Propriete nom = "Prix">89.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">tomtomstart.jpg</Propriete>
+			<Descriptif>Un GPS très utile sur les routes de France!</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+	
 
 	</ListeProduits>
 	
