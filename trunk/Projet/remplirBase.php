@@ -171,8 +171,7 @@
 		
 	while ($row=mysql_fetch_assoc($result)){
 		$rubrique_id = $row["rubrique_id"];
-		$result=RequeteSQL("INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');");
-
+		RequeteSQL("INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');");
 	}
 	
 	echo "$nbProduitsParcourus produits ont été parcourus<br />";
