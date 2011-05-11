@@ -22,6 +22,8 @@
 
 ?>
 
+<div id="page">
+
 	
 <div align="center"><h2>GeekProducts : la boutique en ligne</h2></div>
 
@@ -44,6 +46,7 @@
 	<div id="bas">
 		<div align="center">GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse</div>
 	</div>
+</div>
 </div>
 </body>
 </html>
