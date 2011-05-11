@@ -63,7 +63,7 @@ $(document).ready( function () {
 <div id="page">
 
 <div id="haut">
-	<a href="index.php"></a><img src="images/geekproducts.bmp" height="101px" width="200px"></a>
+	<a href="index.php"></a><img src="images/logo.jpg" height="101px" width="200px"></a>
 	<textarea style="width=100px" style="height=30px" rows="1" maxlength="50">Recherche</textarea> 
 	<input type="button" name="lien1" value="Ok" onclick="self.location.href='lien.html'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
 </div>
