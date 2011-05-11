@@ -1,25 +1,29 @@
 @CHARSET "ISO-8859-1";
 
 html, body {
-	background-color:white;
+	background-color:black;
 	margin: 0;
 	padding: 0;
 	height: 100%;
 }
 
 #page {
-	width: 60%;
+	width: 820px;
 	margin: 0 auto;
 	min-height: 100%;
 	position:relative;
 }
 
 h2 {
-	color:blue;
+	color:#30C6C6;
+}
+
+a {
+	color:#30C6C6;
 }
 
 h3.lien {
-	color:blue;
+	color:#30C6C6;
 	font-size:40pt;
 }
 
@@ -32,7 +36,6 @@ h3.lien {
 	margin-left:3px;
 	width:200px;
 	float:left; 
-	position:fixed;
 	border-radius: 10px; 
 	
 }
@@ -60,6 +63,15 @@ h3.lien {
 	left: 0;
 	width: 100%;
 	
+}
+
+#haut {
+	border: 12px solid #000;
+	border-width:1px;
+	border-radius: 10px;
+	background-color:black;
+	top:0;
+	width: 100%;
 }
 
 
