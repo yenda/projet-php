@@ -1,6 +1,6 @@
 <?php
 	function ConnexionDB(){
-		$connect = mysql_connect("localhost","root","root")
+		$connect = mysql_connect("localhost","root","")
 			or die("erreur de connexion au serveur");
 		
 		mysql_select_db("geekproduct",$connect)

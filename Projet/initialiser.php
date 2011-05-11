@@ -8,7 +8,7 @@
 <body>
 	<?php
 		include 'fonctions.php';
-		$connect = mysql_connect("localhost","root","root")
+		$connect = mysql_connect("localhost","root","")
 			or die(mysql_error());
 		
 		//Suppression de la base de donnée si elle existe
