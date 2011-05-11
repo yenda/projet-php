@@ -27,6 +27,9 @@ h3.lien {
 	background-color:white;
 	padding:5px;
 	margin:auto;
+	width:200px;
+	float:left; 
+	position:fixed;
 	
 }
 
@@ -36,7 +39,7 @@ h3.lien {
 	color: black;
 	background-color:white;
 	padding:5px;
-	margin:auto;	
+	margin-left:230px;	
 	
 }
 
