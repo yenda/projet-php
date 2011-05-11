@@ -10,6 +10,7 @@
 
 <?php
 		include 'fonctions.php';
+		include 'fonctions_menu.php'
 		$connect = mysql_connect("localhost","root","")
 			or die(mysql_error());
 		
@@ -33,13 +34,7 @@
 
 
 <div id="menu">
-	<a href="#">Accueil</a>
-	<ul>
-		<li>blabla
-			<ul>Catégorie 1</ul>
-			<ul>Catégorie 2</ul>
-		</li>
-	</ul>
+	<?php echo Menu();?>
 </div>
 
 <div id="contenu">
