@@ -63,7 +63,7 @@ $(document).ready( function () {
 <div id="page">
 
 <div id="haut">
-	<a href="index.php"></a><img src="images/logo.jpg" height="101px" width="200px"></a>
+	<a href="index.php"></a><img src="images/logo.jpg" height="101px" width="200px" alt="GeekProducts" title="GeekProducts"></a>
 	<input type="text" value= /> 
 	<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
 </div>
