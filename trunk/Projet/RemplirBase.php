@@ -8,6 +8,7 @@
 
 <body>
 <?php
+	include 'fonctions.php';
 	/**Améliorations a apporter :
 	*  Supprimer les echos et remplacer par du texte final de type :
 	*  X Produits et X catégories parcourus
@@ -64,17 +65,13 @@
 			if (!isset($Descriptif))
 				$Descriptif = '';
 	
-			$query = "INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '$Date');";
-			$result = mysql_query($query)
-				or die(mysql_error());
+			$result=RequeteSQL("INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '$Date');");
 			$produit_id = mysql_insert_id();
 			
 			if (!isset($rubrique_id))
 				$rubrique_id[] = 1;
 			foreach ($rubrique_id as $rubrique_id){
-				$query = "INSERT INTO `geekproduct`.`produit_rubrique` VALUES ('$produit_id','$rubrique_id');";
-				$result = mysql_query($query)
-					or die(mysql_error());		
+				$result=RequeteSQL("INSERT INTO `geekproduct`.`produit_rubrique` VALUES ('$produit_id','$rubrique_id');");
 			}
 			$nbProduitsAjoutes++;	
 		}
@@ -91,15 +88,11 @@
 		global $nbRubriquesAjoutes;
 		//on cherche si cette rubrique est déjà dans la base
 		//le cas où la rubrique serait plusieurs fois dans la base n'est pas prévu puisque cette fonction d'ajout ne le permet pas
-		$query = "SELECT rubrique_id FROM rubriques WHERE rubrique_nom = '$rubrique_nom'";		
-		$result = mysql_query($query)
-			or die("$query : ".mysql_error()) ;			
+		$result=RequeteSQL("SELECT rubrique_id FROM rubriques WHERE rubrique_nom = '$rubrique_nom'");	
 		
 		//si elle n'y est pas on la rajoute dans la base et on récupère son id
 		if (mysql_num_rows($result)==0){
-					$query = "INSERT INTO `geekproduct`.`rubriques` VALUES (NULL,'$rubrique_nom');";					
-					$result = mysql_query($query)
-						or die("$query : ".mysql_error()) ;
+					$result=RequeteSQL("INSERT INTO `geekproduct`.`rubriques` VALUES (NULL,'$rubrique_nom');");					
 			$nbRubriquesAjoutes++;
 			return mysql_insert_id();
 		}
@@ -131,9 +124,7 @@
 				$rubriquesup_id = RubriqueID($rubriquesup_nom);
 				//La condition suivante vérifie si la pair de rubrique / rubrique supérieure n'est pas déjà dans la base et l'ajoute si elle n'y est pas
 				if(mysql_num_rows(mysql_query("SELECT * FROM rubrique_rubriquesup WHERE (rubrique_id = '$rubrique_id' AND rubriquesup_id = '$rubriquesup_id')"))==0){		
-					$query = "INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','$rubriquesup_id');";
-					$result = mysql_query($query)
-						or die("$query : ".mysql_error()) ;
+					$result=RequeteSQL("INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','$rubriquesup_id');");
 				}
 			}
 				
@@ -154,11 +145,7 @@
 	$xmlProduits = $xmlListeProduits->children();
 	$xmlRubriques = $xmlListeRubriques->children();
 	
-	$connect = mysql_connect("localhost","root","root")
-		or die(mysql_error());
-	
-	$result = mysql_select_db("geekproduct",$connect)
-		or die(mysql_error());
+	$connect = ConnexionDB();
 
 	//on parcourt les rubriques
 	if (!sizeof($xmlRubriques))
@@ -179,15 +166,13 @@
 	}
 
 	//on détermine les rubrique de plus haut niveau dans la hierarchie et on leur attribue 0 comme id de rubrique supérieure dans la table rubrique_rubriquesup
-	$query = "SELECT rubriques.rubrique_id FROM rubriques LEFT JOIN rubrique_rubriquesup ON rubriques.rubrique_id = rubrique_rubriquesup.rubrique_id WHERE rubrique_rubriquesup.rubrique_id IS NULL";
-	$result = mysql_query($query)
-		or die("$query :".mysql_error());
+	$result=RequeteSQL("SELECT rubriques.rubrique_id FROM rubriques LEFT JOIN rubrique_rubriquesup ON rubriques.rubrique_id = rubrique_rubriquesup.rubrique_id WHERE rubrique_rubriquesup.rubrique_id IS NULL");
+	
 		
 	while ($row=mysql_fetch_assoc($result)){
 		$rubrique_id = $row["rubrique_id"];
-		$query = "INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');";
-		mysql_query($query)
-			or die("$query : ".mysql_error());
+		$result=RequeteSQL("INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');");
+
 	}
 	
 	echo "$nbProduitsParcourus produits ont été parcourus<br />";
@@ -195,8 +180,8 @@
 	echo $nbProduitsParcourus-$nbProduitsAjoutes." produits n'ont pas pu être ajoutés car le description était incomplète<br />";
 	echo "$nbRubriquesAjoutes rubriques ont été ajoutés à la base";
 	
-	$result = mysql_close($connect)
-		or die(mysql_error());
+	DeconnexionDB($connect);
+
 ?>
 
 </body>

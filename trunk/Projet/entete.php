@@ -1,1 +1,0 @@
-<div align="center"><h1>GeekProducts : la boutique en ligne</h1></div>
