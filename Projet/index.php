@@ -40,10 +40,10 @@
 </div>
 
 
-	
-<div id="bas">
-	<div align="center">GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse</div>
+<div align="center">	
+	<div id="bas">
+		<div align="center">GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse</div>
+	</div>
 </div>
-
 </body>
 </html>
