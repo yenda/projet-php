@@ -66,10 +66,9 @@ h3.lien {
 	margin-right:3px;
 	margin-bottom:30px;
 	border-radius: 10px; 
-	position: absolute;
-	bottom: 0; 
-	left: 0;	
+	clear: both;	
 }
+
 
 #haut {
 	border: 12px solid #000;
