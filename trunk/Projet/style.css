@@ -49,5 +49,7 @@ h3.lien {
 	color: black;
 	background-color:white;
 	padding:0px;
+	position:absolute;
+	margin-bottom:0;
 }
 
