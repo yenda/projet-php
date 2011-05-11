@@ -9,10 +9,11 @@
 <body>
 
 <?php
-		$connect = mysql_connect("localhost","root","root")
+		include 'fonctions.php';
+		$connect = mysql_connect("localhost","root","")
 			or die(mysql_error());
 		
-		$result = mysql_select_db("geekproduct",$connect);	
+		$result = ConnexionDB();	
 
   // Remarques :
   // L'utilisation de mysql_data_seek($resultat,0) permet de repositionner un "pointeur"
@@ -24,8 +25,12 @@
 
 <div id="page">
 
-	
-<div align="center"><h2>GeekProducts : la boutique en ligne</h2></div>
+<div id="haut">
+	<a href="index.php"></a><img src="images/geekproducts.bmp" height="101px" width="200px"></a>
+	<textarea style="width=100px" style="height=30px" rows="1" maxlength="50">Recherche</textarea> 
+	<input type="button" name="lien1" value="Ok" onclick="self.location.href='lien.html'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
+</div>
+
 
 <div id="menu">
 	<a href="#">Accueil</a>
