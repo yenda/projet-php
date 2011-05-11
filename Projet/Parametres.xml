@@ -519,6 +519,73 @@
 				<Rubrique>Graveurs blu-ray</Rubrique>
 			</Rubriques>
 		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Garmin nüvi 1390T</Propriete>
+			<Propriete nom = "Prix">195.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">garmin1390t.jpg</Propriete>
+			<Descriptif>GPS Europe Ecran 4.3" avec TMC</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Garmin nüvi 3790T</Propriete>
+			<Propriete nom = "Prix">355.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">garmin3790t.jpg</Propriete>
+			<Descriptif>GPS 43 pays d'Europe Ecran 4.3"</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+
+		<Produit>
+			<Propriete nom = "Libelle">Mappy iti405 Europe</Propriete>
+			<Propriete nom = "Prix">99.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">mappyiti405.jpg</Propriete>
+			<Descriptif>GPS 22 pays d'Europe Ecran 4.3" avec Guide du routard</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Mappy ulti505 Europe</Propriete>
+			<Propriete nom = "Prix">99.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">mappyulti505.jpg</Propriete>
+			<Descriptif>GPS 22 pays d'Europe Ecran 5" avec Guide du routard</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">Navman F360 Europe</Propriete>
+			<Propriete nom = "Prix">79.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">navmanf360.jpg</Propriete>
+			<Descriptif>GPS 23 pays d'Europe Ecran 3.5"</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+		
+		<Produit>
+			<Propriete nom = "Libelle">TomTom GO 7100 Truck</Propriete>
+			<Propriete nom = "Prix">499.95</Propriete>
+			<Propriete nom = "UniteDeVente">l'unité</Propriete>
+			<Propriete nom = "Photo">tomtomgo7100.jpg</Propriete>
+			<Descriptif>GPS 45 pays d'Europe Ecran 4.3"</Descriptif>			
+			<Rubriques>
+				<Rubrique>GPS</Rubrique>
+			</Rubriques>
+		</Produit>
+	
 
 	</ListeProduits>
 	
@@ -628,6 +695,13 @@
 			<Nom>Graveurs Blu-ray</Nom>
 			<RubriquesSuperieures>
 				<Rubrique>Informatique</Rubrique>
+			</RubriquesSuperieures>
+		</Rubrique>
+		
+		<Rubrique>
+			<Nom>GPS</Nom>
+			<RubriquesSuperieures>
+				<Rubrique>Accessoires</Rubrique>
 			</RubriquesSuperieures>
 		</Rubrique>
 	</ListeRubriques>
