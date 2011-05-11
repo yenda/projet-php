@@ -132,7 +132,7 @@
 	
 	//on charge le fichier xml
 	$nbProduitsParcourus = 0 ; $nbProduitsAjoutes = 0 ; $nbRubriquesAjoutes = 0;
-	$xmlParametres = simplexml_load_file("Parametres.xml");
+	$xmlParametres = simplexml_load_file("parametres.xml");
 	
 	if (!sizeof($xmlParametres))
 		echo ("Le document est vide<br />");
