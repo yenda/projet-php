@@ -17,7 +17,7 @@
   // Remarques :
   // L'utilisation de mysql_data_seek($resultat,0) permet de repositionner un "pointeur"
   // en début de résultat d'une interrogation Mysql et permet de re-parcourir les résultats
-  // --> utile si le résultat d'une interrogation doit être parcouru plusieurs fois
+  // utile si le résultat d'une interrogation doit être parcouru plusieurs fois
   //     (comme c'est le cas pour la liste des élèves et des matières
 
 ?>
