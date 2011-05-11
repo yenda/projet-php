@@ -1,13 +1,11 @@
 @CHARSET "ISO-8859-1";
 
-html, body {
-	height: 100%;
-}
-
 body {
 	background-color:white;
 	margin:0;
 	padding:0;
+	height:100%;
+	width:100%;
 }
 
 h2 {
@@ -26,10 +24,11 @@ h3.lien {
 	color: black;
 	background-color:white;
 	padding:5px;
-	margin:auto;
+	margin-left:3px;
 	width:200px;
 	float:left; 
 	position:fixed;
+	border-radius: 10px; 
 	
 }
 
@@ -40,16 +39,15 @@ h3.lien {
 	background-color:white;
 	padding:5px;
 	margin-left:230px;	
+	margin-right:3px;
+	margin-bottom:30px;
+	border-radius: 10px; 
 	
 }
 
 #bas {
-	border: 12px solid #000;
-	border-width: 1px;
-	color: black;
+	border: none;
 	background-color:white;
 	padding:0px;
-	position:absolute;
-	margin-bottom:0;
 }
 
