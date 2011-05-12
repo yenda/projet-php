@@ -50,7 +50,7 @@
 					</td>
 					
 					<td>									
-					<a href="panier.php" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
+					<a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
 						</form>
 		
 					</td>
