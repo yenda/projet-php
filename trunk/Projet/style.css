@@ -10,7 +10,6 @@ html, body {
 #page {
 	width: 820px;
 	margin: 0 auto;
-	min-height: 100%;
 	position:relative;
 }
 
@@ -40,7 +39,7 @@ h3.lien {
 	margin-top:3px;
 	margin-bottom: 0; 
 	width:200px;
-	min-height:100%;
+	min-height:600px;
 	border-radius: 7px; 
 	background:url(images/fond-menu.png) repeat-x;
 	padding:-2px;
@@ -70,7 +69,7 @@ ol, ul {
 	border-width: 1px;
 	color: black;
 	width:590px;
-	min-height:100%;
+	min-height:600px;
 	background-color:#5892B5;
 	padding:5px;
 	margin-left:230px;	
