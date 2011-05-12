@@ -40,7 +40,7 @@ h3.lien {
 	margin-bottom: 0; 
 	width:200px;
 	min-height:600px;
-	border-radius: 7px; 
+	border-radius: 6px; 
 	background:url(images/fond-menu.png) repeat-x;
 	padding:-2px;
 	padding-bottom:5px;
@@ -58,12 +58,6 @@ ol, ul {
 	background-position:0px 7px;
 }
 
-/*li {
-	background:transparent url(../styleImages/template/pointer1.gif) no-repeat;
-    background-position:0px 7px;
-}*/
-
-
 #contenu {
 	border: 12px solid #ccc;
 	border-width: 1px;
@@ -76,7 +70,7 @@ ol, ul {
 	margin-left:230px;	
 	margin-right:0px;
 	margin-top:10px;
-	border-radius: 10px;
+	border-radius: 6px;
 	margin-bottom: 0; 
 	
 }
@@ -89,7 +83,7 @@ ol, ul {
 	width:100%;
 	margin-top:5px;
 	margin-bottom:30px;
-	border-radius: 10px; 
+	border-radius: 6px; 
 	clear: both;	
 }
 
@@ -97,7 +91,7 @@ ol, ul {
 #haut {
 	border: 12px solid #ccc;
 	border-width:1px;
-	border-radius: 10px;
+	border-radius: 6px;
 	background-color:#5892B5;
 	top:0;
 	width: 100%;
@@ -128,7 +122,7 @@ ol, ul {
 	padding-left:10px;
 	border-left: 1px solid #e0e0e0;
 	border-right: 1px solid #e0e0e0;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 .carttable {
 	border: 0;
