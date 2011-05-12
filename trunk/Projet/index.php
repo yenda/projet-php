@@ -33,11 +33,7 @@
 	</tr></table>
 </div>
 
-<div id="menu1">
-	<div class="boxTitleRight">Menu</div>
-</div>
-
-<div id="menu2">
+<div id="menu">
 	<div class="boxTitleRight">Catégories</div>
 	<?php echo Menu($_ENV['rubrique_nom'],$_ENV['rubrique_id']);?>
 	
