@@ -39,27 +39,31 @@
 	
 </div>
 
-<div class="cartback">
-		<table cellpadding="0" cellspacing="0" class="carttable">
-			<tr>
-			<td>
-				<form>
-				<strong>Panier</strong>
-			</td>
-			
-			<td>									
-			<a href="panier.php" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
-				</form>
-
-			</td>
-
-			<td>
-				<div align="right">Total: €0.00</div>
-			</td>
-			</tr>
-
-		</table>
-</div>
+	<?php 
+		if ($_ENV['type']!="panier"){
+				echo '<div class="cartback">
+					<table cellpadding="0" cellspacing="0" class="carttable">
+					<tr>
+					<td>
+						<form>
+						<strong>Panier</strong>
+					</td>
+					
+					<td>									
+					<a href="panier.php" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
+						</form>
+		
+					</td>
+		
+					<td>
+						<div align="right">Total: €0.00</div>
+					</td>
+					</tr>
+		
+				</table>
+			</div>';
+		}	
+	?>
 
 
 <div id="contenu">

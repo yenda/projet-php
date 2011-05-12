@@ -50,8 +50,8 @@
 
 		//Création de la table Produit_Rubrique
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`produit_rubrique` (
-					`ID_produit` INT NOT NULL, 
-					`ID_rubrique` INT NOT NULL) ENGINE = MyISAM;");
+					`produit_reference` INT NOT NULL, 
+					`rubrique_id` INT NOT NULL) ENGINE = MyISAM;");
 		
 		//Création de la table Clients
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`clients` (
