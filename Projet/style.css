@@ -28,16 +28,16 @@ h3.lien {
 }
 
 #menu {
-	border: 12px solid #000;
+	border: 12px solid #ccc;
 	border-width: 1px;
 	color: black;
 	margin-left:1px;
 	margin-top:3px;
 	margin-bottom: 0; 
 	width:200px;
-	border-radius: 4px; 
+	border-radius: 7px; 
 	background:url(images/fond-menu.png) no-repeat;
-	padding-left:-2px;
+	padding:-2px;
 	position:relative;
 	float:left; 
 	
@@ -46,7 +46,7 @@ h3.lien {
 	
 
 #contenu {
-	border: 12px solid #000;
+	border: 12px solid #ccc;
 	border-width: 1px;
 	color: black;
 	width:590px;
@@ -61,7 +61,7 @@ h3.lien {
 }
 
 #bas {
-	border: 12px solid #000;
+	border: 12px solid #ccc;
 	border-width:1px;
 	background-color:#5892B5;
 	padding:5px;
@@ -74,7 +74,7 @@ h3.lien {
 
 
 #haut {
-	border: 12px solid #000;
+	border: 12px solid #ccc;
 	border-width:1px;
 	border-radius: 10px;
 	background-color:#5892B5;
