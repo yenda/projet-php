@@ -25,16 +25,26 @@
 	
 	// Récupère les informations de la page concernée
 	function Recuperation_infos() {
+		//On récupère le type de page à afficher
 		if (isset($_GET['type']))
-			$_ENV['type'] = ($_GET['type']);
+				$_ENV['type'] = ($_GET['type']);
 		else {
 			$_ENV['type'] = "index";
 		}
-			if (isset($_GET['id']))
-			$_ENV['id'] = ($_GET['id']);
-		else {
-			$_ENV['id'] = "";
-		}	
+		
+		if (isset($_GET['id']))
+			$_ENV['id'] = intval($_GET['id']);
+		else
+			$_ENV['id'] = 0;
+		
+		if (($_ENV['type']=="produit")&&(isset($_GET['rubrique'])))
+			$_ENV['rubrique_id'] = intval($_GET['rubrique']);
+		elseif ($_ENV['type']=="rubrique")
+				$_ENV['rubrique_id'] = $_ENV['id'];
+		else
+			$_ENV['rubrique_id'] = 0;
+			
+		
 		/*$strSQL = 'SELECT * FROM `pages` WHERE `Id_page` = '.$_ENV['id_page'];
 		$resultat = requete_SQL($strSQL);
 		$tabl_result = mysql_fetch_array($resultat);
