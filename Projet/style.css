@@ -18,6 +18,11 @@ h2 {
 	color:#30C6C6;
 }
 
+a {
+	text-decoration:none;
+	color:grey;
+}
+
 a:hover {
 	color:#30C6C6;
 }
@@ -43,12 +48,18 @@ h3.lien {
 	
 }
 
-/*ol, ul {
+ol, ul {
 	margin: 0px;
-	padding-left: 8px;
+	padding-left: 15px;
 	padding-top:2px;
 	color: #656565;	
-	list-style: none;
+	list-style-image : url(images/fleche.gif);
+	background-position:0px 7px;
+}
+
+/*li {
+	background:transparent url(../styleImages/template/pointer1.gif) no-repeat;
+    background-position:0px 7px;
 }*/
 
 
