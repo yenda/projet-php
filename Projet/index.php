@@ -45,7 +45,7 @@
 		elseif ($_ENV['type']=="recherche")
 			include("recherche.php");
 		elseif ($_ENV['type']=="inscription")
-			include("inscription.php")
+			include("inscription.php");
 		else
 			include("404.php");
 	?>
