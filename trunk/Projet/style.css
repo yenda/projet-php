@@ -70,7 +70,8 @@ ol, ul {
 	color: black;
 	width:590px;
 	min-height:600px;
-	background-color:#5892B5;
+	/*background-color:#5892B5;*/
+	background:url(images/fond-menu.png) repeat-x;
 	padding:5px;
 	margin-left:230px;	
 	margin-right:0px;
