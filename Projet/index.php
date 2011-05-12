@@ -65,6 +65,7 @@ $(document).ready( function () {
 <div id="menu">
 	<div class="boxTitleRight">Catégories</div>
 	<?php echo Menu();?>
+	
 </div>
 
 <div id="contenu">
