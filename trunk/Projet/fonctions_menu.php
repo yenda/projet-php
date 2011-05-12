@@ -8,7 +8,7 @@
 		$menu .= "<ul>";
 		//on ajoute les résultats au menu en recherchant aussi les sous-rubriques de chaque rubrique trouvée
 		while ($row=mysql_fetch_assoc($result)){
-			$menu .= "<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."'>".$row["rubrique_nom"]."</li>";
+			$menu .= "<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."'>".$row["rubrique_nom"]."</a></li>";
 			ConstruireMenu($menu,$row["rubrique_id"]);
 		}
 		$menu .= "</ul>";
