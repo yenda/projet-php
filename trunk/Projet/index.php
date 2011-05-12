@@ -33,35 +33,28 @@
 	</tr></table>
 </div>
 
+<div id="menu">
+	<div class="boxTitleRight">Catégories</div>
+	<?php echo Menu($_ENV['rubrique_nom'],$_ENV['rubrique_id']);?>
+	
+</div>
+
 <div class="cartback">
 		<table cellpadding="0" cellspacing="0" class="carttable">
 			<tr>
 			<td>
 				<form>
-				<strong>Panier: </strong>
+				<strong>Panier</strong>
 			</td>
-			<td>				
-				Articles dans le panier:			</td>
-
-			<td>
-				Total: €0.00
-			</td>
-			<td>
-				<div align="right">	
-					<select class="cartdrop">
-					
-					
-					<option value="" selected>Votre panier est vide.</option>
-					</select>
-				<div align="right">
-
-			</td>
-			<td>								
-				<div align="right">
-					<a href="panier.php" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
-				</div>
+			
+			<td>									
+			<a href="panier.php" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
 				</form>
 
+			</td>
+
+			<td>
+				<div align="right">Total: €0.00</div>
 			</td>
 			</tr>
 
@@ -69,13 +62,8 @@
 </div>
 
 
-<div id="menu">
-	<div class="boxTitleRight">Catégories</div>
-	<?php echo Menu($_ENV['rubrique_nom'],$_ENV['rubrique_id']);?>
-	
-</div>
-
 <div id="contenu">
+
 	<?php
 		if ($_ENV['type']=="index")
 			include("accueil.php");
