@@ -42,9 +42,9 @@
 			include("rubrique.php");
 		elseif ($_ENV['type']=="produit")
 			include("produit.php");
-		elseif if ($_ENV['type']=="recherche")
+		elseif ($_ENV['type']=="recherche")
 			include("recherche.php");
-		elseif if ($_ENV['type']=="inscription")
+		elseif ($_ENV['type']=="inscription")
 			include("inscription.php")
 		else
 			include("404.php");
