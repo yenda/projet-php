@@ -160,11 +160,9 @@ ol, ul {
 
 .cartback {
 	background-color: #cbe2ec;
-	width: 768px;
-	margin-left: 22px;
+	width: 100%;
 	margin-top:10px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left:10px;
 	border-left: 1px solid #e0e0e0;
 	border-right: 1px solid #e0e0e0;
 	border-radius: 10px;
@@ -176,12 +174,12 @@ ol, ul {
 .carttable td {
 	vertical-align: middle;
 }
-.carttop {
-	background: url(../styleImages/template/cartTop.gif) no-repeat top;
-	height: 4px;
-	font-size: 1px; 
-	width: 790px;
-	margin-left: 22px; 
-	}
 
+.tableau {
+	border: 0;
+	width: 100%;
+}
+.tableau td {
+	vertical-align: middle;
+}
 
