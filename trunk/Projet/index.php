@@ -27,6 +27,41 @@
 	<a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a>
 </div>
 
+<div class="cartback">
+		<table cellpadding="0" cellspacing="0" class="carttable">
+			<tr>
+			<td>
+				<form>
+				<strong>Panier: </strong>
+			</td>
+			<td>				
+				Articles dans le panier:			</td>
+
+			<td>
+				Total: €0.00
+			</td>
+			<td>
+				<div align="right">	
+					<select class="cartdrop">
+					
+					
+					<option value="" selected>Votre panier est vide.</option>
+					</select>
+				<div align="right">
+
+			</td>
+			<td>								
+				<div align="right">
+					<a href="panier.php" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
+				</div>
+				</form>
+
+			</td>
+			</tr>
+
+		</table>
+</div>
+
 
 <div id="menu">
 	<div class="boxTitleRight">Catégories</div>
