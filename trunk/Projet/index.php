@@ -21,10 +21,16 @@
 <div id="page">
 
 <div id="haut">
+	<table cellpadding="0" cellspacing="0" class="tableau">
+	<tr>
+	<td>
 	<a href="index.php"><img src="images/logo.gif" height="50px" width="100px" alt="GeekProducts" title="GeekProducts"></a>
+	</td>
+	<td>
 	<input type="text" value="" /> 
-	<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
-	<a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a>
+	<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold"onclick></input></td> 
+	<td><a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a></td>
+	</tr></table>
 </div>
 
 <div class="cartback">
