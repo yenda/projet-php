@@ -56,7 +56,7 @@
 					</td>
 		
 					<td>
-						<div align="right">Total: €0.00</div>
+						<div align="right">Total 0.00€</div>
 					</td>
 					</tr>
 		
