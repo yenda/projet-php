@@ -2,7 +2,7 @@
 	//Cette fonction construit le menu et le revoit sous forme d'une chaîne
 	//Le menu est construit de façon récursive
 	function Menu($rubrique_nom="principale",$rubrique_id=0){
-		$menu="<ul>\n\t\t<li><a href='index.php'><b>Acceuil</b></a></li>";
+		$menu="<ul>\n\t\t<li><a href='index.php'><b>Accueil</b></a></li>";
 		//on effectue une requête pour obtenir l'ID des rubriques ayant pour rubrique supérieure celle qui
 		//est en paramètre, 0 lors du premier appel de la fonction
 		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` in (SELECT `rubrique_id` FROM `rubrique_rubriquesup` WHERE `rubriquesup_id` = ".$rubrique_id.") ORDER BY `rubrique_nom`");
