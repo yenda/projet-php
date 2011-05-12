@@ -158,4 +158,30 @@ ol, ul {
 	padding:0px;
 	}
 
+.cartback {
+	background-color: #cbe2ec;
+	width: 768px;
+	margin-left: 22px;
+	margin-top:10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+	border-radius: 10px;
+}
+.carttable {
+	border: 0;
+	width: 770px;
+}
+.carttable td {
+	vertical-align: middle;
+}
+.carttop {
+	background: url(../styleImages/template/cartTop.gif) no-repeat top;
+	height: 4px;
+	font-size: 1px; 
+	width: 790px;
+	margin-left: 22px; 
+	}
+
 
