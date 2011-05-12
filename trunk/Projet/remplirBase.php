@@ -42,8 +42,8 @@
 			}																			
 			elseif ($Attribut->getname() == "Descriptif")
 				$Descriptif = utf8_decode(mysql_real_escape_string($Attribut));
-			//on regarde si le produit appartient a des rubriques, si une rubrique n'est pas dans la base elle est ajoutée, dans tout les cas on revoit l'ID de la rubrique
-			//et on la stocke dans un tableau
+			//on regarde si le produit appartient a des rubriques, si une rubrique n'est pas dans la base elle est
+			//ajoutée, dans tout les cas on revoit l'ID de la rubrique et on la stocke dans un tableau
 			elseif ($Attribut->getname() == "Rubriques"){
 				foreach($Attribut as $rubrique_nom){
 					$rubrique_id[] = RubriqueID(utf8_decode(mysql_real_escape_string($rubrique_nom)));					
@@ -51,6 +51,7 @@
 			}				
 		}
 		
+		//Gestion des données manquantes
 		if(empty($Libelle))
 			echo "Le produit n°$nbProduitsParcourus n'a pas de Libellé et n'a pas pu être ajouté à la base<br />";
 		elseif (empty($Prix))
@@ -64,12 +65,15 @@
 				$Photo = "defaut.jpg";
 			if (!isset($Descriptif))
 				$Descriptif = '';
-	
+			
+			//Ajout du produit à la base
 			$result=RequeteSQL("INSERT INTO `geekproduct`.`produits` VALUES (NULL, '$Libelle', '$Prix', '$UniteDeVente', '$Photo', '$Descriptif', '$Date');");
 			$produit_id = mysql_insert_id();
 			
+			//La rubrique par défaut du produit est Divers
 			if (!isset($rubrique_id))
 				$rubrique_id[] = 1;
+			//Ajout des liens produit/rubriques
 			foreach ($rubrique_id as $rubrique_id){
 				$result=RequeteSQL("INSERT INTO `geekproduct`.`produit_rubrique` VALUES ('$produit_id','$rubrique_id');");
 			}

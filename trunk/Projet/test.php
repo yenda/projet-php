@@ -1,92 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>GeekProducts</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	    <script type="text/javascript">
-    /*
-    Mise en place de la fonction
-    */
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+<head> 
+<title>Document sans titre</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+</head> 
+ 
+<body> 
+<?php  
+ 
+// Configuration  
+// Nombre total de menus  
+$nbr = 4;  
+ 
+// Ci-dessous lister vos menus en mettant le titre en premiere place dans le array, les autres seront les sous-menus...  
+$menu[1] = array ('Accueil',  
+ 
+);  
+ 
+$menu[2] =array('Virus et Spywares',  
+'Virus MSN',  
+'Norton et McAfee', 
+ 
+);  
+ 
+$menu[3] = array ('Windows Vista',  
+'Activation de Vista',  
+'Raccourcis clavier',  
+'Point de restauration', 
+'Effet Aéro', 
+'Compatibilite', 
+);  
+ 
+$menu[4] = array ('Astuces',  
+'Limiter la connexion d un compte utilisateur',  
+); 
+ 
+// On définis le style des menus  
+$menu_tpl = '<div style="padding: 2px"><a href="{lien}">{element}</a></div>';  
+ 
+// On boucle pour afficher tout les menus  
+for ($i=1; $i<=$nbr; $i++) {  
+      
+    // On selectionne le nom du Menu  
+    $element = $menu[ $i ][0];  
+      
+    // On prevoit de refermer le menu en cliquant sur le lien (si menu ouvert)  
      
-    function Choix(formulaire) {
-    i = formulaire.Box1.selectedIndex;
-     
-    /*
-    if servant à afficher le texte ( 0= valeur par défaut)
-    */
-     
-    if (i == 0) {
-      for (i=0;i<3;i++) {
-        formulaire.Box2.options[i].text="";
-        }
-      return;
-      }
-    /*
-    Switch en fonction de la valeur renvoyée par la Box1
-    */
-     
-    switch (i) {
-    case 1 : var txt = new Array ('AG2R PREVOYANCE','ASTANA','BOUYGUES TELECOM','CAISSE D\'EPARGNE','COFIDIS','CREDIT AGRICOLE','DISCOVERY CHANNEL','EUSKALTEL EUSKADI','FRANCAISE DES JEUX','GEROLSTEINER','LAMPRE - FONDITAL','LIQUIGAS','PREDICTOR - LOTTO','QUICK STEP - INNERGETIC','RABOBANK','SAUNIER DUVAL - PRODIR','T-MOBILE','TEAM CSC','TEAM MILRAM','UNIBET.COM'); break;
-    case 2 : var txt = new Array ('Agritubel','Liberty Seguros','VC Roubaix'); break;
-     
-    }
-     
-     
-    /*
-    Boucle pour afficher le texte de la Box2
-    */
-     
-    formulaire.Box2.options[0].text="--- Choisissez une Equipe ---";
-    for (i=0;i<20;i++) {
-      formulaire.Box2.options[i+1].text=txt[i];
-     }
-    }
-     
-     
-    </script>
-</head>
-
-<body>
-
-<?php
-		include 'fonctions.php';
-		include 'fonctions_menu.php';
-
-		$connect = ConnexionDB();	
-
-  // Remarques :
-  // L'utilisation de mysql_data_seek($resultat,0) permet de repositionner un "pointeur"
-  // en début de résultat d'une interrogation Mysql et permet de re-parcourir les résultats
-  // utile si le résultat d'une interrogation doit être parcouru plusieurs fois
-  //     (comme c'est le cas pour la liste des élèves et des matières
-
-?>
-
-<div id="page">
-
-<div id="haut">
-	<a href="index.php"></a><img src="images/geekproducts.bmp" height="101px" width="200px"></a>
-	<textarea style="width=100px" style="height=30px" rows="1" maxlength="50">Recherche</textarea> 
-	<input type="button" name="lien1" value="Ok" onclick="self.location.href='lien.html'" style="background-color:white" style="color:white; font-weight:bold"onclick></input> 
-</div>
-
-
-<div id="menu">
-	<?php echo Menu();?>
-</div>
-
-<div id="contenu">
-	Voici le contenu du site. Nous vendons des produits informatique
-</div>
-
-
-<div align="center">	
-	<div id="bas">
-		<div align="center">GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse</div>
-	</div>
-</div>
-</div>
-	<?php DeconnexionDB($connect);?>
-</body>
+    if ($_GET['to'] == $i) $lien = "";  
+    else $lien = '?to='.$i;  
+      
+    // On applique le style  
+    $in = array ('{element}', '{lien}');  
+    $out = array ($element, $lien);  
+      
+    $menus = str_replace ($in, $out, $menu_tpl);  
+      
+    // On affiche le Menu stylé  
+    echo '<p>'.$menus.'</p>';  
+      
+    // Si les sous-menus sont demandés, on les affiche en fonction...  
+    if (isset($_GET['to']) && $_GET['to'] != '') {  
+          
+        // On vérifie le N° de Menu demandé pour limiter à 1 affichage les sous menus...  
+        if ($i == $_GET['to']) {  
+              
+            // On boucle les sous-menus en fonctions des elements de l'array correspondant.  
+            for ($j=1; $j<=count($menu[ $i ])-1; $j++) {  
+                  
+                // On affiche le lien des sous-menus  
+                echo  '><a href="?to='.$i.'goto='.$j.' ">'.$menu[ $i ][ $j ].'</a><br />';  
+              
+            }  
+          
+        }  
+      
+    }  
+ 
+}  
+ 
+?>  
+ 
+</body> 
 </html>
