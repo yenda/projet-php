@@ -45,7 +45,9 @@
 			$_ENV['rubrique_id'] = 0;
 			
 		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` = ".$_ENV['rubrique_id']);
-		if (!$_ENV['rubrique_nom']=mysql_fetch_assoc($result)
+		if ($row=mysql_fetch_assoc($result))
+			$_ENV['rubrique_nom']=$row["rubrique_nom"];
+		else
 			$_ENV['rubrique_nom']="principale";
 		
 			
