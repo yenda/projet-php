@@ -24,7 +24,7 @@
 	<table cellpadding="0" cellspacing="0" class="tableau">
 	<tr>
 	<td>
-	<a href="index.php"><img src="images/logo.gif" height="50px" width="100px" alt="GeekProducts" title="GeekProducts"></a>
+	<a href="index.php"><img src="images/logo.gif" width="100px" height="50px" alt="GeekProducts" title="GeekProducts"></a>
 	</td>
 	<td>
 	<input type="text" value="" /> 
