@@ -31,17 +31,19 @@ h3.lien {
 	border: 12px solid #000;
 	border-width: 1px;
 	color: black;
-	background-color:#FFFFF;
-	padding:5px;
-	margin-left:3px;
+	margin-left:1px;
 	margin-top:3px;
 	margin-bottom: 0; 
 	width:200px;
+	border-radius: 10px; 
+	background:url(images/fond-menu.png) no-repeat;
+	padding-left:-2px;
 	position:relative;
 	float:left; 
-	border-radius: 10px; 
 	
 }
+
+	
 
 #contenu {
 	border: 12px solid #000;
@@ -121,9 +123,11 @@ h3.lien {
       }	
       
 .boxTitleRight {
-	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
+	/*background: #FFFFFF url(images/fond-categories.gif) no-repeat top;*/
+	background-color:#5892B5;
 	color:#FFFFFF;
 	text-align:center;
+	padding:0px;
 	}
 
 
