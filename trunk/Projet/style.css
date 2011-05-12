@@ -18,7 +18,7 @@ h2 {
 	color:#30C6C6;
 }
 
-a {
+a:hover {
 	color:#30C6C6;
 }
 
@@ -31,7 +31,7 @@ h3.lien {
 	border: 12px solid #000;
 	border-width: 1px;
 	color: black;
-	background-color:#5892B5;
+	background-color:#FFFFF;
 	padding:5px;
 	margin-left:3px;
 	margin-top:3px;
