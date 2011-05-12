@@ -40,6 +40,7 @@ h3.lien {
 	margin-top:3px;
 	margin-bottom: 0; 
 	width:200px;
+	min-height:100%;
 	border-radius: 7px; 
 	background:url(images/fond-menu.png) repeat-x;
 	padding:-2px;
@@ -69,6 +70,7 @@ ol, ul {
 	border-width: 1px;
 	color: black;
 	width:590px;
+	min-height:100%;
 	background-color:#5892B5;
 	padding:5px;
 	margin-left:230px;	
