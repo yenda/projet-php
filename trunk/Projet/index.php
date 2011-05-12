@@ -49,15 +49,17 @@
 						<strong>Panier</strong>
 					</td>
 					
+					<td>
+						<div align="right">Total 0.00€</div>
+					</td>
+					
 					<td>									
-					<a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a>
+					<div align="right"><a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a></div>
 						</form>
 		
 					</td>
 		
-					<td>
-						<div align="right">Total 0.00€</div>
-					</td>
+
 					</tr>
 		
 				</table>
