@@ -35,7 +35,7 @@ h3.lien {
 	margin-top:3px;
 	margin-bottom: 0; 
 	width:200px;
-	border-radius: 10px; 
+	border-radius: 4px; 
 	background:url(images/fond-menu.png) no-repeat;
 	padding-left:-2px;
 	position:relative;
@@ -123,8 +123,7 @@ h3.lien {
       }	
       
 .boxTitleRight {
-	/*background: #FFFFFF url(images/fond-categories.gif) no-repeat top;*/
-	background-color:#5892B5;
+	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
 	color:#FFFFFF;
 	text-align:center;
 	padding:0px;
