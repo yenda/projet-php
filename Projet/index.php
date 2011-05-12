@@ -43,7 +43,7 @@
 		elseif ($_ENV['type']=="produit")
 			include("produit.php");
 		elseif if ($_ENV['type']=="recherche")
-			include("recherche.php")
+			include("recherche.php");
 		elseif if ($_ENV['type']=="inscription")
 			include("inscription.php")
 		else
