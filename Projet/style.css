@@ -31,7 +31,7 @@ h3.lien {
 	font-size:40pt;
 }
 
-#menu {
+#menu1 {
 	border: 12px solid #ccc;
 	border-width: 1px;
 	color: black;
@@ -46,8 +46,24 @@ h3.lien {
 	padding-bottom:5px;
 	position:relative;
 	float:left; 
-	
-} 
+}
+
+#menu2 {
+	border: 12px solid #ccc;
+	border-width: 1px;
+	color: black;
+	margin-left:1px;
+	margin-top:10px;
+	margin-bottom: 0; 
+	width:200px;
+	min-height:600px;
+	border-radius: 6px; 
+	background:url(images/fond-menu.png) repeat-x;
+	padding:-2px;
+	padding-bottom:5px;
+	position:relative;
+	float:left; 
+}
 
 ol, ul {
 	margin: 0px;
