@@ -43,10 +43,11 @@ h3.lien {
 	border-radius: 7px; 
 	background:url(images/fond-menu.png) repeat-x;
 	padding:-2px;
+	padding-bottom:5px;
 	position:relative;
 	float:left; 
 	
-}
+} 
 
 ol, ul {
 	margin: 0px;
