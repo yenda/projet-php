@@ -105,6 +105,14 @@ ol, ul {
 	padding:5px;
 }
 
+#haut a {
+	color:white;
+}
+
+#haut a:hover {
+	color:grey;
+}
+
 .navigation { 
       margin: 0; 
       padding: 0; 
