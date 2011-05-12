@@ -29,7 +29,7 @@
 	<td>
 	<input type="text" value="" /> 
 	<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold"onclick></input></td> 
-	<td><a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a></td>
+	<td><div align="right"></div><a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a></div></td>
 	</tr></table>
 </div>
 
