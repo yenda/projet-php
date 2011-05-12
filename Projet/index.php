@@ -1,3 +1,11 @@
+<?php 
+	include 'fonctions.php';
+	include 'fonctions_menu.php';
+
+	$connect = ConnexionDB();
+	Recuperation_infos();
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -45,21 +53,6 @@ $(document).ready( function () {
 
 <body>
 
-
-<?php
-		include 'fonctions.php';
-		include 'fonctions_menu.php';
-
-		$connect = ConnexionDB();	
-
-  // Remarques :
-  // L'utilisation de mysql_data_seek($resultat,0) permet de repositionner un "pointeur"
-  // en début de résultat d'une interrogation Mysql et permet de re-parcourir les résultats
-  // utile si le résultat d'une interrogation doit être parcouru plusieurs fois
-  //     (comme c'est le cas pour la liste des élèves et des matières
-
-?>
-
 <div id="page">
 
 <div id="haut">
@@ -75,7 +68,17 @@ $(document).ready( function () {
 </div>
 
 <div id="contenu">
-	Voici le contenu du site. Nous vendons des produits informatique
+	<?php
+		if ($_ENV['type']=="index")
+			include("accueil.php");
+		elseif ($_ENV['type']=="rubrique")
+			include("rubrique.php");
+		elseif ($_ENV['type']=="rubrique")
+			include("produit.php");
+		else
+			include("404.php");
+
+	?>
 </div>
 
 	
