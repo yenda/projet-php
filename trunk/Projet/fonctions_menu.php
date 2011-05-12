@@ -13,6 +13,7 @@
 			$menu .= "\n\t\t\t<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."'>".$row["rubrique_nom"]."</a></li>";
 		}
 		$menu .= "\n\t\t</ul></li>";
+		$menu .= "\n\t\t<li><a href='index.php?type=recherche'><b>Recherche</b></a></li>";
 		$menu .= "\n\t</ul>";
 		return $menu;
 	}
