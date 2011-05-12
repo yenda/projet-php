@@ -119,6 +119,11 @@ h3.lien {
       background: none; 
       padding: 3px 20px; 
       }	
-
+      
+.boxTitleRight {
+	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
+	color:#FFFFFF;
+	text-align:center;
+	}
 
 
