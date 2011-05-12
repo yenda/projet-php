@@ -29,7 +29,7 @@
 
 <div id="menu">
 	<div class="boxTitleRight">Catégories</div>
-	<?php echo Menu();?>
+	<?php echo Menu($_ENV['rubrique_id']);?>
 	
 </div>
 
