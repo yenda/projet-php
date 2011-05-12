@@ -1,7 +1,7 @@
 <?php
 	//Cette fonction construit le menu et le revoit sous forme d'une chaîne
 	//Le menu est construit de façon récursive
-	function Menu($rubrique_id=0,$rubrique_nom="principale"){
+	function Menu($rubrique_nom="principale",$rubrique_id=0){
 		$menu="<ul>\n\t\t<li><a href='index.php'>Acceuil</a></li>";
 		//on effectue une requête pour obtenir l'ID des rubriques ayant pour rubrique supérieure celle qui
 		//est en paramètre, 0 lors du premier appel de la fonction
