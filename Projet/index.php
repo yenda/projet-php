@@ -11,7 +11,6 @@
 <head>
 	<title>GeekProducts</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-	<script type="text/javascript" src="jquery-1.3.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	
 
@@ -44,7 +43,6 @@
 			include("produit.php");
 		else
 			include("404.php");
-
 	?>
 </div>
 
