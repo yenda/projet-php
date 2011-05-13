@@ -19,7 +19,7 @@
 <?php 
 if (isset($_POST['recherche']))
 {
-	if (empty($_POST['recherche']))
+	if ((empty($_POST['recherche']))||(!is_string($_POST['recherche'])))
 	{
 		echo "Vous devez saisir des mots clés pour votre recherche"
 	}
