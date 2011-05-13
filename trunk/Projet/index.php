@@ -33,14 +33,13 @@
 	</tr></table>
 </div>
 
-<div id="menu">
-	<div class="categories">Catégories</div>
-	<?php
-		echo Menu();
-	?>
-
-</div>
-
+		<div id="menu">
+			<div class="categories">Catégories</div>
+			<?php
+				echo Menu();
+			?>
+		
+		</div>
 
 	<?php 
 		if ($_ENV['type']!="panier"){
