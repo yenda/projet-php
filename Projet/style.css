@@ -1,12 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-html, body {
-	background-color:white;
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-
 #page {
 	width: 1024px;
 	margin: 0 auto;
@@ -29,23 +22,6 @@ a:hover {
 h3.lien {
 	color:#30C6C6;
 	font-size:40pt;
-}
-
-#menu {
-	border: 12px solid #ccc;
-	border-width: 1px;
-	color: black;
-	margin-left:1px;
-	margin-right:25px;
-	margin-top:10px;
-	margin-bottom: 0; 
-	width:200px;
-	border-radius: 6px; 
-	background:url(images/fond-menu.png) repeat-x;
-	padding:-2px;
-	padding-bottom:5px;
-	position:relative;
-	float:left; 
 }
 
 
@@ -104,30 +80,17 @@ ol, ul {
 #haut a:hover {
 	color:grey;
 }
-    
-#categories {
+
+#menu {
 	border: 12px solid #ccc;
 	border-width: 1px;
 	color: black;
-	margin-left:1px;
-	margin-right:25px;
-	margin-top:10px;
-	margin-bottom: 0; 
+	margin-right:15px; 
+	margin-left:-2px;
 	width:200px;
 	border-radius: 6px; 
-	background:url(images/fond-menu.png) repeat-x;
-	padding:-2px;
-	padding-bottom:5px;
-	position:relative;
-	float:left; 
+	background:url(images/fond-menu.png) repeat-x; 
 }
-
-.categories {
-	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
-	color:#FFFFFF;
-	text-align:center;
-	padding:0px;
-	}
 
 .menu {
 	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
@@ -139,8 +102,6 @@ ol, ul {
 .panier {
 	background-color: #cbe2ec;
 	width: 795px;
-	margin-top:10px;
-	margin-left:0px;
 	padding-left:10px;
 	border-left: 1px solid #e0e0e0;
 	border-right: 1px solid #e0e0e0;
@@ -149,7 +110,6 @@ ol, ul {
 
 
 .tableaupanier {
-	border: 0;
 	width: 795px;
 }
 .tableaupanier td {
@@ -161,22 +121,22 @@ ol, ul {
 	margin-bottom: 1px;
 }
 
-.tableau {
-	border: 0;
+.tableau_entete {
 	width: 100%;
 	padding-right:5px;
 }
-.tableau td {
+.tableau_entete td {
 	vertical-align: middle;
 	text-align:right;
 }
 
-.tabpage {
-	border: 0;
-	width: 100%;
+.tableau_page {
+	padding:2px;	
 }
 
-.tabpage td {
-	vertical-align: middle;
-	text-align:right;
+.tableau_page td {
+	vertical-align:top;
+}
+	
+	
 }

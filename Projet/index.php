@@ -18,7 +18,7 @@
 		<div id="page">
 				
 		<div id="haut">
-			<table cellpadding="0" cellspacing="0" class="tableau">
+			<table  class="tableau_entete">
 				<tr>
 					<td width="100px">
 						<a href="index.php"><img src="images/logo.gif" width="100px" height="50px" alt="GeekProducts" title="GeekProducts"></a>
@@ -33,7 +33,7 @@
 				</tr>
 			</table>
 		</div>
-		<table cellpadding="0" cellspacing="0" class="tableau_menu">
+		<table class="tableau_page" border="2">
 		<tr>
 			<td>
 				<div id="menu">
@@ -103,12 +103,11 @@
 		</div>
 		</td>
 		</tr>
-		</table>
-		<table cellpadding="0" cellspacing="0" class="tableau_menu">
+		
 		<tr>
 			<td>
-				<div id="categories">
-					<div class="categories">Catégories</div>
+				<div id="menu">
+					<div class="menu">Catégories</div>
 					<?php
 						echo Menu();
 					?> 
