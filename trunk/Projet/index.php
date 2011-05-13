@@ -80,6 +80,8 @@
 <div id="contenu">
 
 	<?php
+		echo Chemin($_ENV['rubrique_id']);
+		echo "<br /><br />";
 		if ($_ENV['type']=="index")
 			include("accueil.php");
 		elseif ($_ENV['type']=="rubrique")
