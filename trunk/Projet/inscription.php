@@ -30,18 +30,18 @@ function VerifierAdresseMail($adresse)
 <?php 
 if (isset($_POST['login']))
 {
-	if ((empty($_POST['login'])) || (!is_string($_POST['login']))
+	if ((empty($_POST['login'])) || (!is_string($_POST['login'])))
 	{
 		echo "Le champ nom d'utilisateur n'est pas correctement rempli";
 		if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
 		{
 			echo "Le mot de passe n'est pas correctement saisi";
 		}
-		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false))
+		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
 		{
 			echo "Le champ adresse e-mail n'est pas correctement rempli";
 		}
-		else if ((empty($_POST['telmain'])) || (str_len($_POST['telmain']!=10))
+		else if ((empty($_POST['telmain'])) || (str_len($_POST['telmain']!=10)))
 		{
 			echo "Le champ numéro de téléphone n'est pas correctement rempli";
 		}
