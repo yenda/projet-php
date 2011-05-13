@@ -22,7 +22,25 @@
 	
 
 	
-	function Chemin($rubrique_id){
+	function Chemin(){
 		$chemin = "";
+		if ($_ENV['id'] != 0) {
+			// on récupère les informations de la page en cours dans la DB
+			$result = RequeteSQL('SELECT *, `rubriques` INNER JOIN `rubrique_rubriquesup` ON `rubriques`.`rubrique_id`=`rubrique_rubriquesup`.`rubrique_id` WHERE');
+			$resultat = requete_SQL($strSQL);
+			$tabl_result = mysql_fetch_array($resultat);
+			
+			$titrepage = $tabl_result['Titre'];
+			$idparent = $tabl_result['Id_parent'];
+			
+			// création du lien vers la page en cours
+			$chemin_page_en_cours = ' -> <a href="index.php?id_page='.$idpage.'">'.$titrepage.'</a>';
+			
+			// Concaténation du lien de la page N-1 et
+			// du lien de la page en cours
+			$chemin_complet = affiche_chemin_fer($idparent).$chemin_page_en_cours;
+		}
+		// renvoie le chemin complet
+		return $chemin_complet;
 	}
 ?>
