@@ -37,6 +37,6 @@
 			return $chemin;
 		}
 		else
-			return "<br /><a href='index.php'>Accueil</a> > <a href='index.php?type=".$_ENV['type']."'>".ucfirst($_ENV['type'])."</a>";
+			return "<br /><a href='index.php'>Accueil</a> > <a href='index.php?type=".$_ENV['type']."'>".str_replace('_',' ',ucfirst($_ENV['type']))."</a>";
 	}
 ?>
