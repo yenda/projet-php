@@ -227,15 +227,7 @@
 							</tr>
 							<tr>
 								<td class="Inner" width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;background:url(/images/gui/main/CptAddrIco.jpg) center right no-repeat;">
-									<div class="AccSmall">
-										<input type="radio" name="civ" value="1" id="civ1" />
-										<label for="civ1">M.</label>
-										<input type="radio" name="civ" value="2" id="civ2" />
 
-										<label for="civ2">Mme</label>
-										<input type="radio" name="civ" value="3" id="civ3" />
-										<label for="civ3">Mlle</label>
-									</div>
 									<div class="ElemtMandat">Nom : </div>
 									<div>
 										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="" /> 									</div>
