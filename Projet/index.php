@@ -36,7 +36,7 @@
 		</div>
 		<table class="tableau_page">
 		<tr>
-			<td>
+			<td height="1px">
 				<div id="menu">
 				
 					<div class="menu">Menu</div>
