@@ -94,6 +94,8 @@
 					include("recherche.php");
 				elseif ($_ENV['type']=="inscription")
 					include("inscription.php");
+				elseif ($_ENV['type']=="panier")
+					include("panier.php");
 				else
 					include("404.php");
 			?>
