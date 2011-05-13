@@ -38,8 +38,9 @@
 	<?php
 		echo Menu();
 	?>
-	
+
 </div>
+
 
 	<?php 
 		if ($_ENV['type']!="panier"){
