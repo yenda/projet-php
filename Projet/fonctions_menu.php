@@ -22,17 +22,21 @@
 
 	
 	function Chemin($rubrique_id){
-		if ($rubrique_id != 0) {
-			$chemin = "";			
-			$result = RequeteSQL("SELECT `rubriques` . * , `rubrique_rubriquesup`.`rubriquesup_id` FROM `rubriques` INNER JOIN `rubrique_rubriquesup` ON `rubriques`.`rubrique_id` = `rubrique_rubriquesup`.`rubrique_id` WHERE `rubriques`.`rubrique_id` =".$rubrique_id);
-			while($row = mysql_fetch_array($result)){
-				$chemin .= Chemin($row['rubriquesup_id']);
-				$chemin .= ' > <a href="index.php?type=rubrique&id='.$rubrique_id.'">'.$row['rubrique_nom'].'</a>';
+		if (($_ENV['type']=="rubrique")||($_ENV['type']=="produit")){
+			if ($rubrique_id != 0) {
+				$chemin = "";			
+				$result = RequeteSQL("SELECT `rubriques` . * , `rubrique_rubriquesup`.`rubriquesup_id` FROM `rubriques` INNER JOIN `rubrique_rubriquesup` ON `rubriques`.`rubrique_id` = `rubrique_rubriquesup`.`rubrique_id` WHERE `rubriques`.`rubrique_id` =".$rubrique_id);
+				while($row = mysql_fetch_array($result)){
+					$chemin .= Chemin($row['rubriquesup_id']);
+					$chemin .= ' > <a href="index.php?type=rubrique&id='.$rubrique_id.'">'.$row['rubrique_nom'].'</a>';
+				}
 			}
+			else 
+				$chemin = '<br /><a href="index.php">Accueil</a>';
+			// renvoie le chemin complet
+			return $chemin;
 		}
-		else 
-			$chemin = '<br /><a href="index.php">Accueil</a>';
-		// renvoie le chemin complet
-		return $chemin;
+		else
+			return "<br /><a href='index.php'>Accueil</a> > <a href='index.php?type=".$_ENV['type']."'>".ucfirst($_ENV['type'])."</a>";
 	}
 ?>
