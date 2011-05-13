@@ -8,7 +8,7 @@ html, body {
 }
 
 #page {
-	width: 820px;
+	width: 1024px;
 	margin: 0 auto;
 	position:relative;
 }
@@ -62,7 +62,7 @@ ol, ul {
 	border: 12px solid #ccc;
 	border-width: 1px;
 	color: black;
-	width:590px;
+	width:795px;
 	min-height:600px;
 	/*background-color:#5892B5;*/
 	background:url(images/fond-menu.png) repeat-x;
@@ -123,7 +123,7 @@ ol, ul {
 
 .panier {
 	background-color: #cbe2ec;
-	width: 590px;
+	width: 795px;
 	margin-top:10px;
 	margin-left:230px;
 	padding-left:10px;
@@ -135,7 +135,7 @@ ol, ul {
 
 .tableaupanier {
 	border: 0;
-	width: 590px;
+	width: 795px;
 }
 .tableaupanier td {
 	vertical-align: middle;
