@@ -4,7 +4,7 @@
 	function Menu(){
 		$rubrique_id = $_ENV['rubrique_id'];
 		
-		$menu="";
+		$menu="<ul>";
 		//on effectue une requête pour obtenir l'ID des rubriques ayant pour rubrique supérieure celle qui
 		//est en paramètre, 0 lors du premier appel de la fonction
 		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` in (SELECT `rubrique_id` FROM `rubrique_rubriquesup` WHERE `rubriquesup_id` = ".$rubrique_id.") ORDER BY `rubrique_nom`");
