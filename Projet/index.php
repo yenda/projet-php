@@ -22,11 +22,11 @@
 			<table  class="tableau_entete">
 				<tr>
 					<td width="100px">
-						<a href="index.php"><img src="images/logo.gif" width="100px" height="50px" alt="GeekProducts" title="GeekProducts"></a>
+						<a href="index.php"><img src="images/logo.gif" width="200px" height="100px" alt="GeekProducts" title="GeekProducts"></a>
 					</td>
 					<td width="700px">
 						<input type="text" value="" /> 
-						<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold"onclick></input>
+						<input type="submit" name="lien1" value="Ok" onclick="self.location.href='page_a_definir.php'" style="background-color:white" style="color:white; font-weight:bold" onclick></input>
 					</td> 
 					<td>
 						<div align="right"></div><a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a></div>
