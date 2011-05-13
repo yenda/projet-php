@@ -15,6 +15,69 @@
 		or die(mysql_error());
 	
 ?>
+
+<?php 
+function VerifierAdresseMail($adresse) 
+{ 
+   $Syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#'; 
+   if(preg_match($Syntaxe,$adresse)) 
+      return true; 
+   else 
+     return false; 
+}
+?>
+
+<?php 
+if (isset($_POST['login']))
+{
+	if ((empty($_POST['login'])) || (!is_string($_POST['login']))
+	{
+		echo "Le champ nom d'utilisateur n'est pas correctement rempli";
+		if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
+		{
+			echo "Le mot de passe n'est pas correctement saisi";
+		}
+		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false))
+		{
+			echo "Le champ adresse e-mail n'est pas correctement rempli";
+		}
+		else if ((empty($_POST['telmain'])) || (str_len($_POST['telmain']!=10))
+		{
+			echo "Le champ numéro de téléphone n'est pas correctement rempli";
+		}
+		else if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
+		{
+			echo "Le champ nom n'est pas correctement rempli";
+		}
+		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
+		{
+			echo "Le champ prenom n'est pas correctement rempli";
+		}
+		else if((empty($_POST['rue1'])) || (!is_string($_POST['rue1'])) || (isset($_POST['rue2']) and (!is_string($_POST['rue2'])) || (strlen($POST['rue2'])>35)))
+		{
+			echo "Le champ adresse n'est pas correctement rempli";
+		}
+		else if((empty($_POST['cp'])) || (!is_int($_POST['cp'])))
+		{
+			echo "Le champ code postal n'est pas correctement rempli";
+		}
+		else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
+		{
+			echo "Le champ ville n'est pas correctement rempli";
+		}
+		else if (!isset($_POST['verif']))
+		{
+			echo "Vous devez cocher la case pour certifier l'exactitude des renseignements fournis";
+		}
+	}
+	else 
+	{
+		//Faire le remplissage de la base après avoir rajouté les champs manquants dans la base
+	}
+}
+
+
+?>
 <form method="post" action="inscription.php">
 			<table style="margin-left:10px;" width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
@@ -249,7 +312,6 @@
 										<input name="rue1" type="text" id="rue1" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="" />
 									</div>
 									<div class="ElemtFac">Complément d'adresse<br />(N° bât, étage, appt, digicode...) :</div>
-
 									<div>
 										<input name="rue2" type="text" id="rue2" style="height:12px; font-size:10px; width:150px;" maxlength="35" value="" />
 									</div>
