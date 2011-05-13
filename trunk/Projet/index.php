@@ -35,7 +35,9 @@
 
 <div id="menu">
 	<div class="boxTitleRight">Catégories</div>
-	<?php echo Menu($_ENV['rubrique_nom'],$_ENV['rubrique_id']);?>
+	<?php
+		echo Menu();
+	?>
 	
 </div>
 
