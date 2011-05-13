@@ -72,6 +72,16 @@ if (isset($_POST['login']))
 	}
 	else 
 	{
+		$login=$_POST['login'];
+		$pass=$_POST['pass'];
+		$mail=$_POST['mail'];
+		$telmain=$_POST['telmain'];
+		$nom=$_POST['nom'];
+		$prenom=$_POST['prenom'];
+		$rue1=$_POST['rue1'];
+		$rue2=$_POST['rue2'];
+		$cp=$_POST['cp'];
+		$ville=$_POST['ville'];
 		//Faire le remplissage de la base après avoir rajouté les champs manquants dans la base
 	}
 }
