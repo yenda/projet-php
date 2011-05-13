@@ -14,10 +14,10 @@
 			$cat .= mysql_num_rows($result_nb_produits)." objet";
 			if (mysql_num_rows($result_nb_produits)>1)
 				$cat .= "s";
-			$cat .= ", ".mysql_num_rows($result_nb_rubriques)."rubrique";
+			$cat .= ", ".mysql_num_rows($result_nb_rubriques)." rubrique";
 			if (mysql_num_rows($result_nb_rubriques)>1)
 				$cat .= "s";
-			$cat .= "), "	
+			$cat .= "), ";	
 		}
 	}
 	if (isset($cat))
