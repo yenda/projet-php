@@ -22,25 +22,18 @@
 	
 
 	
-	function Chemin(){
-		$chemin = "";
-		if ($_ENV['id'] != 0) {
-			// on récupère les informations de la page en cours dans la DB
-			$result = RequeteSQL('SELECT *, `rubriques` INNER JOIN `rubrique_rubriquesup` ON `rubriques`.`rubrique_id`=`rubrique_rubriquesup`.`rubrique_id` WHERE');
-			$resultat = requete_SQL($strSQL);
-			$tabl_result = mysql_fetch_array($resultat);
+	function Chemin($rubrique_id){
+		if ($rubrique_id != 0) {
 			
-			$titrepage = $tabl_result['Titre'];
-			$idparent = $tabl_result['Id_parent'];
-			
-			// création du lien vers la page en cours
-			$chemin_page_en_cours = ' -> <a href="index.php?id_page='.$idpage.'">'.$titrepage.'</a>';
-			
-			// Concaténation du lien de la page N-1 et
-			// du lien de la page en cours
-			$chemin_complet = affiche_chemin_fer($idparent).$chemin_page_en_cours;
+			$result = RequeteSQL("SELECT `rubriques` . * , `rubrique_rubriquesup`.`rubriquesup_id` FROM `rubriques` INNER JOIN `rubrique_rubriquesup` ON `rubriques`.`rubrique_id` = `rubrique_rubriquesup`.`rubrique_id` WHERE `rubriques`.`rubrique_id` =".$rubrique_id);
+			$row = mysql_fetch_array($result);
+			$chemin = Chemin($row['rubriquesup_id']);			
+			$chemin .= ' > <a href="index.php?type=rubrique&id='.$rubrique_id.'">'.$row['rubrique_nom'].'</a>';
+
 		}
+		else 
+			$chemin = '<a href="index.php">Accueil</a>';
 		// renvoie le chemin complet
-		return $chemin_complet;
+		return $chemin;
 	}
 ?>
