@@ -34,7 +34,7 @@
 				</tr>
 			</table>
 		</div>
-		<table class="tableau_page" border="2">
+		<table class="tableau_page">
 		<tr>
 			<td>
 				<div id="menu">
@@ -83,7 +83,7 @@
 		<div id="contenu">
 		
 			<?php
-				echo Chemin($_ENV['rubrique_id']);
+				echo substr(Chemin($_ENV['rubrique_id']),6);
 				echo "<br /><br />";
 				if ($_ENV['type']=="index")
 					include("accueil.php");
