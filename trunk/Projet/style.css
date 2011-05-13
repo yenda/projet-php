@@ -15,8 +15,12 @@ a {
 	color:grey;
 }
 
-a:hover {
+a:hover, a.menu-special:hover {
 	color:#30C6C6;
+}
+
+a.menu-special {
+	color:white;
 }
 
 h3.lien {
