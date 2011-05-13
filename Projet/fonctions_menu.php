@@ -9,13 +9,13 @@
 		//est en paramètre, 0 lors du premier appel de la fonction
 		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` in (SELECT `rubrique_id` FROM `rubrique_rubriquesup` WHERE `rubriquesup_id` = ".$rubrique_id.") ORDER BY `rubrique_nom`");
 		//on ajoute les résultats au menu en recherchant aussi les sous-rubriques de chaque rubrique trouvée
-		$menu .= "\n\t\t<li><a href='index.php?type=rubrique&id=$rubrique_id'><b>Rubrique ".$_ENV['rubrique_nom']."</b></a>";
-		$menu .= "\n\t\t<ul>";
+		$menu .= "\n\t\t\t\t\t\t<li><a href='index.php?type=rubrique&id=$rubrique_id'><b>Rubrique ".$_ENV['rubrique_nom']."</b></a>";
+		$menu .= "\n\t\t\t\t\t\t<ul>";
 		while ($row=mysql_fetch_assoc($result)){
-			$menu .= "\n\t\t\t<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."&rubrique=$rubrique_id'>".$row["rubrique_nom"]."</a></li>";
+			$menu .= "\n\t\t\t\t\t\t\t<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."&rubrique=$rubrique_id'>".$row["rubrique_nom"]."</a></li>";
 		}
-		$menu .= "\n\t\t</ul></li>";
-		$menu .= "\n\t</ul>";
+		$menu .= "\n\t\t\t\t\t\t</ul></li>";
+		$menu .= "\n\t\t\t\t\t</ul>";
 		return $menu;
 	}
 	
