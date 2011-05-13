@@ -38,11 +38,9 @@
 		else
 			$_ENV['id'] = 0;
 		
-		//On récupère l'id de la rubrique dont l'utilisateur vient quand il est sur une page de type objet
-		//car un objet peut appartenir à plusieurs rubriques. Cette information permet notament de construire le menu
-		if (($_ENV['type']=="produit")&&(isset($_GET['rubrique'])))
-			$_ENV['rubrique_id'] = intval($_GET['rubrique']);
-		elseif ($_ENV['type']=="rubrique")
+		//On récupère l'id de la rubrique si on est sur une page rubrique pour l'affichage du menu
+		//sinon on met 0
+		if ($_ENV['type']=="rubrique")
 			$_ENV['rubrique_id'] = $_ENV['id'];
 		else
 			$_ENV['rubrique_id'] = 0;
