@@ -37,7 +37,10 @@
 		
 			<div class="menu">Menu</div>
 				<ul>
-					<li><a href="index.php">Accueil</a></li>
+					<li><a href='index.php'><b>Accueil</b></a></li>
+					<li><a href='index.php?type=recherche'><b>Recherche</b></a></li>
+					<li><a href='index.php?type=conditions'><b>Conditions de Vente</b></a></li>
+					<li><a href='index.php?type=apropos'><b>À Propos</b></a></li>					
 				</ul>
 
 			<div class="categories">Catégories</div>
