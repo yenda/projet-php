@@ -106,14 +106,14 @@ ol, ul {
 	color:grey;
 }
       
-.boxTitleRight {
+.categories {
 	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
 	color:#FFFFFF;
 	text-align:center;
 	padding:0px;
 	}
 
-.cartback {
+.panier {
 	background-color: #cbe2ec;
 	width: 590px;
 	margin-top:10px;
@@ -123,15 +123,15 @@ ol, ul {
 	border-right: 1px solid #e0e0e0;
 	border-radius: 6px;
 }
-.carttable {
+.tableaupanier {
 	border: 0;
 	width: 590px;
 }
-.carttable td {
+.tableaupanier td {
 	vertical-align: middle;
 }
 
-.cartarrow {
+.fleche {
 	vertical-align: middle;
 	margin-bottom: 1px;
 }
