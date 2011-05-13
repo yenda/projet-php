@@ -97,10 +97,11 @@
 	?>
 
 	
+
+</div>
 	<div id="bas" align="center">
 		GNU GPL V3 Créateurs Eric Dvorsak, Maël Clesse
 	</div>
-</div>
 	<?php DeconnexionDB($connect);?>
 </body>
 </html>
