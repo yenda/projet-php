@@ -110,7 +110,7 @@
 		<tr>
 			<td>
 				<div id="menu">
-					<div class="menu">Catégories</div>
+					<div class="menu"><a href="index.php?type=rubrique">Catégories</a></div>
 					<?php
 						echo Menu();
 					?> 
