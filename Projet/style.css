@@ -48,6 +48,7 @@ h3.lien {
 	float:left; 
 }
 
+
 ol, ul {
 	margin: 0px;
 	padding-left: 15px;
@@ -145,26 +146,3 @@ ol, ul {
 .tableau td {
 	vertical-align: middle;
 }
-
-.boxTitleLeft,.boxContentLeft,.boxFooterLeft {
-	width: 162px;
-	margin: auto;
-}
-.boxContentLeft {
-	width: 162px;
-}
-.boxTitleRight,.boxContentRight,.boxFooterRight,.boxTitleRightSpecial {
-	width: 162px;
-	margin: auto;
-}
-.boxTitleRight {
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	letter-spacing: 0.5px;
-	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-	padding: 3px;
-	padding-left: 8px;
-	margin-left: 1px;
-}
-
