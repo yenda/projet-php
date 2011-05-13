@@ -140,6 +140,17 @@ ol, ul {
 .tableau_page td {
 	vertical-align:top;
 }
-	
+
+.liste_produits {
+	width: 100%;	
+}
+
+.liste_produits tr td{
+	border: 12px solid #ccc;
+	border-width:2px;
+	border-radius: 6px;
+	vertical-align: middle;
+	padding:2px;
+}
 	
 }

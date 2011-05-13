@@ -31,12 +31,18 @@
 					$chemin .= ' > <a href="index.php?type=rubrique&id='.$rubrique_id.'">'.$row['rubrique_nom'].'</a>';
 				}
 			}
-			else 
-				$chemin = '<br /><a href="index.php">Accueil</a>';
+			else {
+				if ($_ENV['type']=="rubrique")
+					$chemin = '<br /><a href="index.php">Accueil</a> > <a href="index.php?type=rubrique">Rubriques</a>';
+				else
+					$chemin = '<br /><a href="index.php">Accueil</a>';
+			}
 			// renvoie le chemin complet
 			return $chemin;
 		}
-		else
-			return "<br /><a href='index.php'>Accueil</a> > <a href='index.php?type=".$_ENV['type']."'>".str_replace('_',' ',ucfirst($_ENV['type']))."</a>";
+		elseif ($_ENV['type']=="index")
+			return "<br /><a href='index.php'>Accueil</a>";
+		else 
+			return "<br /><a href='index.php'>Accueil</a> > <a href='index.php?type=".$_ENV['type']."'>".strtr(ucfirst($_ENV['type']),'_',' ')."</a>";
 	}
 ?>
