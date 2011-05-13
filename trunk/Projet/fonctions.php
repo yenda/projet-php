@@ -56,19 +56,5 @@
 			$_ENV['rubrique_id'] = 0;
 			$_ENV['rubrique_nom']="principale";
 		}
-
-		/*if(isset($_SERVER["HTTP_REFERER"])&&(preg_match("/index\.php\?type=rubrique&id=([0-9]+)/",$_SERVER["HTTP_REFERER"],$regs)))
-			$_ENV['rubriqueroot'] = $regs[1];
-		else
-			$_ENV['rubriqueroot'] = 0;*/		
-		
-		/*$strSQL = 'SELECT * FROM `pages` WHERE `Id_page` = '.$_ENV['id_page'];
-		$resultat = requete_SQL($strSQL);
-		$tabl_result = mysql_fetch_array($resultat);
-		$_ENV['mots_cles'] = $tabl_result['Mots_cles'];
-		$_ENV['description'] = $tabl_result['Description'];
-		$_ENV['titre'] = $tabl_result['Titre'];
-		$_ENV['contenu'] = $tabl_result['Contenu'];
-		$_ENV['id_parent'] = $tabl_result['Id_parent'];*/
 	}
 ?>
