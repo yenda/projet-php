@@ -87,18 +87,9 @@
 				echo "<br /><br />";
 				if ($_ENV['type']=="index")
 					include("accueil.php");
-				elseif ($_ENV['type']=="rubrique")
-					include("rubrique.php");
-				elseif ($_ENV['type']=="produit")
-					include("produit.php");
-				elseif ($_ENV['type']=="recherche")
-					include("recherche.php");
-				elseif ($_ENV['type']=="inscription")
-					include("inscription.php");
-				elseif ($_ENV['type']=="panier")
-					include("panier.php");
 				else
-					include("404.php");
+					include("$_ENV['type'].".php"");
+				
 			?>
 		
 			
