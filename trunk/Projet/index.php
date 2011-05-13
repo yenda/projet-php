@@ -34,7 +34,7 @@
 </div>
 
 <div id="menu">
-	<div class="boxTitleRight">Catégories</div>
+	<div class="categories">Catégories</div>
 	<?php
 		echo Menu();
 	?>
@@ -43,8 +43,8 @@
 
 	<?php 
 		if ($_ENV['type']!="panier"){
-				echo '<div class="cartback">
-					<table cellpadding="0" cellspacing="0" class="carttable">
+				echo '<div class="panier">
+					<table cellpadding="0" cellspacing="0" class="tableaupanier">
 					<tr>
 					<td>
 						<form>
@@ -56,7 +56,7 @@
 					</td>
 					
 					<td>									
-					<div align="right"><a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="cartarrow"></a></div>
+					<div align="right"><a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/cartarrow.gif" class="fleche"></a></div>
 						</form>
 		
 					</td>
