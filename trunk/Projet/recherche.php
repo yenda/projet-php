@@ -7,7 +7,7 @@ if (isset($_POST['recherche']))
 	}
 	else 
 	{
-		//faire une requête MySQL qui trouves les produits dont le nom contient un ou plusieurs
+		//faire une requête MySQL qui trouve les produits dont le nom contient un ou plusieurs
 		//mot(s)-clé(s) et les afficher
 	}
 }
