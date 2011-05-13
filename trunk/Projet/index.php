@@ -85,10 +85,13 @@
 			<?php
 				echo substr(Chemin($_ENV['rubrique_id']),6);
 				echo "<br /><br />";
+				$contenu = "";
 				if ($_ENV['type']=="index")
-					include("accueil.php");
+					$contenu ="accueil";
 				else
-					include("$_ENV['type'].".php"");
+					$contenu = $_ENV['type'];
+				$contenu .= ".php";
+				include ("$contenu");
 				
 			?>
 		
