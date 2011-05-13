@@ -34,6 +34,11 @@
 </div>
 
 		<div id="menu">
+		
+			<div class="menu">Menu</div>
+				<ul>
+					<li><a href="index.php">Accueil</a></li>
+				</ul>
 
 			<div class="categories">Catégories</div>
 			<?php
@@ -41,10 +46,6 @@
 			?> 
 		
 			<br/><br/>
-			<div class="menu">Menu</div>
-				<ul>
-					<li><a href="index.php">Accueil</a></li>
-				</ul>
 		</div>
 				
 		<?php 
