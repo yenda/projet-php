@@ -26,8 +26,12 @@
 	// Récupère les informations de la page concernée ainsi que les résultats des requêtes nécessaires à la construction de la page
 	function Recuperation_infos() {
 		//On récupère le type de page à afficher, qui sera index par défaut
-		if (isset($_GET['type']))
+		if (isset($_GET['type'])){
 				$_ENV['type'] = ($_GET['type']);
+				$contenu = $_ENV['type'].".php";
+				if (!file_exists("$contenu"))
+					$_ENV['type'] = 404;
+		}
 		else {
 			$_ENV['type'] = "index";
 		}

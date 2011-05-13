@@ -1,6 +1,6 @@
 <?php 
-	include 'fonctions.php';
-	include 'fonctions_menu.php';
+	include_once 'fonctions.php';
+	include_once 'fonctions_menu.php';
 
 	$connect = ConnexionDB();
 	$result = Recuperation_infos();
@@ -22,7 +22,7 @@
 			<table  class="tableau_entete">
 				<tr>
 					<td width="100px">
-						<a href="index.php"><img src="images/logo.gif" width="200px" height="100px" alt="GeekProducts" title="GeekProducts"></a>
+						<a href="index.php"><img src="images/logo.gif" width="100px" height="50px" alt="GeekProducts" title="GeekProducts"></a>
 					</td>
 					<td width="700px">
 						<input type="text" value="" /> 
@@ -43,8 +43,8 @@
 						<ul>
 							<li><a href='index.php'><b>Accueil</b></a></li>
 							<li><a href='index.php?type=recherche'><b>Recherche</b></a></li>
-							<li><a href='index.php?type=conditions'><b>Conditions de Vente</b></a></li>
-							<li><a href='index.php?type=apropos'><b>À Propos</b></a></li>					
+							<li><a href='index.php?type=conditions_de_vente'><b>Conditions de Vente</b></a></li>
+							<li><a href='index.php?type=a_propos'><b>À Propos</b></a></li>					
 						</ul>
 				</div>				
 			</td>

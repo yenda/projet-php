@@ -61,7 +61,7 @@
 		else{
 			$Date = date("Y-m-d");
 			
-			if (!isset($Photo))
+			if ((!isset($Photo))||(!file_exists("images/produits/$Photo")))
 				$Photo = "defaut.jpg";
 			if (!isset($Descriptif))
 				$Descriptif = '';

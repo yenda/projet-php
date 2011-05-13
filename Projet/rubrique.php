@@ -28,11 +28,17 @@
 <br /><br />
 <?php
 	//cherche si des produits appartiennent à la rubrique et les affiche
-	$result_produit = RequeteSQL("SELECT `produits`.`produits_Libelle`,`produits`.`produits_Prix` FROM `produits`INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference`=`produit_rubrique`.`produit_reference` WHERE `rubrique_id`=".$_ENV['rubrique_id']);
-	while($row=mysql_fetch_assoc($result_produit)){
-		echo $row["produits_Libelle"];
-		echo " ";
-		echo $row["produits_Prix"]." &euro;";
-		echo "<br />";
+	$result_produit = RequeteSQL("SELECT `produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits`INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference`=`produit_rubrique`.`produit_reference` WHERE `rubrique_id`=".$_ENV['rubrique_id']);
+	if (mysql_fetch_assoc($result_produit)){
+		mysql_data_seek($result_produit,0);
+		echo "<table class = 'liste_produits'><tr><th></th><th>Nom</th><th>Prix TTC</th></tr>";
+		while($row=mysql_fetch_assoc($result_produit)){
+			echo "<tr><td width='100px' height='100px'>";
+			echo "<img src='images/thumbs/".$row["produits_Photo"]."'>";
+			echo "</td>";
+			echo "<td>".$row["produits_Libelle"]."</td>";
+			echo "<td>".$row["produits_Prix"]." &euro;</td>";
+		}
+		echo "</table>";
 	}
 ?>
