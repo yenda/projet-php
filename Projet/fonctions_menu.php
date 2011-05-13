@@ -4,7 +4,7 @@
 	function Menu(){
 		$rubrique_id = $_ENV['rubrique_id'];
 		
-		$menu="<ul>\n\t\t<li><a href='index.php'><b>Accueil</b></a></li>";
+		$menu="";
 		//on effectue une requête pour obtenir l'ID des rubriques ayant pour rubrique supérieure celle qui
 		//est en paramètre, 0 lors du premier appel de la fonction
 		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` in (SELECT `rubrique_id` FROM `rubrique_rubriquesup` WHERE `rubriquesup_id` = ".$rubrique_id.") ORDER BY `rubrique_nom`");
@@ -15,7 +15,6 @@
 			$menu .= "\n\t\t\t<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."&rubrique=$rubrique_id'>".$row["rubrique_nom"]."</a></li>";
 		}
 		$menu .= "\n\t\t</ul></li>";
-		$menu .= "\n\t\t<li><a href='index.php?type=recherche'><b>Recherche</b></a></li>";
 		$menu .= "\n\t</ul>";
 		return $menu;
 	}
