@@ -114,6 +114,13 @@ ol, ul {
 	padding:0px;
 	}
 
+.menu {
+	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
+	color:#FFFFFF;
+	text-align:center;
+	padding:0px;
+	}
+
 .panier {
 	background-color: #cbe2ec;
 	width: 590px;
@@ -145,4 +152,9 @@ ol, ul {
 }
 .tableau td {
 	vertical-align: middle;
+}
+
+.tableau2 {
+	border: 0;
+	width: 100%;
 }

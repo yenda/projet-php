@@ -34,14 +34,20 @@
 </div>
 
 		<div id="menu">
+
 			<div class="categories">Catégories</div>
 			<?php
 				echo Menu();
-			?>
+			?> 
 		
+			<br/><br/>
+			<div class="menu">Menu</div>
+				<ul>
+					<li><a href="index.php">Accueil</a></li>
+				</ul>
 		</div>
-
-	<?php 
+				
+		<?php 
 		if ($_ENV['type']!="panier"){
 				echo '<div class="panier">
 					<table cellpadding="0" cellspacing="0" class="tableaupanier">
@@ -86,7 +92,6 @@
 		else
 			include("404.php");
 	?>
-</div>
 
 	
 	<div id="bas" align="center">
