@@ -66,7 +66,7 @@
 							</td>
 							
 							<td>									
-							<div align="right"><a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/fleche.gif" class="fleche"></a></div>
+							<div align="right"><a href="index.php?type=panier" class="txtviewCart" id="flashBasket">Afficher le panier <img src="images/fleche2.gif" class="fleche"></a></div>
 								</form>
 				
 							</td>
