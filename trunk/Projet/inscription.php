@@ -70,7 +70,7 @@ if (isset($_POST['login']))
 
 
 ?>
-<form method="post" action="inscription.php">
+<form method="post" action="index.php?type=inscription">
 			<table style="margin-left:10px;" width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="50%" style="vertical-align:top;">
@@ -340,7 +340,7 @@ if (isset($_POST['login']))
 
 									<input name="back" type="hidden" id="back" value="">
 									<input name="op" type="hidden" id="op" value="register" />
-									<input type="image" name="imageField" src="/images/gui/main/BtnContinueGreen.jpg" style="margin-top:10px; float:right;" />
+									<input type="submit" value="Valider et envoyer" style="margin-top:10px; float:right;" />
 								</td>
 							</tr>
 						</table>
