@@ -349,8 +349,3 @@ if (isset($_POST['login']))
 			</table>
 
 		</form>
-
-
-
-</body>
-</html>
