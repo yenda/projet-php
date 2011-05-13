@@ -289,7 +289,7 @@
 							<th width="715" align="left">Validation <img width="8" height="11" alt="" style="display: inline;"/></th>
 							<tr>
 								<td class="Inner" width="625" valign="top" height="100" align="left" style="padding: 10px;" colspan="3">
-									<input type="checkbox" name="verif" id="verif"/><label for="verif"> Je certifie exactes les informations renseignées dans les champs ci-dessu.</label>
+									<input type="checkbox" name="verif" id="verif"/><label for="verif"> Je certifie exactes les informations renseignées dans les champs ci-dessus.</label>
 									<br/>
 
 									<input name="back" type="hidden" id="back" value="">
