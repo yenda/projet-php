@@ -23,35 +23,42 @@
 		return $result;
 	}
 	
-	// Récupère les informations de la page concernée
+	// Récupère les informations de la page concernée ainsi que les résultats des requêtes nécessaires à la construction de la page
 	function Recuperation_infos() {
-		//On récupère le type de page à afficher
+		//On récupère le type de page à afficher, qui sera index par défaut
 		if (isset($_GET['type']))
 				$_ENV['type'] = ($_GET['type']);
 		else {
 			$_ENV['type'] = "index";
 		}
 		
+		//On récupère l'id de la page qui sera 0 par défaut
 		if (isset($_GET['id']))
 			$_ENV['id'] = intval($_GET['id']);
 		else
 			$_ENV['id'] = 0;
 		
+		//On récupère l'id de la rubrique dont l'utilisateur vient quand il est sur une page de type objet
+		//car un objet peut appartenir à plusieurs rubriques. Cette information permet notament de construire le menu
 		if (($_ENV['type']=="produit")&&(isset($_GET['rubrique'])))
 			$_ENV['rubrique_id'] = intval($_GET['rubrique']);
 		elseif ($_ENV['type']=="rubrique")
-				$_ENV['rubrique_id'] = $_ENV['id'];
+			$_ENV['rubrique_id'] = $_ENV['id'];
 		else
 			$_ENV['rubrique_id'] = 0;
 			
 		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` = ".$_ENV['rubrique_id']);
 		if ($row=mysql_fetch_assoc($result))
 			$_ENV['rubrique_nom']=$row["rubrique_nom"];
-		else
+		else{
+			$_ENV['rubrique_id'] = 0;
 			$_ENV['rubrique_nom']="principale";
-		
-			
-			
+		}
+
+		/*if(isset($_SERVER["HTTP_REFERER"])&&(preg_match("/index\.php\?type=rubrique&id=([0-9]+)/",$_SERVER["HTTP_REFERER"],$regs)))
+			$_ENV['rubriqueroot'] = $regs[1];
+		else
+			$_ENV['rubriqueroot'] = 0;*/		
 		
 		/*$strSQL = 'SELECT * FROM `pages` WHERE `Id_page` = '.$_ENV['id_page'];
 		$resultat = requete_SQL($strSQL);
