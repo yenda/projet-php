@@ -25,8 +25,10 @@
 						<a href="index.php"><img src="images/logo.gif" width="100px" height="50px" alt="GeekProducts" title="GeekProducts"></a>
 					</td>
 					<td width="700px">
-						<input type="text" value="" /> 
-						<input type="submit" name="lien1" value="Ok" onclick="self.location.href='recherche.php'" style="background-color:white" style="color:white; font-weight:bold" onclick></input>
+						<form method="post" action="index.php?type=recherche">
+							<input name="recherche" type="text" id="recherche" style="height:20px; font-size:13px; width:200px;" value="" maxlength="50" />
+							<input type="submit" name="Submit" value="OK"/> 
+						</form>
 					</td> 
 					<td>
 						<div align="right"></div><a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a></div>
