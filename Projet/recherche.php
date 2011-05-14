@@ -24,7 +24,7 @@ else if (isset($_POST['recherche']))
 		//faire une requête MySQL qui trouve les produits dont le nom contient un ou plusieurs
 		//mot(s)-clé(s) et les afficher
 		$recherche=$_POST['recherche'];
-		$result_produit = RequeteSQL("SELECT `produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits` WHERE `produits_Libelle` LIKE '%$recherche%'");
+		$result_produit = RequeteSQL("SELECT `produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits` WHERE `produits_Libelle` LIKE '%$recherche%' OR `produits_Descriptif` LIKE '%$recherche'");
 		if (mysql_fetch_assoc($result_produit)){
 			mysql_data_seek($result_produit,0);
 			echo "<table class = 'liste_produits'><tr><th></th><th>Nom</th><th>Prix TTC</th></tr>";
