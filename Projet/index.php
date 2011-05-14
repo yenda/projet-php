@@ -31,7 +31,7 @@
 						</form>
 					</td> 
 					<td>
-						<div align="right"></div><a href="index.php?type=inscription">Inscription</a> | <a href="login.php">Connexion</a></div>
+						<div align="right"></div><a href="index.php?type=inscription">Inscription</a> | <a href="index.php?type=connexion">Connexion</a></div>
 					</td>
 				</tr>
 			</table>
