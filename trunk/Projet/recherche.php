@@ -30,10 +30,10 @@ if (isset($_POST['recherche']))
 ?>
 
 <p>Saisissez les termes à rechercher sur le site</p>
-
-<div id="recherche">
-	<form method="post" action="index.php?type=recherche">
-		<input name="recherche" type="text" id="recherche" style="height:20px; font-size:13px; width:200px;" value="" maxlength="50" />
-		<input type='submit' name='Submit' value='Rechercher'/> 
-	</form>
-</div>
+	
+	<div id="recherche">
+		<form method="post" action="index.php?type=recherche">
+			<input name="recherche" type="text" id="recherche" style="height:20px; font-size:13px; width:200px;" value="" maxlength="50" />
+			<input type="submit" name="Submit" value="Rechercher"/> 
+		</form>
+	</div>
