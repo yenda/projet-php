@@ -54,11 +54,15 @@ if (isset($_POST['login']))
 		$telmain=$_POST['telmain'];
 		$nom=$_POST['nom'];
 		$prenom=$_POST['prenom'];
+		$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
 		$rue1=$_POST['rue1'];
 		$rue2=$_POST['rue2'];
+		$adresse=$rue1." ".$rue2;
 		$cp=$_POST['cp'];
 		$ville=$_POST['ville'];
-		//Faire le remplissage de la base après avoir rajouté les champs manquants dans la base
+		
+		//Ajout de l'utilisateur à la base de données
+		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail');");
 	}
 }
 
