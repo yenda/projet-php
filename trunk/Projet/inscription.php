@@ -7,6 +7,16 @@ function VerifierAdresseMail($adresse)
    else 
      return false; 
 }
+
+function VerifierDisponibiliteLogin ($login)
+{
+	$result = mysql_query("SELECT * FROM client WHERE client_login=$login");
+	$num_rows = mysql_num_rows($result);
+	if ($num_rows==0)
+		return true;
+	else 
+		return false;
+}
 ?>
 
 <?php 
@@ -15,42 +25,26 @@ if (isset($_POST['login']))
 	if ((empty($_POST['login'])) || (!is_string($_POST['login'])))
 	{
 		echo "Le champ nom d'utilisateur n'est pas correctement rempli";
-		if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
-		{
+		if (VerifierDisponibiliteLogin($_POST['login'])==false)
+			echo "Login non disponible, veuillez en choisir un autre";
+		else if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
 			echo "Le mot de passe n'est pas correctement saisi";
-		}
 		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
-		{
 			echo "Le champ adresse e-mail n'est pas correctement rempli";
-		}
 		else if ((empty($_POST['telmain'])) || (str_len($_POST['telmain']!=10)))
-		{
 			echo "Le champ numéro de téléphone n'est pas correctement rempli";
-		}
 		else if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
-		{
 			echo "Le champ nom n'est pas correctement rempli";
-		}
 		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
-		{
 			echo "Le champ prenom n'est pas correctement rempli";
-		}
 		else if((empty($_POST['rue1'])) || (!is_string($_POST['rue1'])) || (isset($_POST['rue2']) and (!is_string($_POST['rue2'])) || (strlen($POST['rue2'])>35)))
-		{
 			echo "Le champ adresse n'est pas correctement rempli";
-		}
 		else if((empty($_POST['cp'])) || (!is_int($_POST['cp'])))
-		{
 			echo "Le champ code postal n'est pas correctement rempli";
-		}
 		else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
-		{
 			echo "Le champ ville n'est pas correctement rempli";
-		}
 		else if (!isset($_POST['verif']))
-		{
 			echo "Vous devez cocher la case pour certifier l'exactitude des renseignements fournis";
-		}
 	}
 	else 
 	{
