@@ -26,10 +26,9 @@ if (isset($_POST['login']))
 			echo "Login non disponible, veuillez en choisir un autre";
 	else 
 	{*/
-	if ((empty($_POST['login'])) || (!is_string($_POST['login'])))
-	{
-		echo "Le champ nom d'utilisateur n'est pas correctement rempli";
-		if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
+		if ((empty($_POST['login'])) || (!is_string($_POST['login'])))
+			echo "Le champ nom d'utilisateur n'est pas correctement rempli";
+		else if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
 			echo "Le mot de passe n'est pas correctement saisi";
 		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
 			echo "Le champ adresse e-mail n'est pas correctement rempli";
@@ -39,7 +38,7 @@ if (isset($_POST['login']))
 			echo "Le champ nom n'est pas correctement rempli";
 		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
 			echo "Le champ prenom n'est pas correctement rempli";
-		else if((empty($_POST['rue1'])) || (!is_string($_POST['rue1'])) || (isset($_POST['rue2']) and (!is_string($_POST['rue2']))) || (strlen($POST['rue2'])>35))
+		else if((empty($_POST['rue1'])) || (!is_string($_POST['rue1'])) || (isset($_POST['rue2']) and (!is_string($_POST['rue2']))) || (strlen($_POST['rue2'])>35))
 			echo "Le champ adresse n'est pas correctement rempli";
 		else if((empty($_POST['cp'])) || (!is_int($_POST['cp'])))
 			echo "Le champ code postal n'est pas correctement rempli";
@@ -47,25 +46,24 @@ if (isset($_POST['login']))
 			echo "Le champ ville n'est pas correctement rempli";
 		else if (!isset($_POST['verif']))
 			echo "Vous devez cocher la case pour certifier l'exactitude des renseignements fournis";
-	}
-	else 
-	{
-		$login=$_POST['login'];
-		$pass=$_POST['pass'];
-		$mail=$_POST['mail'];
-		$telmain=$_POST['telmain'];
-		$nom=$_POST['nom'];
-		$prenom=$_POST['prenom'];
-		$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
-		$rue1=$_POST['rue1'];
-		$rue2=$_POST['rue2'];
-		$adresse=$rue1." ".$rue2;
-		$cp=$_POST['cp'];
-		$ville=$_POST['ville'];
-		
-		//Ajout de l'utilisateur à la base de données
-		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail');");
-	}
+		else 
+		{
+			$login=$_POST['login'];
+			$pass=$_POST['pass'];
+			$mail=$_POST['mail'];
+			$telmain=$_POST['telmain'];
+			$nom=$_POST['nom'];
+			$prenom=$_POST['prenom'];
+			$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
+			$rue1=$_POST['rue1'];
+			$rue2=$_POST['rue2'];
+			$adresse=$rue1." ".$rue2;
+			$cp=$_POST['cp'];
+			$ville=$_POST['ville'];
+			
+			//Ajout de l'utilisateur à la base de données
+			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail');");
+		}
 	//}
 }
 
