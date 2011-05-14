@@ -60,10 +60,9 @@
 					`client_nom` VARCHAR(30) NOT NULL, 
 					`client_prenom` VARCHAR(30) NOT NULL, 
 					`client_datenaissance` DATE NOT NULL, 
-					`client_num` SMALLINT NOT NULL, 
-					`client_rue` INT NOT NULL, 
-					`client_codepostal` INT NOT NULL, 
-					`client_bancaire` BIGINT NOT NULL, 
+					`client_adresse` VARCHAR(70) NOT NULL, 
+					`client_codepostal` INT NOT NULL,
+					`client_ville` VARCHAR(30) NOT NULL,  
 					`client_telephone` VARCHAR(10) NOT NULL, 
 					`client_mail` VARCHAR(50) NOT NULL) ENGINE = MyISAM;");
 			
