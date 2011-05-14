@@ -27,7 +27,7 @@
 <p><b>Article&nbsp;5&nbsp;: Paiement</b></p>
 <p>Vous pouvez effectuer le règlement par carte de paiement. <!--ou par chèque.--></p>
 <p>Les cartes émises par des banques domiciliées hors de France doivent obligatoirement être des cartes bancaires internationales. En cas de règlement par carte de paiement, le montant de votre commande n'est débité qu'au moment de l'expédition de vos articles.</p>
-<p>Le chèque devra être établi à l'ordre d'GeekProduct EU SARL, et envoyé à l'adresse ci-dessous&nbsp;: </p>
+<p>Le chèque devra être établi à l'ordre de GeekProduct EU SARL, et envoyé à l'adresse ci-dessous&nbsp;: </p>
 <p>Dans le cas où Vous seriez en retard dans le paiement du prix, Nous serions en droit de réclamer des intérêts de retard calculés sur la base du taux légal en vigueur et applicables à compter du jour de la sommation de payer.</p>
 <p><b>Article&nbsp;6&nbsp;: Retours</b></p>
 
