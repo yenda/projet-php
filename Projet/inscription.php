@@ -8,7 +8,7 @@ function VerifierAdresseMail($adresse)
      return false; 
 }
 
-function VerifierDisponibiliteLogin ($login)
+function VerifierDisponibiliteLogin ($login) //Cette fonction ne fonctionne pas :/
 {
 	$result = mysql_query("SELECT * FROM client WHERE client_login='".$login."'");
 	$num_rows = mysql_num_rows($result);
@@ -40,7 +40,7 @@ if (isset($_POST['login']))
 			echo "Le champ prenom n'est pas correctement rempli";
 		else if((empty($_POST['rue1'])) || (!is_string($_POST['rue1'])) || (isset($_POST['rue2']) and (!is_string($_POST['rue2']))) || (strlen($_POST['rue2'])>35))
 			echo "Le champ adresse n'est pas correctement rempli";
-		else if((empty($_POST['cp'])) || (!is_int($_POST['cp'])))
+		else if((empty($_POST['cp'])) || (!is_numeric($_POST['cp'])))
 			echo "Le champ code postal n'est pas correctement rempli";
 		else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
 			echo "Le champ ville n'est pas correctement rempli";
