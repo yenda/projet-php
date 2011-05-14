@@ -334,7 +334,7 @@
 		</Produit>
 		
 		<Produit>
-			<Propriete nom = "Libelle">Corsair 32Go</Propriete>
+			<Propriete nom = "Libelle">Clé USB Corsair 32Go</Propriete>
 			<Propriete nom = "Prix">68</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">corsair32.jpg</Propriete>
@@ -345,7 +345,7 @@
 		</Produit>
 		
 		<Produit>
-			<Propriete nom = "Libelle">Sony Micro Vault Click 4Go</Propriete>
+			<Propriete nom = "Libelle">Clé USB Sony Micro Vault Click 4Go</Propriete>
 			<Propriete nom = "Prix">11.98</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">sony4.jpg</Propriete>
@@ -356,7 +356,7 @@
 		</Produit>
 		
 		<Produit>
-			<Propriete nom = "Libelle">Kingston DataTraveler 100 G2 8 Go</Propriete>
+			<Propriete nom = "Libelle">Clé USB Kingston DataTraveler 100 G2 8 Go</Propriete>
 			<Propriete nom = "Prix">12.75</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">kingston8.jpg</Propriete>
@@ -367,7 +367,7 @@
 		</Produit>
 		
 		<Produit>
-			<Propriete nom = "Libelle">LG Mobile 4 Go chargeur de téléphone</Propriete>
+			<Propriete nom = "Libelle">Clé USB LG Mobile 4 Go chargeur de téléphone</Propriete>
 			<Propriete nom = "Prix">27.90</Propriete>
 			<Propriete nom = "UniteDeVente">l'unité</Propriete>
 			<Propriete nom = "Photo">lgmobile.jpg</Propriete>
