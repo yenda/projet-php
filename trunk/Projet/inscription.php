@@ -8,11 +8,10 @@ function VerifierAdresseMail($adresse)
      return false; 
 }
 
-function VerifierDisponibiliteLogin ($login) //Cette fonction ne fonctionne pas :/
+function VerifierDisponibiliteLogin ($login)
 {
-	$result = mysql_query("SELECT * FROM client WHERE client_login='".$login."'");
-	$num_rows = mysql_num_rows($result);
-	if ($num_rows==0)
+	$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$login'");
+	if (mysql_num_rows($result)==0)
 		return true;
 	else 
 		return false;
@@ -22,10 +21,10 @@ function VerifierDisponibiliteLogin ($login) //Cette fonction ne fonctionne pas 
 <?php 
 if (isset($_POST['login']))
 {
-	/*if (VerifierDisponibiliteLogin($_POST['login'])==false)
+	if (VerifierDisponibiliteLogin($_POST['login'])==false)
 			echo "Login non disponible, veuillez en choisir un autre";
 	else 
-	{*/
+	{
 		if ((empty($_POST['login'])) || (!is_string($_POST['login'])))
 			echo "Le champ nom d'utilisateur n'est pas correctement rempli";
 		else if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
@@ -64,7 +63,7 @@ if (isset($_POST['login']))
 			//Ajout de l'utilisateur à la base de données
 			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail');");
 		}
-	//}
+	}
 }
 
 
