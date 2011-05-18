@@ -65,7 +65,7 @@
 					`client_ville` VARCHAR(30) NOT NULL,  
 					`client_telephone` VARCHAR(10) NOT NULL, 
 					`client_mail` VARCHAR(50) NOT NULL) ENGINE = MyISAM;");
-			
+		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` (`client_login`, `client_mdp`, `client_nom`, `client_prenom`, `client_datenaissance`, `client_adresse`, `client_codepostal`, `client_ville`, `client_telephone`, `client_mail`) VALUES ('admin', 'admin', 'Administrateur', 'Administrateur', '', '', '', '', '', '');");
 		$result = mysql_close($connect)
 			or die(mysql_error());
 	?>
