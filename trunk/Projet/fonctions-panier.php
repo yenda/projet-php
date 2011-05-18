@@ -46,6 +46,10 @@ function supprimerArticle($libelleProduit){
    echo "Un problème est survenu veuillez contacter l'administrateur du site.";
 }
 
+function supprimerPanier(){
+   unset($_SESSION['panier']);
+}
+
 function modifierQTeArticle($libelleProduit,$qteProduit){
    //Si le panier éxiste
    if (creationPanier())
@@ -68,7 +72,7 @@ function modifierQTeArticle($libelleProduit,$qteProduit){
    echo "Un problème est survenu veuillez contacter l'administrateur du site.";
 }
 
-function MontantGlobal(){
+function montantGlobal(){
    $total=0;
    for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
    {
@@ -76,4 +80,3 @@ function MontantGlobal(){
    }
    return $total;
 }
-
