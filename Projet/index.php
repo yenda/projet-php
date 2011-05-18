@@ -32,7 +32,7 @@
 						</form>
 					</td> 
 					<td>
-						<div align="right"><a href="index.php?type=inscription">Inscription</a> | <a href="index.php?type=connexion">Connexion</a></div>
+						<div align="right"><a href="index.php?type=inscription">Inscription</a> | <a href="index.php?type=login">Connexion</a></div>
 					</td>
 				</tr>
 			</table>
