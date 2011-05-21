@@ -58,7 +58,7 @@ if (!$erreur){
 echo '<?xml version="1.0" encoding="utf-8"?>';?>
 
 <form method="post" action="panier.php">
-<table style="width: 400px">
+<table style="width: 400px" border="1">
 	<tr>
 		<td colspan="4">Votre panier</td>
 	</tr>
