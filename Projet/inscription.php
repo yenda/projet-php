@@ -59,9 +59,10 @@ if (isset($_POST['login']))
 			$adresse=$rue1." ".$rue2;
 			$cp=$_POST['cp'];
 			$ville=$_POST['ville'];
+			$cb=$_POST['cartebancaire'];
 			
 			//Ajout de l'utilisateur à la base de données
-			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail');");
+			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail', '$cb');");
 		}
 	}
 }
@@ -182,6 +183,11 @@ if (isset($_POST['login']))
 									<div class="ElemtMandat">Ville : </div>
 									<div>
 										<input name="ville" type="text" id="ville" style="height:12px; font-size:10px; width:150px;" value="" />
+									</div>
+									
+									<div class="ElemtMandat">Numéro de carte bancaire : </div>
+									<div>
+										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" value="" />
 									</div>
 
 								</td>
