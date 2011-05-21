@@ -187,5 +187,8 @@
 
 ?>
 
+	<input type="button" value="Aller à l'index" onclick="self.location.href='index.php'"> 
+
+
 </body>
 </html>
