@@ -71,7 +71,5 @@
 			or die(mysql_error());
 	?>
 	
-	<input type="button" value="Remplir la base" onclick="self.location.href='remplirBase.php'"> 
-
 </body>
 </html>
