@@ -159,6 +159,20 @@ ol, ul {
 	vertical-align:top;
 }
 
+.liste_photos {
+	width:100%;
+	padding-left:100px;
+	padding-right:100px;
+}
+
+.liste_photos td{
+	border: 12px solid #ccc;
+	border-width:2px;
+	border-radius: 6px;
+	vertical-align: middle;
+	text-align: center;
+}
+
 .liste_produits {
 	width: 100%;
 	padding-left:20px;
@@ -193,8 +207,7 @@ ol, ul {
 	border-width:2px;
 	border-radius: 6px;
 	vertical-align: middle;
-	padding:5px;
-	
+	padding:5px;	
 }
 
 .produit th{

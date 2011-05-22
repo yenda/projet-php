@@ -18,7 +18,7 @@
 ?>
 <p>Pour commencer à naviguer dans notre boutique choisissez une rubrique dans le menu latéral où cliquez sur la photographie du produit qui vous intéresse ci dessous</p>
 
-<table class = 'liste_produits'>
+<table class = 'liste_photos'>
 <?php 
 	for($i=0; $i<5;$i++){
 		echo "<tr>";
