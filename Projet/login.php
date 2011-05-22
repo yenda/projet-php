@@ -1,5 +1,4 @@
 <?php
-
 function VerifierExistenceLogin ($login)
 {
 	$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$login'");
@@ -9,16 +8,45 @@ function VerifierExistenceLogin ($login)
 		return false;
 }
 
+function TesterMotDePasse ($login,$pass)
+{
+	$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$login'&&client_mdp='$pass'");
+	if (mysql_num_rows($result)==1)
+		return true;
+	else 
+		return false;
+}
+
 ?>
-<?php if (0) { ?>	
+<?php 
+if (!isset($_SESSION['login'])) { 
+	if (isset($_POST['login'])){
+		$login=mysql_real_escape_string($_POST['login']);
+		if (!VerifierExistenceLogin($login)){
+			$login="";
+			echo "<div class='alert'><br />Login inexistant</div><br />";
+		}
+		elseif (isset($_POST['pass'])){
+			$pass=mysql_real_escape_string($_POST['pass']);
+			if (!TesterMotDePasse($login,$pass))
+				echo "<div class='alert'><br />Mot de passe éronné</div><br />";
+			else
+				$_SESSION['login']=$login;
+		}
+		else
+			echo "<div class='alert'><br />Mot de passe non renseigné</div><br />";
+	}
+	else
+		$login="";
+?>	
 			<div id="login">
 						<form method="post" action="index.php?type=login">
-									<div class="ElemtMandat">Login</div>
+									<div>Login</div>
 									<div>
-										<input name="login" type="text" id="login" style="height:12px; font-size:10px; width:150px;" value="" maxlength="20" />
+										<input name="login" type="text" id="login" style="height:12px; font-size:10px; width:150px;" value="<?php echo htmlentities(trim($login)) ?>" maxlength="20" />
 									</div>
 
-									<div class="ElemtMandat">Mot de passe</div>
+									<div>Mot de passe</div>
 									<div>
 										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30";" />
 									</div>

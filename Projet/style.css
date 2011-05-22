@@ -76,7 +76,6 @@ ol, ul {
 
 #login {
 	text-align:center;
-	text-align:center;
 	color:#5892B5;
 	font-size:15pt;
 	
@@ -115,6 +114,11 @@ ol, ul {
 	background:url(images/fond-menu.png) repeat-x; 
 }
 
+.alert {
+	color: red;
+	text-align:center;
+	font-weigt:bold;	
+}
 .menu {
 	background: #FFFFFF url(images/fond-categories.gif) no-repeat top;
 	color:#FFFFFF;
