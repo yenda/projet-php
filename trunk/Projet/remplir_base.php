@@ -195,7 +195,7 @@
 	if((!isset($_GET['xml']))||(!file_exists($_GET['xml']))){
 ?>
 	<form method="get" action="index.php">
-		<input type='hidden' value="remplir_base" name="type">
+		<input type='hidden' value="remplir_base" name="type" />
 		<input type='file' name='xml' />
 		<input type='submit' value='Remplir la base' />
 	</form>

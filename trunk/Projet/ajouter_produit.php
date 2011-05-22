@@ -8,10 +8,11 @@
 ?>
 <h1>Ajout d'un produit</h1>
 <?php
+	
 	//Les fonctions de cette page sont similaires à celle de remplir base
 ?>
 	<form method="get" action="index.php">
-		<input type='hidden' value="ajouter_produit" name="type">
+		<input type='hidden' value="ajouter_produit" name="type" />
 		<input type='file' name='xml' />
 		<input type='submit' value='Remplir la base' />
 	</form>
