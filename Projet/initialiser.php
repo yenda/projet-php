@@ -5,7 +5,7 @@
 	}
 	else{
 ?>
-
+<h1>Initialisation de la base</h1>
 <?php
 		//Suppression de la base de donnée si elle existe
 		$result=RequeteSQL("DROP DATABASE IF EXISTS geekproduct");

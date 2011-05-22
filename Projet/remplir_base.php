@@ -7,7 +7,7 @@
 	else{
 ?>
 
-<br /><br />
+<h1>Remplissage de la base</h1>
 
 <?php
 
@@ -188,14 +188,14 @@
 		else
 			echo "<div class='alert'>Fichier introuvable</div>";
 ?>
-<h4><a href='index.php?type=remplirBase'>Choisir un autre fichier</a></h4>
+<h4><a href='index.php?type=remplir_base'>Choisir un autre fichier</a></h4>
 <?php 
 	}
 	
 	if((!isset($_GET['xml']))||(!file_exists($_GET['xml']))){
 ?>
-	<form method="get" action="index.php?type=remplirBase">
-		<input type='hidden' value="remplirBase" name="type">
+	<form method="get" action="index.php">
+		<input type='hidden' value="remplir_base" name="type">
 		<input type='file' name='xml' />
 		<input type='submit' value='Remplir la base' />
 	</form>
