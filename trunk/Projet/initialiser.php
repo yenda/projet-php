@@ -66,7 +66,7 @@
 					`client_telephone` VARCHAR(10) NOT NULL, 
 					`client_mail` VARCHAR(50) NOT NULL,
 					`client_cartebancaire` INT NOT NULL) ENGINE = MyISAM;");
-		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` (`client_login`, `client_mdp`, `client_nom`, `client_prenom`, `client_datenaissance`, `client_adresse`, `client_codepostal`, `client_ville`, `client_telephone`, `client_mail`, `client_cartebancaire`) VALUES ('admin', 'admin', 'Administrateur', 'Administrateur', '', '', '', '', '', '', '');");
+		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` (`client_login`, `client_mdp`, `client_nom`, `client_prenom`, `client_datenaissance`, `client_adresse`, `client_codepostal`, `client_ville`, `client_telephone`, `client_mail`, `client_cartebancaire`) VALUES ('admin', 'admin', '', '', '', '', '', '', '', '', '');");
 		
 		//Création de la table Panier_Client
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_client` (
