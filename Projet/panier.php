@@ -1,5 +1,6 @@
 <?php
 include_once("fonctions_panier.php");
+session_start();
 
 $erreur = false;
 

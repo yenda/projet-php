@@ -20,7 +20,7 @@ function ajouterArticle($produits_Reference,$produits_Quantite){
 
       if ($positionProduit !== false)
       {
-         $_SESSION['panier']['produits_Quantite'][$positionProduit] += $produits_Quantite ;
+         $_SESSION['panier']['produits_Quantite'][$positionProduit] += $produits_Quantite;
       }
       else
       {
@@ -45,7 +45,7 @@ function modifierQTeArticle($produits_Reference,$produits_Quantite){
 
          if ($positionProduit !== false)
          {
-            $_SESSION['panier']['produits_Quantite'][$positionProduit] = $produits_Quantite ;
+            $_SESSION['panier']['produits_Quantite'][$positionProduit] = $produits_Quantite;
          }
       }
       else

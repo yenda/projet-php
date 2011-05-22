@@ -4,7 +4,7 @@
 
 	$connect = ConnexionDB();
 	$result = Recuperation_infos();
-	session_start(); //démarre une session pour stocker les objets dans le panier
+	//session_start(); //démarre une session pour stocker les objets dans le panier
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
