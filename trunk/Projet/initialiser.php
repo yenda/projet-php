@@ -1,16 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>Initialisation de la base de donnée</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-</head>
+<?php
+	if ((!isset($_SESSION['login']))||($_SESSION['login']!="admin")){
+		header('Location: index.php&type=404');  
+		exit();
+	}
+	else{
+?>
 
-<body>
-	<?php
-		include 'fonctions.php';
-		$connect = mysql_connect("localhost","root","")
-			or die(mysql_error());
-		
+<?php
 		//Suppression de la base de donnée si elle existe
 		$result=RequeteSQL("DROP DATABASE IF EXISTS geekproduct");
 
@@ -78,11 +74,14 @@
 					`panier_id` BIGINT NOT NULL, 
 					`produits_Reference` BIGINT NOT NULL,
 					`produits_Quantite` INT NOT NULL) ENGINE = MyISAM;");
-		
-		$result = mysql_close($connect)
-			or die(mysql_error());
+	
 		
 	?>
 	
-</body>
-</html>
+	<div class='alert'>La base de donnée a été initialisée</div>
+	<br />
+	<h4><a href="index.php?type=admin">Retour à la page d'administration</a></h4>
+
+<?php 
+	}
+?>

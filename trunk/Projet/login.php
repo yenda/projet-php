@@ -30,8 +30,11 @@ if (!isset($_SESSION['login'])) {
 			$pass=mysql_real_escape_string($_POST['pass']);
 			if (!TesterMotDePasse($login,$pass))
 				echo "<div class='alert'><br />Mot de passe éronné</div><br />";
-			else
+			else{
 				$_SESSION['login']=$login;
+				header('Location: index.php');  
+				exit(); 
+			}
 		}
 		else
 			echo "<div class='alert'><br />Mot de passe non renseigné</div><br />";

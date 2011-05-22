@@ -33,7 +33,17 @@
 						</form>
 					</td> 
 					<td>
-						<div align="right"><a href="index.php?type=inscription">Inscription</a> | <a href="index.php?type=login">Connexion</a></div>
+						<div align="right">						
+							<?php if (!isset($_SESSION['login'])){?>
+							<a href="index.php?type=inscription">Inscription</a> | 
+							<a href="index.php?type=login">Connexion</a>
+							<?php } else {if ($_SESSION['login']="admin"){?>
+							<a href="index.php?type=admin">Administration</a>
+							<?php } else { ?>
+							<a href="index.php?type=compte">Mon Compte</a>
+							<?php } ?>
+							<a href="deconnexion.php">| Deconnexion</a>
+							<?php } ?></div>
 					</td>
 				</tr>
 			</table>
@@ -86,7 +96,6 @@
 				else
 					$chemin = Chemin($_ENV['rubrique_id']);
 				echo substr($chemin,6);
-				$contenu = "";
 				if ($_ENV['type']=="index")
 					$contenu ="accueil";
 				else
