@@ -15,9 +15,9 @@
 	
 	<ul>
 		<li><a href='index.php?type=initialiser'><b>Initialiser la base</b></a></li>
-		<li><a href='index.php?type=remplirBase'><b>Remplir la base</b></a></li>
-		<li><a href='index.php?type=ajoutProduit'><b>Ajouter un produit</b></a></li>
-		<li><a href='index.php?type=suppProduit'><b>Supprimer un produit</b></a></li>			
+		<li><a href='index.php?type=remplir_base'><b>Remplir la base</b></a></li>
+		<li><a href='index.php?type=ajouter_produit'><b>Ajouter un produit</b></a></li>
+		<li><a href='index.php?type=supprimer_produit'><b>Supprimer un produit</b></a></li>			
 	</ul>
 
 <?php 
