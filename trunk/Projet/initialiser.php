@@ -50,12 +50,12 @@
 
 		//Création de la table Produit_Rubrique
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`produit_rubrique` (
-					`produit_reference` INT NOT NULL, 
+					`produit_reference` BIGINT NOT NULL, 
 					`rubrique_id` INT NOT NULL) ENGINE = MyISAM;");
 		
 		//Création de la table Clients
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`clients` (
-					`client_login` VARCHAR(20) NOT NULL, 
+					`client_login` VARCHAR(20) NOT NULL PRIMARY KEY, 
 					`client_mdp` VARCHAR(20) NOT NULL, 
 					`client_nom` VARCHAR(30) NOT NULL, 
 					`client_prenom` VARCHAR(30) NOT NULL, 
@@ -67,8 +67,20 @@
 					`client_mail` VARCHAR(50) NOT NULL,
 					`client_cartebancaire` INT NOT NULL) ENGINE = MyISAM;");
 		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` (`client_login`, `client_mdp`, `client_nom`, `client_prenom`, `client_datenaissance`, `client_adresse`, `client_codepostal`, `client_ville`, `client_telephone`, `client_mail`, `client_cartebancaire`) VALUES ('admin', 'admin', 'Administrateur', 'Administrateur', '', '', '', '', '', '', '');");
+		
+		//Création de la table Panier_Client
+		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_client` (
+					`panier_id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+					`client_login` VARCHAR(20) NOT NULL) ENGINE = MyISAM;");
+		
+		//Création de la table Panier_Client
+		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_produit` (
+					`panier_id` BIGINT NOT NULL, 
+					`produit_reference` BIGINT NOT NULL) ENGINE = MyISAM;");
+		
 		$result = mysql_close($connect)
 			or die(mysql_error());
+		
 	?>
 	
 </body>
