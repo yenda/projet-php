@@ -14,7 +14,7 @@
 	echo "<tr><th>Unité de vente</th><td>".$produit["produits_UniteDeVente"]."</td></tr>";
 	echo "<tr><th>Date d'ajout au catalogue</th><td>".$produit["produits_DateAjout"]."</td></tr>";
 	echo "</table>";
-	echo "<h4><a href='panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT' onclick='window.open(this.href, '', 
+	echo "<h4><a href='panier.php?action=ajout&amp;l=".$produit['produits_Libelle']."&amp;q=1&amp;p=".$produit['produits_Prix']."' onclick='window.open(this.href, '', 
 'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;'>Ajouter au panier<br /><img src='images/minipanier.jpg'></a></h4>";
 	}
 	else
