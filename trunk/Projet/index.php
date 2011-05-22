@@ -1,6 +1,8 @@
 <?php 
 	include_once 'fonctions.php';
 	include_once 'fonctions_menu.php';
+	
+	session_start();
 
 	$connect = ConnexionDB();
 	$result = Recuperation_infos();
