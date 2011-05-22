@@ -1,4 +1,5 @@
 <?php
+	//Les pages réservées à l'administrateur renvoient une erreur 404 lorsque quelqu'un essaye de les atteindre en passant par l'URL
 	if ((!isset($_SESSION['login']))||($_SESSION['login']!="admin")){
 		header('Location: index.php&type=404');  
 		exit();
@@ -127,55 +128,81 @@
 				
 	}
 	
-	//on charge le fichier xml
-	$nbProduitsParcourus = 0 ; $nbProduitsAjoutes = 0 ; $nbRubriquesAjoutes = 0;
-	$xmlParametres = simplexml_load_file("parametres.xml");
-	
-	if (!sizeof($xmlParametres))
-		echo ("Le document est vide<br />");
-	
-	//cette variable pour le parcours des produits
-	$xmlListeProduits = $xmlParametres->ListeProduits;
-	//cette variable pour le parcours des rubriques
-	$xmlListeRubriques = $xmlParametres->ListeRubriques;
-	
-	$xmlProduits = $xmlListeProduits->children();
-	$xmlRubriques = $xmlListeRubriques->children();
-
-	//on parcourt les rubriques
-	if (!sizeof($xmlRubriques))
-		echo ("aucune rubrique<br />");	
-	else{
-		foreach ($xmlRubriques as $Rubrique){
-			AjouterRubriqueBase($Rubrique);
-		}
-	}
-	
-	//on parcourt les produits
-	if (!sizeof($xmlProduits))
-		echo ("aucun produit<br />");
-	else{
-		foreach ($xmlProduits as $Produit){
-			AjouterProduitBase($Produit);
-		}
-	}
-
-	//on détermine les rubrique de plus haut niveau dans la hierarchie et on leur attribue 0 comme id de rubrique supérieure dans la table rubrique_rubriquesup
-	$result=RequeteSQL("SELECT rubriques.rubrique_id FROM rubriques LEFT JOIN rubrique_rubriquesup ON rubriques.rubrique_id = rubrique_rubriquesup.rubrique_id WHERE rubrique_rubriquesup.rubrique_id IS NULL");
-	
-		
-	while ($row=mysql_fetch_assoc($result)){
-		$rubrique_id = $row["rubrique_id"];
-		RequeteSQL("INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');");
-	}
-	
-	echo "$nbProduitsParcourus produits ont été parcourus<br />";
-	echo "$nbProduitsAjoutes produits ont été ajoutés à la base<br />";
-	echo $nbProduitsParcourus-$nbProduitsAjoutes." produits n'ont pas pu être ajoutés car le description était incomplète<br />";
-	echo "$nbRubriquesAjoutes rubriques ont été ajoutés à la base";
 ?>
 
-<br /><br />
+<?php 
+	if(isset($_GET['xml'])){
+		$xml = $_GET['xml'];
+		if(file_exists($xml)){
+			if (preg_match("/.xml$/",$xml)){
+				//on charge le fichier xml
+				$nbProduitsParcourus = 0 ; $nbProduitsAjoutes = 0 ; $nbRubriquesAjoutes = 0;
+				$xmlParametres = simplexml_load_file("$xml");
+				
+				if (!sizeof($xmlParametres))
+					echo ("Le document est vide<br />");
+				
+				//cette variable pour le parcours des produits
+				$xmlListeProduits = $xmlParametres->ListeProduits;
+				//cette variable pour le parcours des rubriques
+				$xmlListeRubriques = $xmlParametres->ListeRubriques;
+				
+				$xmlProduits = $xmlListeProduits->children();
+				$xmlRubriques = $xmlListeRubriques->children();
+			
+				//on parcourt les rubriques
+				if (!sizeof($xmlRubriques))
+					echo ("aucune rubrique<br />");	
+				else{
+					foreach ($xmlRubriques as $Rubrique){
+						AjouterRubriqueBase($Rubrique);
+					}
+				}
+				
+				//on parcourt les produits
+				if (!sizeof($xmlProduits))
+					echo ("aucun produit<br />");
+				else{
+					foreach ($xmlProduits as $Produit){
+						AjouterProduitBase($Produit);
+					}
+				}
+			
+				//on détermine les rubrique de plus haut niveau dans la hierarchie et on leur attribue 0 comme id de rubrique supérieure dans la table rubrique_rubriquesup
+				$result=RequeteSQL("SELECT rubriques.rubrique_id FROM rubriques LEFT JOIN rubrique_rubriquesup ON rubriques.rubrique_id = rubrique_rubriquesup.rubrique_id WHERE rubrique_rubriquesup.rubrique_id IS NULL");
+				
+					
+				while ($row=mysql_fetch_assoc($result)){
+					$rubrique_id = $row["rubrique_id"];
+					RequeteSQL("INSERT INTO `geekproduct`.`rubrique_rubriquesup` VALUES ('$rubrique_id','0');");
+				}
+	
+				echo "$nbProduitsParcourus produits ont été parcourus<br />";
+				echo "$nbProduitsAjoutes produits ont été ajoutés à la base<br />";
+				echo $nbProduitsParcourus-$nbProduitsAjoutes." produits n'ont pas pu être ajoutés car le description était incomplète<br />";
+				echo "$nbRubriquesAjoutes rubriques ont été ajoutés à la base";
+			}
+			else
+				echo "<div class='alert'>Le fichier n'est pas dans le bon format</div>";
+		}
+		else
+			echo "<div class='alert'>Fichier introuvable</div>";
+?>
+<h4><a href='index.php?type=remplirBase'>Choisir un autre fichier</a></h4>
+<?php 
+	}
+	
+	if((!isset($_GET['xml']))||(!file_exists($_GET['xml']))){
+?>
+	<form method="get" action="index.php?type=remplirBase">
+		<input type='hidden' value="remplirBase" name="type">
+		<input type='file' name='xml' />
+		<input type='submit' value='Remplir la base' />
+	</form>
+
+<?php		
+	}
+?>
 <h4><a href="index.php?type=admin">Retour à la page d'administration</a></h4>
 
 <?php 

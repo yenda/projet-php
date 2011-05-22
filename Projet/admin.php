@@ -1,4 +1,5 @@
 <?php
+	//Les pages réservées à l'administrateur renvoient une erreur 404 lorsque quelqu'un essaye de les atteindre en passant par l'URL
 	if ((!isset($_SESSION['login']))||($_SESSION['login']!="admin")){
 		header('Location: index.php&type=404');  
 		exit();
@@ -14,7 +15,9 @@
 	
 	<ul>
 		<li><a href='index.php?type=initialiser'><b>Initialiser la base</b></a></li>
-		<li><a href='index.php?type=remplirBase'><b>Remplir la base</b></a></li>			
+		<li><a href='index.php?type=remplirBase'><b>Remplir la base</b></a></li>
+		<li><a href='index.php?type=ajoutProduit'><b>Ajouter un produit</b></a></li>
+		<li><a href='index.php?type=suppProduit'><b>Supprimer un produit</b></a></li>			
 	</ul>
 
 <?php 
