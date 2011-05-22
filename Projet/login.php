@@ -10,22 +10,21 @@ function VerifierExistenceLogin ($login)
 }
 
 ?>
-
+<?php if (0) { ?>	
 			<div id="login">
-						<form method="post" action="index.php?type=inscription">
-									<div class="ElemtMandat">Mon nom d'utilisateur</div>
+						<form method="post" action="index.php?type=login">
+									<div class="ElemtMandat">Login</div>
 									<div>
 										<input name="login" type="text" id="login" style="height:12px; font-size:10px; width:150px;" value="" maxlength="20" />
 									</div>
 
-									<div class="ElemtMandat">Mon mot de passe</div>
+									<div class="ElemtMandat">Mot de passe</div>
 									<div>
-										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" onkeyup="PasswdStrength(this);" onchange="PasswdStrength(this);" />
-										<input name="back" type="hidden" id="back" value="">
-										<input name="op" type="hidden" id="op" value="register" />
-										<input type="submit" value="Se connecter" style="margin-top:10px; float:middle;" />
-										<div id="PassMessage"></div>
+										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30";" />
 									</div>
-									
+									<div>
+										<input type="submit" value="Se connecter" style="margin-top:10px; float:middle;" />
+									</div>
 						</form>
 			</div>
+<?php }?>	

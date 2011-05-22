@@ -76,7 +76,8 @@
 		//Création de la table Panier_Client
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_produit` (
 					`panier_id` BIGINT NOT NULL, 
-					`produit_reference` BIGINT NOT NULL) ENGINE = MyISAM;");
+					`produits_Reference` BIGINT NOT NULL,
+					`produits_Quantite` INT NOT NULL) ENGINE = MyISAM;");
 		
 		$result = mysql_close($connect)
 			or die(mysql_error());
