@@ -45,8 +45,7 @@
 		while($row=mysql_fetch_assoc($result_produit)){
 			echo "<tr><td class='photo'><a href='index.php?type=produit&id=".$row["produits_Reference"]."'><img src='images/thumbs/".$row["produits_Photo"]."'></a></td>";
 			echo "<td><a href='index.php?type=produit&id=".$row["produits_Reference"]."'>".$row["produits_Libelle"]."</a></td>";
-			echo "<td class='prix'>".$row["produits_Prix"]." &euro;<a href='index.php?type=panier&action=ajout&amp;l=".$row['produits_Libelle']."&amp;q=1&amp;p=".$row['produits_Prix']."' onclick='window.open(this.href, '', 
-'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;'><img src='images/minipanier.jpg'></a></td></tr>";
+			echo "<td class='prix'>".$row["produits_Prix"]." &euro;<a href='index.php?type=panier&produit=".$row['produits_Reference']."'><img src='images/minipanier.jpg'></a></td></tr>";
 		}
 		echo "</table>";
 	}
