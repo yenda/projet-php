@@ -30,10 +30,18 @@
 <br /><h4>Produits</h4>
 <?php
 	//cherche si des produits appartiennent à la rubrique et les affiche
-	$result_produit = RequeteSQL("SELECT `produits_Reference`,`produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits`INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference`=`produit_rubrique`.`produit_reference` WHERE `rubrique_id`=".$_ENV['rubrique_id']);
+	if (isset($_GET['ordre'])&&($_GET['ordre']="prix"))
+		$ordre="`produits_Prix`";
+	else 
+		$ordre="`produits_Libelle`";
+		
+	$result_produit = RequeteSQL("SELECT `produits_Reference`,`produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits`INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference`=`produit_rubrique`.`produit_reference` WHERE `rubrique_id`=".$_ENV['rubrique_id']." ORDER BY ".$ordre);
 	if (mysql_fetch_assoc($result_produit)){
 		mysql_data_seek($result_produit,0);
-		echo "<table class = 'liste_produits'><tr><th></th><th>Nom</th><th>Prix TTC</th></tr>";
+		echo "<table class = 'liste_produits'>";
+		echo "<tr><th></th>";
+		echo "<th><a href='index.php?type=rubrique&id=".$_ENV['rubrique_id']."'>Nom</a></th>";
+		echo "<th><a href='index.php?type=rubrique&id=".$_ENV['rubrique_id']."&ordre=prix'>Prix TTC</a></th></tr>";
 		while($row=mysql_fetch_assoc($result_produit)){
 			echo "<tr><td class='photo'><a href='index.php?type=produit&id=".$row["produits_Reference"]."'><img src='images/thumbs/".$row["produits_Photo"]."'></a></td>";
 			echo "<td><a href='index.php?type=produit&id=".$row["produits_Reference"]."'>".$row["produits_Libelle"]."</a></td>";
