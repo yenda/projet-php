@@ -12,14 +12,28 @@
 		$menu .= "\n\t\t\t\t\t\t<li><a href='index.php?type=rubrique&id=$rubrique_id'><b>Rubrique ".$_ENV['rubrique_nom']."</b></a>";
 		$menu .= "\n\t\t\t\t\t\t<ul>";
 		while ($row=mysql_fetch_assoc($result)){
-			$menu .= "\n\t\t\t\t\t\t\t<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."&rubrique=$rubrique_id'>".$row["rubrique_nom"]."</a></li>";
+			$menu .= "\n\t\t\t\t\t\t\t<li><a href='index.php?type=rubrique&id=".$row["rubrique_id"]."'>".$row["rubrique_nom"]."</a></li>";
 		}
 		$menu .= "\n\t\t\t\t\t\t</ul></li>";
 		$menu .= "\n\t\t\t\t\t</ul>";
 		return $menu;
 	}
 	
-
+	//Un produit peut appartenir à plusieurs rubrique
+	//Cette fonction permet de chercher un chemin pour chacune d'elle
+	function CheminProduit($produit_id) {
+		$result = RequeteSQL("SELECT `rubrique_id` FROM `produit_rubrique` WHERE `produit_reference` =".$produit_id);
+		if (mysql_fetch_assoc($result)){
+			mysql_data_seek($result,0);
+			$chemin = "";
+			while($row = mysql_fetch_array($result)){
+				$chemin .= Chemin($row['rubrique_id']);
+			}
+		}
+		else
+			$chemin = Chemin(0);
+		return $chemin;
+	}
 	
 	function Chemin($rubrique_id){
 		if (($_ENV['type']=="rubrique")||($_ENV['type']=="produit")){
@@ -27,6 +41,8 @@
 				$chemin = "";			
 				$result = RequeteSQL("SELECT `rubriques` . * , `rubrique_rubriquesup`.`rubriquesup_id` FROM `rubriques` INNER JOIN `rubrique_rubriquesup` ON `rubriques`.`rubrique_id` = `rubrique_rubriquesup`.`rubrique_id` WHERE `rubriques`.`rubrique_id` =".$rubrique_id);
 				while($row = mysql_fetch_array($result)){
+					//Certaines rubriques appartiennent à plusieurs rubriques supérieures
+					//Dans ce cas on affiche tout les chemins possibles
 					$chemin .= Chemin($row['rubriquesup_id']);
 					$chemin .= ' > <a href="index.php?type=rubrique&id='.$rubrique_id.'">'.$row['rubrique_nom'].'</a>';
 				}

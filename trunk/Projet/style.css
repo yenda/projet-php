@@ -6,8 +6,26 @@
 	position:relative;
 }
 
+h1 {
+	text-align:center;
+	color: #213643;
+	font-size:20pt;
+}
+
 h2 {
 	color:#30C6C6;
+}
+
+h3 {
+	font-weigt:bold;
+	color: #213643;
+}
+
+h4 {
+	text-align:center;
+	color:#5892B5;
+	font-size:15pt;
+	
 }
 
 a {
@@ -21,11 +39,6 @@ a:hover, a.menu-special:hover {
 
 a.menu-special {
 	color:white;
-}
-
-h3.lien {
-	color:#30C6C6;
-	font-size:40pt;
 }
 
 
@@ -147,7 +160,18 @@ ol, ul {
 }
 
 .liste_produits {
-	width: 100%;	
+	width: 100%;
+	padding-left:20px;
+	padding-right:20px;	
+}
+
+.photo {
+	width:100px;
+}
+
+.prix {
+	width:75px;
+	text-align:center;
 }
 
 .liste_produits tr td{
@@ -155,7 +179,31 @@ ol, ul {
 	border-width:2px;
 	border-radius: 6px;
 	vertical-align: middle;
-	padding:2px;
+	padding:10px;
+}
+
+.produit {
+	width:100%;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.produit tr td{
+	border: 12px solid #ccc;
+	border-width:2px;
+	border-radius: 6px;
+	vertical-align: middle;
+	padding:5px;
+	
+}
+
+.produit th{
+	border: 12px solid #ccc;
+	border-width:2px;
+	border-radius: 6px;
+	vertical-align: middle;
+	padding:5px;
+	width:200px;
 }
 	
 #recherche {

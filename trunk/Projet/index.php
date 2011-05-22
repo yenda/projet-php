@@ -81,8 +81,11 @@
 		<div id="contenu">
 		
 			<?php
-				echo substr(Chemin($_ENV['rubrique_id']),6);
-				echo "<br /><br />";
+				if ($_ENV['type']=="produit")
+					$chemin = CheminProduit($_ENV['id']);
+				else
+					$chemin = Chemin($_ENV['rubrique_id']);
+				echo substr($chemin,6);
 				$contenu = "";
 				if ($_ENV['type']=="index")
 					$contenu ="accueil";
