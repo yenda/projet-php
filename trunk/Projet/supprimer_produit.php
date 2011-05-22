@@ -36,7 +36,11 @@
 ?>
 	<div class='alert'>Il n'y a pas de produit correspondant à cette référence</div>
 <?php 				
-	}}
+		}
+?>
+	<h4><a href="index.php?type=supprimer_produit">Supprimer un autre produit</a></h4>
+<?php 
+	}
 ?>	
 	<h4><a href="index.php?type=admin">Retour à la page d'administration</a></h4>
 <?php 

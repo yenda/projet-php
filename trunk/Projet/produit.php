@@ -18,13 +18,16 @@
 		echo "<h4><a href='index.php?type=panier&produit=".$produit['produits_Reference']."'>Ajouter au panier<br /><img src='images/minipanier.jpg'></a></h4>";
 		if ((isset($_SESSION['login']))&&($_SESSION['login']="admin")){
 	?>		
-	<h4><form method="get" action="index.php">
-		<input type='hidden' value="supprimer_produit" name="type" />
-		<?php echo "<input type='hidden' value='".$_ENV['id']."' name='ref' />\n";?>
-		<input type='submit' value='Supprimer le produit' />
-	</form></h4>
+	<h4>
+		<form method="get" action="index.php">
+			<input type='hidden' value="supprimer_produit" name="type" />
+			<?php echo "<input type='hidden' value='".$_ENV['id']."' name='ref' />\n";?>
+			<input type='submit' value='Supprimer le produit' />
+		</form>
+	</h4>
 <?php 
-	}}
+		}
+	}
 	else
 		include("404.php");
 ?>
