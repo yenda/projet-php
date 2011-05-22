@@ -11,12 +11,12 @@ if($action !== null)
    $erreur=true;
 
    //récuperation des variables en POST ou GET
-   $l = (isset($_POST['l'])? $_POST['l']:  (isset($_GET['l'])? $_GET['l']:null )) ;
+   $l = (isset($_POST['l'])? $_POST['produit']:  (isset($_GET['produit'])? $_GET['produit']:null )) ;
    $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;
    $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
 
    //Suppression des espaces verticaux
-   $l = preg_replace('#\v#', '',$l);
+   $l = preg_replace('#\v#', '',$produit);
    //On verifie que $p soit un float
    $p = floatval($p);
 
@@ -37,11 +37,11 @@ if($action !== null)
 if (!$erreur){
    switch($action){
       Case "ajout":
-         ajouterArticle($l,$q,$p);
+         ajouterArticle($produit,$q);
          break;
 
       Case "suppression":
-         supprimerArticle($l);
+         supprimerArticle($produit);
          break;
 
       Case "refresh" :

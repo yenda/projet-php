@@ -25,12 +25,17 @@ function ajouterArticle($produits_Reference,$produits_Quantite){
       else
       {
          //Sinon on ajoute le produit
+         $produits_Quantite=1;
          array_push( $_SESSION['panier']['produits_Reference'],$produits_Reference);
          array_push( $_SESSION['panier']['produits_Quantite'],$produits_Quantite);
       }
    }
    else
    echo "Un problème est survenu veuillez contacter l'administrateur du site.";
+}
+
+function libelleProduit (){
+	
 }
 
 function modifierQTeArticle($produits_Reference,$produits_Quantite){
