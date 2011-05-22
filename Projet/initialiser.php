@@ -1,5 +1,12 @@
 <?php
-	if ((!isset($_SESSION['login']))||($_SESSION['login']!="admin")){
+	//Ces lignes permettent lors de la première execution du script sur un serveur
+	//d'initialiser la base de donnée en lançant la page intialiser.php dans la barre d'URL
+	//Une fois que la base de donnée a été créée il n'est plus possible d'initialiser de cette manière, l'utilisateur
+	//doit alors avoir des droits d'administrateur
+	include_once ('fonctions.php');
+	$connect = mysql_connect("localhost","root","")
+		or die("erreur de connexion au serveur");
+	if ((mysql_select_db("geekproduct",$connect))&&((!isset($_SESSION['login']))||($_SESSION['login']!="admin"))){
 		header('Location: index.php&type=404');  
 		exit();
 	}
