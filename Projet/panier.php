@@ -1,6 +1,5 @@
 <?php
 include_once("fonctions_panier.php");
-session_start();
 
 $erreur = false;
 
@@ -23,10 +22,10 @@ if($action !== null)
    //On traite $q qui peut etre un entier simple ou un tableau d'entier
     
    if (is_array($q)){
-      $QteArticle = array();
+      $produits_Quantite = array();
       $i=0;
       foreach ($q as $contenu){
-         $QteArticle[$i++] = intval($contenu);
+         $produits_Quantite[$i++] = intval($contenu);
       }
    }
    else
@@ -45,9 +44,9 @@ if (!$erreur){
          break;
 
       Case "refresh" :
-         for ($i = 0 ; $i < count($QteArticle) ; $i++)
+         for ($i = 0 ; $i < count($produits_Quantite) ; $i++)
          {
-            modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
+            modifierQTeArticle($_SESSION['panier']['produits_Reference'][$i],round($produits_Quantite[$i]));
          }
          break;
 
@@ -66,7 +65,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	<tr>
 		<td>Libellé</td>
 		<td>Quantité</td>
-		<td>Prix Unitaire</td>
 		<td>Action</td>
 	</tr>
 
@@ -74,7 +72,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	<?php
 	if (creationPanier())
 	{
-	   $nbArticles=count($_SESSION['panier']['libelleProduit']);
+	   $nbArticles=count($_SESSION['panier']['produits_Reference']);
 	   if ($nbArticles <= 0)
 	   echo "<tr><td>Votre panier est vide </td></tr>";
 	   else
@@ -82,16 +80,16 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	      for ($i=0 ;$i < $nbArticles ; $i++)
 	      {
 	         echo "<tr>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</td>";
-	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></td>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-	         echo "<td><a href=\"".htmlspecialchars("index.php?type=panier&action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer</a></td>";
+	         echo "<td>".htmlspecialchars($_SESSION['panier']['produits_Reference'][$i])."</td>";
+	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['produits_Quantite'][$i])."\"/></td>";
+	         //echo "<td>".htmlspecialchars($_SESSION['panier']['produits_Prix'][$i])."</td>";
+	         echo "<td><a href=\"".htmlspecialchars("index.php?type=panier&action=suppression&l=".rawurlencode($_SESSION['panier']['produits_Reference'][$i]))."\">Supprimer</a></td>";
 	         echo "</tr>";
 	      }
 
 	      echo "<tr><td colspan=\"2\"> </td>";
 	      echo "<td colspan=\"2\">";
-	      echo "Total : ".MontantGlobal();
+	      //echo "Total : ".MontantGlobal();
 	      echo "</td></tr>";
 
 	      echo "<tr><td colspan=\"4\">";
