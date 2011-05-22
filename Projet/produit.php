@@ -9,6 +9,7 @@
 	echo "<h1>".$produit["produits_Libelle"]."<br /><br />";
 	echo "<img src='images/produits/".$produit["produits_Photo"]."'></h1>";
 	echo "<table class = 'produit'>";
+	echo "<tr><th>Prix</th><td>".$produit["produits_Prix"]."</td></tr>";
 	echo "<tr><th>Référence</th><td>".$produit["produits_Reference"]."</td></tr>";
 	echo "<tr><th>Description</th><td>".$produit["produits_Descriptif"]."</td></tr>";
 	echo "<tr><th>Unité de vente</th><td>".$produit["produits_UniteDeVente"]."</td></tr>";
