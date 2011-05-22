@@ -75,8 +75,11 @@ ol, ul {
 }
 
 #login {
-	width : 300 px;
-	margin:0 auto; 
+	text-align:center;
+	text-align:center;
+	color:#5892B5;
+	font-size:15pt;
+	
 }
 
 

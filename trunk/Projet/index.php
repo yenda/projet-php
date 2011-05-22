@@ -4,7 +4,6 @@
 
 	$connect = ConnexionDB();
 	$result = Recuperation_infos();
-	//session_start(); //démarre une session pour stocker les objets dans le panier
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,14 +52,13 @@
 	
 			<td rowspan="2">	
 						
-				<?php 
+			<?php 
 				if ($_ENV['type']!="panier"){
-						echo '
+			?>
 			<div class="panier">
 				<table cellpadding="0" cellspacing="0" class="tableaupanier">
 					<tr>
 						<td>
-							<form>
 							<strong>Panier</strong>
 						</td>								
 						<td>
@@ -68,12 +66,12 @@
 						</td>
 						
 						<td>									
-						<div align="right"><a href="index.php?type=panier">Afficher le panier <img src="images/fleche2.gif" class="fleche"></a></div>
-							</form>			
+							<div align="right"><a href="index.php?type=panier">Afficher le panier <img src="images/fleche2.gif" class="fleche"></a></div>	
 						</td>			
 					</tr>				
 				</table>
-			</div>';
+			</div>
+			<?php 
 				}	
 			?>
 		
@@ -94,10 +92,7 @@
 				$contenu .= ".php";
 				include ("$contenu");
 				
-			?>
-		
-			
-		
+			?>	
 		</div>
 		</td>
 		</tr>
