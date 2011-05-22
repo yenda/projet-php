@@ -20,18 +20,20 @@
 
 <table class = 'liste_photos'>
 <?php 
-	for($i=0; $i<5;$i++){
-		echo "<tr>";
-		for($j=0; $j<5;$j++){
-			$rand=mt_rand(1,$nbproduit-1);
-			$photo=mysql_result($resultproduit,$rand,"produits_Photo");
-			$reference=mysql_result($resultproduit,$rand,"produits_Reference");
-			$libelle=mysql_result($resultproduit,$rand,"produits_Libelle");
-			echo "<td>";
-			echo "<a href='index.php?type=produit&id=".$reference."'><img src='images/thumbs/$photo' title='$libelle'></a></td>";
-			echo "</td>";
+	if ($nbproduit>0){
+		for($i=0; $i<5;$i++){
+			echo "<tr>";
+			for($j=0; $j<5;$j++){
+				$rand=mt_rand(1,$nbproduit-1);
+				$photo=mysql_result($resultproduit,$rand,"produits_Photo");
+				$reference=mysql_result($resultproduit,$rand,"produits_Reference");
+				$libelle=mysql_result($resultproduit,$rand,"produits_Libelle");
+				echo "<td>";
+				echo "<a href='index.php?type=produit&id=".$reference."'><img src='images/thumbs/$photo' title='$libelle'></a></td>";
+				echo "</td>";
+			}
+			echo "</tr>";
 		}
-		echo "</tr>";
 	}
 ?>
 </table>

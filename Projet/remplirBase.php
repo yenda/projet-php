@@ -1,21 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>Remplir la base à partir d'un fichier XML</title>
-		<meta http-equiv="Content-Type" content="text/html ; charset=iso-8859-1"/>
-	</head>
-
-<body>
 <?php
-	include 'fonctions.php';
-	/**Améliorations a apporter :
-	*  Supprimer les echos et remplacer par du texte final de type :
-	*  X Produits et X catégories parcourus
-	*  X Produits et X Catégories ajoutés
-	*  Les produits X X et X et les catégories X, X et X sont incomplets et n'ont pas pu être ajoutés
-	*/
+	if ((!isset($_SESSION['login']))||($_SESSION['login']!="admin")){
+		header('Location: index.php&type=404');  
+		exit();
+	}
+	else{
+?>
 
+<br /><br />
+
+<?php
 
 	/*Cette fonction parcourt l'ensemble des attributs d'un produit et les place dans des variables éponymes
 	 * Une fois la collecte terminée il effectue une requête INSERT INTO pou*r ajouter le produit à  la base
@@ -148,8 +141,6 @@
 	
 	$xmlProduits = $xmlListeProduits->children();
 	$xmlRubriques = $xmlListeRubriques->children();
-	
-	$connect = ConnexionDB();
 
 	//on parcourt les rubriques
 	if (!sizeof($xmlRubriques))
@@ -182,12 +173,11 @@
 	echo "$nbProduitsAjoutes produits ont été ajoutés à la base<br />";
 	echo $nbProduitsParcourus-$nbProduitsAjoutes." produits n'ont pas pu être ajoutés car le description était incomplète<br />";
 	echo "$nbRubriquesAjoutes rubriques ont été ajoutés à la base";
-	
-	DeconnexionDB($connect);
-
 ?>
 
+<br /><br />
+<h4><a href="index.php?type=admin">Retour à la page d'administration</a></h4>
 
-
-</body>
-</html>
+<?php 
+	}
+?>
