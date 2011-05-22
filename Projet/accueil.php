@@ -16,7 +16,7 @@
 		
 	echo "Nous vous proposons de naviguer parmi nos <b>$nbrubrique rubrique$s</b> qui contien$nent un total de <b>$nbproduit produit$ss</b> à découvrir !";
 ?>
-<p>Pour commencer à naviguer dans notre boutique choisissez une rubrique dans le menu latéral où cliquer sur la photographie du produit qui vous intéresse ci dessous</p>
+<p>Pour commencer à naviguer dans notre boutique choisissez une rubrique dans le menu latéral où cliquez sur la photographie du produit qui vous intéresse ci dessous</p>
 
 <table class = 'liste_produits'>
 <?php 
