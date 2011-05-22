@@ -35,14 +35,13 @@ function ajouterArticle($libelleProduit,$qteProduit,$prixProduit){
 
 function supprimerArticle($libelleProduit){
    //Si le panier existe
-   if (creationPanier() && !isVerrouille())
+   if (creationPanier())
    {
       //Nous allons passer par un panier temporaire
       $tmp=array();
       $tmp['libelleProduit'] = array();
       $tmp['qteProduit'] = array();
       $tmp['prixProduit'] = array();
-      $tmp['verrou'] = $_SESSION['panier']['verrou'];
 
       for($i = 0; $i < count($_SESSION['panier']['libelleProduit']); $i++)
       {
