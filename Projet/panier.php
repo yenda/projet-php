@@ -1,6 +1,5 @@
 <?php
 include_once("fonctions_panier.php");
-session_start();
 
 $erreur = false;
 
@@ -11,12 +10,12 @@ if($action !== null)
    $erreur=true;
 
    //récuperation des variables en POST ou GET
-   $l = (isset($_POST['l'])? $_POST['produit']:  (isset($_GET['produit'])? $_GET['produit']:null )) ;
+   $l = (isset($_POST['produit'])? $_POST['produit']:  (isset($_GET['produit'])? $_GET['produit']:null )) ;
    $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;
    $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
 
    //Suppression des espaces verticaux
-   $l = preg_replace('#\v#', '',$produit);
+   $l = preg_replace('#\v#', '',$l);
    //On verifie que $p soit un float
    $p = floatval($p);
 
