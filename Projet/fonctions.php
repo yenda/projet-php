@@ -42,16 +42,19 @@
 		else
 			$_ENV['id'] = 0;
 		
-		//On récupère l'id de la rubrique si on est sur une page rubrique pour l'affichage du menu
-		//sinon on met 0
-		if ($_ENV['type']=="rubrique")
+		//On récupère l'id et le nom de la rubrique si on est sur une page rubrique pour l'affichage du menu
+		//Si elle n'existe pas où si on est sur une page d'un autre type l'id est 0 et le nom de la rubrique "principale"
+		//Ces variables sont importantes pour la construction du menu latéral
+		if ($_ENV['type']=="rubrique"){
 			$_ENV['rubrique_id'] = $_ENV['id'];
-		else
-			$_ENV['rubrique_id'] = 0;
-			
-		$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` = ".$_ENV['rubrique_id']);
-		if ($row=mysql_fetch_assoc($result))
-			$_ENV['rubrique_nom']=$row["rubrique_nom"];
+			$result = RequeteSQL("SELECT * FROM `rubriques` WHERE `rubrique_id` = ".$_ENV['rubrique_id']);
+				if ($row=mysql_fetch_assoc($result))
+					$_ENV['rubrique_nom']=$row["rubrique_nom"];
+				else{
+					$_ENV['rubrique_id'] = 0;
+					$_ENV['rubrique_nom']="principale";
+				}
+		}
 		else{
 			$_ENV['rubrique_id'] = 0;
 			$_ENV['rubrique_nom']="principale";
