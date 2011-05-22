@@ -83,7 +83,7 @@ if (isset($_POST['login']))
 
 									<div class="ElemtMandat">Mon mot de passe</div>
 									<div>
-										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" onkeyup="PasswdStrength(this);" onchange="PasswdStrength(this);" />
+										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" />
 										<div id="PassMessage"></div>
 									</div>
 									<div class="ElemtMandat">Confirmation du mot de passe</div>
