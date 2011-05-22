@@ -95,8 +95,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	      echo "</td></tr>";
 
 	      echo "<tr><td colspan=\"4\">";
-	      echo "<input type=\"submit\" value=\"Rafraichir\" />";
-	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\" />";
+	      echo "<a href=\"index.php?type=panier\">Rafraichir</a>";
 
 	      echo "</td></tr>";
 	   }
