@@ -3,9 +3,10 @@
 	include_once 'fonctions.php';
 	include_once 'fonctions_menu.php';
 	include_once 'fonctions_panier.php';
-	
-
-	$connect = ConnexionDB();
+	$connect = mysql_connect("localhost","root","");
+	if (!mysql_select_db("geekproduct",$connect)){
+		include ("initialiser.php");
+	}	
 	$result = Recuperation_infos();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
