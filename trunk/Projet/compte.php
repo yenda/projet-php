@@ -5,11 +5,11 @@
 	}
 	else{
 
-$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$_SESSION['login']'");
-$sql=mysql_fetch_assoc($result);
-while ($row = mysql_fetch_assoc($result)) {
-	echo
-			'<form method="post" action="index.php?type=compte">
+$result = RequeteSQL("SELECT * FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
+$row=mysql_fetch_assoc($result);
+?>
+
+<form method="post" action="index.php?type=compte">
 			<table style="margin-left:10px;" width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="50%" style="vertical-align:top;">
@@ -32,14 +32,14 @@ while ($row = mysql_fetch_assoc($result)) {
 										<input name="mail" type="text" id="mail" style="height:12px; font-size:10px; width:150px;" value="" /> 									
 									</div>
 									<div class="ElemtFac">Date de naissance</div>
-									<select name="dnjour" id="dnjour">
-										<?php
+									<select name="dnjour" id="dnjour">';
+									<?php
 											$jours = "<option></option>\n";
 											for($i=1;$i<=31;$i++){
 												$jours .= "\t\t\t\t\t\t\t\t\t\t<option value='".$i."'>".$i."</option>\n";
 											}
-											echo $jours;
-										?>	
+											echo $jours;	
+									?>	
 									</select>
 									
 									<select name="dnmois" id="dnmois">
@@ -149,9 +149,6 @@ while ($row = mysql_fetch_assoc($result)) {
 					</td>
 				</tr>
 			</table>
+</form>
 
-		</form>
-		
- 
-	}
-?>
+<?php }?>
