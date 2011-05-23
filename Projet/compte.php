@@ -1,5 +1,5 @@
 <?php
-	if ((!isset($_SESSION['login']))&&($_SESSION['login']!="admin")){
+	if (!isset($_SESSION['login'])){
 		header('Location: index.php&type=404');  
 		exit();
 	}

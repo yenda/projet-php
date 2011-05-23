@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <?php echo "<h1>Rubrique ".$_ENV['rubrique_nom']."</h1>"?>
 
 <h4>Rubriques</h4>

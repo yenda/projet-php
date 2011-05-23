@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <?php 
 	//On recherche les informations qui concernent le produit
 	$result_produit = RequeteSQL("SELECT * FROM `produits` WHERE `produits_reference`=".$_ENV['id']);

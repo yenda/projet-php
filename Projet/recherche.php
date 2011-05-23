@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <?php 
 include_once 'fonctions.php';
  

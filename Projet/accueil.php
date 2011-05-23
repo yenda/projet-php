@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <h1>Bienvenue sur notre site</h1>
 <?php 
 	$resultproduit= RequeteSQL("SELECT * FROM `produits`");

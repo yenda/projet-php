@@ -9,7 +9,6 @@
 		header('Location: index.php&type=404');  
 		exit();
 	}
-	else{
 ?>
 <h1>Initialisation de la base</h1>
 <?php
@@ -89,7 +88,6 @@
 	<h4><a href="index.php?type=admin">Retour à la page d'administration</a></h4>
 
 <?php 
-	}
 	if (!isset($_SESSION['login'])){
 		header('Location: index.php?type='.$_GET["type"].'');  
 		exit();

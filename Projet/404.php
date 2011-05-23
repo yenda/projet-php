@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <div align = "center">
 	Cette page n'existe pas !
 	<br /><br />
