@@ -1,104 +1,85 @@
 <?php
-include_once("fonctions_panier.php");
-
-$erreur = false;
-
-$action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
-if($action !== null)
-{
-   if(!in_array($action,array('ajout', 'suppression', 'refresh')))
-   $erreur=true;
-
-   //récuperation des variables en POST ou GET
-   $l = (isset($_POST['produit'])? $_POST['produit']:  (isset($_GET['produit'])? $_GET['produit']:null )) ;
-   $p = (isset($_POST['p'])? $_POST['p']:  (isset($_GET['p'])? $_GET['p']:null )) ;
-   $q = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
-
-   //Suppression des espaces verticaux
-   $l = preg_replace('#\v#', '',$l);
-   //On verifie que $p soit un float
-   $p = floatval($p);
-
-   //On traite $q qui peut etre un entier simple ou un tableau d'entier
-    
-   if (is_array($q)){
-      $produits_Quantite = array();
-      $i=0;
-      foreach ($q as $contenu){
-         $produits_Quantite[$i++] = intval($contenu);
-      }
-   }
-   else
-   $q = intval($q);
-    
+if(isset($_POST['action'])){
+	if ($_POST['action']=="effacer"){
+		supprimePanier();
+		creationPanier();
+	}
+	elseif ($_POST['action']=="supprimer")
+		supprimerArticle($_POST['produit']);
 }
 
-if (!$erreur){
-   switch($action){
-      Case "ajout":
-         ajouterArticle($produit,$q);
-         break;
+if(isset($_GET['produit'])){ 
+   //récuperation de l'id du produit à ajouter
+   $produit = intval($_GET['produit']);
 
-      Case "suppression":
-         supprimerArticle($produit);
-         break;
-
-      Case "refresh" :
-         for ($i = 0 ; $i < count($produits_Quantite) ; $i++)
-         {
-            modifierQTeArticle($_SESSION['panier']['produits_Reference'][$i],round($produits_Quantite[$i]));
-         }
-         break;
-
-      Default:
-         break;
-   }
+   $result = RequeteSQL("SELECT * FROM `produits` WHERE `produits_Reference` = ".$produit);
+		if ($row=mysql_fetch_assoc($result)){
+			ajouterArticle($produit);
+			echo "<br /><div class='alert'>".$row['produits_Libelle']." a été ajouté à votre panier</div>";
+		}
+		else{
+			echo "<div class='alert'><br />Le produit que vous essayez d'ajouter n'existe pas</div>";
+		}
 }
-
-echo '<?xml version="1.0" encoding="utf-8"?>';?>
-
-<form method="post" action="panier.php">
-<table style="width: 400px" border="1">
-	<tr>
-		<td colspan="4">Votre panier</td>
-	</tr>
-	<tr>
-		<td>Libellé</td>
-		<td>Quantité</td>
-		<td>Action</td>
-	</tr>
-
-
-	<?php
-	if (creationPanier())
-	{
-	   $nbArticles=count($_SESSION['panier']['produits_Reference']);
-	   if ($nbArticles <= 0)
-	   echo "<tr><td>Votre panier est vide </td></tr>";
-	   else
-	   {
-	      for ($i=0 ;$i < $nbArticles ; $i++)
-	      {
-	         echo "<tr>";
-	         echo "<td>".htmlspecialchars($_SESSION['panier']['produits_Reference'][$i])."</td>";
-	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['produits_Quantite'][$i])."\"/></td>";
-	         //echo "<td>".htmlspecialchars($_SESSION['panier']['produits_Prix'][$i])."</td>";
-	         echo "<td><a href=\"".htmlspecialchars("index.php?type=panier&action=suppression&l=".rawurlencode($_SESSION['panier']['produits_Reference'][$i]))."\">Supprimer</a></td>";
-	         echo "</tr>";
-	      }
-
-	      echo "<tr><td colspan=\"2\"> </td>";
-	      echo "<td colspan=\"2\">";
-	      //echo "Total : ".MontantGlobal();
-	      echo "</td></tr>";
-
-	      echo "<tr><td colspan=\"4\">";
-	      echo "<input type=\"submit\" value=\"Rafraichir\"/>";
-	      echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-
-	      echo "</td></tr>";
-	   }
-	}	
-	?>
+	$nbArticles=count($_SESSION['panier']['produits_Reference']);
+	if ($nbArticles <= 0)
+		echo "<br /><br />Votre panier est vide";
+	else{
+?>
+	<h1>Votre panier</h1>
+	<table class="caddie">
+		<tr>
+			<th>Libellé</th>
+			<th>Prix à l'unité</th>
+			<th>Quantité</th>
+			<th>Action</th>
+		</tr>
+<?php 
+      	$_SESSION['panier']['total'] = 0;
+      	$_SESSION['panier']['quant'] = 0;
+		$requete = "SELECT * FROM `produits` WHERE 0";
+		foreach($_SESSION['panier']['produits_Reference'] as $reference){
+			$requete .= "|| `produits_Reference` = ".$reference;			
+		}
+		$result=RequeteSQL($requete);
+		$i=$nbArticles;
+		while($row=mysql_fetch_assoc($result)){
+			echo "<tr>";
+			echo "<td><a href='index.php?type=produit&id=".$row['produits_Reference']."'>".$row['produits_Libelle']."</a></td>";
+			echo "<td>".$row['produits_Prix']." &euro;</td>";
+			$i = array_search($row['produits_Reference'],  $_SESSION['panier']['produits_Reference']);
+			echo "<td>".$_SESSION['panier']['produits_Quantite'][$i]."</td>";
+			$_SESSION['panier']['quant'] += $_SESSION['panier']['produits_Quantite'][$i];
+			$_SESSION['panier']['total'] += $row['produits_Prix']*$_SESSION['panier']['produits_Quantite'][$i];
+			echo '<form method="post" action="index.php?type=panier">';
+			echo "<td><input type='submit' value='Supprimer produit'/><input type='hidden' name='action' value='supprimer'/><input type='hidden' name='produit' value='$i'/></td>";
+			echo "</form>";
+			echo "</tr>";
+		}
+?>
+		<tr>
+			<td>
+			</td>
+			<td>
+				Total : <?php echo $_SESSION['panier']['total'];?> &euro;
+			</td>
+			<td>
+				<?php
+					$s="";
+					if ($_SESSION['panier']['quant']>1)
+						$s="s"; 
+					echo $_SESSION['panier']['quant']." produit$s";?> 
+			</td>
+			<td>
+				<form method="post" action="index.php?type=panier">
+					<input type="submit" value="Effacer panier"/>
+					<input type="hidden" name="action" value="effacer"/>
+				</form>
+			</td>
+		</tr>
+		
 </table>
 </form>
+<?php 
+	}	
+?>

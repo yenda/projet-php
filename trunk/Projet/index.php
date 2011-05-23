@@ -1,6 +1,7 @@
 <?php 
 	include_once 'fonctions.php';
 	include_once 'fonctions_menu.php';
+	include_once 'fonctions_panier.php';
 	
 	session_start();
 
@@ -74,7 +75,7 @@
 							<strong>Panier</strong>
 						</td>								
 						<td>
-							<div align="right">Total 0.00€</div>
+							<div align="right"><?php echo "Total panier : ".$_SESSION['panier']['total']." &euro;";?></div>
 						</td>
 						
 						<td>									

@@ -225,6 +225,30 @@ ol, ul {
 	padding:5px;
 	width:200px;
 }
+
+.caddie {
+	width:100%;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.caddie tr td{
+	border: 12px solid #ccc;
+	border-width:2px;
+	border-radius: 6px;
+	vertical-align: middle;
+	text-align: center;
+	padding:5px;	
+}
+
+.caddie th{
+	border: 12px solid #ccc;
+	border-width:2px;
+	border-radius: 6px;
+	vertical-align: middle;
+	padding:5px;
+	width:200px;
+}
 	
 #recherche {
 	text-align:center;
