@@ -1,9 +1,9 @@
 <?php 
+	session_start();
 	include_once 'fonctions.php';
 	include_once 'fonctions_menu.php';
 	include_once 'fonctions_panier.php';
 	
-	session_start();
 
 	$connect = ConnexionDB();
 	$result = Recuperation_infos();
