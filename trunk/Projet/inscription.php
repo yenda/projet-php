@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <?php 
 function VerifierAdresseMail($adresse) 
 { 

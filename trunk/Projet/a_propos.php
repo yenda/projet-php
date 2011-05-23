@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <h1>Informations légales</h1><dl> </dl><p>La conception, la forme, le titre et l'ensemble des éléments contenus sur le site www.GeekProducts.fr sont protégés à l'échelle mondiale au titre du droit d'auteur et des marques.</p>
 <p><b>Droits d'auteur</b></p>
 <p>Le titre, la conception, la forme du site www.GeekProducts.fr mais aussi son contenu tels que les commentaires, éditoriaux, illustrations et images originales et leur organisation, ainsi que toute compilation de logiciels, code source fondamental, logiciel (y compris les applets), et autres éléments contenus sur le site www.GeekProducts.fr sont la propriété de GeekProducts.com, Inc., et de ses sociétés affiliées, dont GeekProducts.fr.</p>

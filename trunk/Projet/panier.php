@@ -1,4 +1,8 @@
 <?php
+	include ("redirection.php");
+?>
+
+<?php
 if(isset($_POST['action'])){
 	if ($_POST['action']=="effacer"){
 		supprimePanier();

@@ -1,4 +1,8 @@
 <?php
+	include ("redirection.php");
+?>
+
+<?php
 function VerifierExistenceLogin ($login)
 {
 	$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$login'");

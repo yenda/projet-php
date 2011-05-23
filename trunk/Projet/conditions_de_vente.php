@@ -1,3 +1,7 @@
+<?php
+	include ("redirection.php");
+?>
+
 <h1>Conditions générales de vente</h1>
 <p><i>Dernière mise à jour le 13 mai 2011<br>
 <p><b>Article&nbsp;1&nbsp;: Préambule</b></p>
