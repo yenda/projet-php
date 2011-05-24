@@ -1,6 +1,6 @@
 <?php
 	//Les pages réservées à l'administrateur renvoient une erreur 404 lorsque quelqu'un essaye de les atteindre en passant par l'URL
-	if ((!isset($_ENV['type']))||(!isset($_SESSION['login']))&&($_SESSION['login']!="admin")){
+	if ((!isset($_ENV['type']))||(!isset($_SESSION['login']))||($_SESSION['login']!="admin")){
 		header('Location: index.php&type=404');  
 		exit();
 	}
@@ -18,7 +18,8 @@
 		<th>Nom du produit</th>
 		<th>Quantité</th>
 	</tr>
-<?php 		
+<?php 	
+		//On affiche les produits qui sont dans la commande
 		while ($produit=mysql_fetch_assoc($produits)){
 			echo "<tr>";
 			echo "<td>".$produit["produits_Reference"]."</td>";
@@ -30,6 +31,7 @@
 </table>
 <h4>Information commande</h4>
 <?php 
+	//On affiche les informations qui concernent le panier
 	$panier=RequeteSQL("SELECT * FROM `panier_client` WHERE `panier_id`=$panier");
 	echo "<b>ID du client :</b> ".mysql_result($panier,0,'client_login')."<br /><br />";
 	echo "<b>Montant total de la commande :</b> ".mysql_result($panier,0,'total')." &euro;";
@@ -56,6 +58,7 @@
 
 	<h1>Visualisation des commandes</h1>
 <?php 
+		//On récupère tout les paniers et on les classe par date
 		$paniers = RequeteSQL("SELECT `client_login`,`panier_id`,`total`,`date` FROM `panier_client` ORDER BY `date` DESC");
 		if (mysql_fetch_assoc($paniers)){
 			mysql_data_seek($paniers,0);
