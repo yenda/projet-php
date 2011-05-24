@@ -14,7 +14,7 @@
 		echo "<br /><br />Il n'y a aucun produit dans le panier";
 	else{
 ?>
-	<h1>Votre commande</h1>
+	<h1>Votre commande a été validée !</h1>
 	<table class="caddie">
 		<tr>
 			<th>Libellé</th>
@@ -57,19 +57,39 @@
 <form method="post" action="index.php?type=validation_commande">
 <h3>Type de livraison</h3>
 <?php
-	echo $_POST['livraison'];
+	if ($_POST['livraison']=="colissimo"){
+		$livraison = "Colissimo";
+		$total = $_SESSION['panier']['total']+10;
+	}
+	else{
+		$livraison = "Chronopost";
+		$total = $_SESSION['panier']['total']+20;
+	}
+	echo $livraison;
 ?>
 <h3>Adresse de livraison</h3>
 <?php
+	echo $_POST['nom'];
+	echo "<br />";
+	echo $_POST['prenom'];
+	echo "<br />";
 	echo $_POST['adresse'];
+	echo "<br />";
+	echo $_POST['codepostal'];
+	echo "<br />";
+	echo $_POST['ville'];
 ?>
 		
-<h3>Mode de paiement</h3>
+<h3>Numéro de carte bancaire</h3>
 <?php 
 	echo $_POST['carte'];
 ?>
-	<input type="radio" name="carte" value="" id="carte2" /> <label for="carte1">Choisir carte</label><br />
 </form>
+
+<h3>Total de la commande</h3>
+<?php
+	echo $total." &euro;";
+?>
 
 <h1>
 	<form method="post" action="index.php">

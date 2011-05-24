@@ -5,6 +5,7 @@
 <?php 
 	//On vérifie que le client est loggué avant de le laisser finaliser sa commande
 	if (isset($_SESSION['login'])){
+		//
 ?>
 
 <?php	
@@ -60,27 +61,27 @@
        <input type="radio" name="livraison" value="chronopost" id="chronopost" /> <label for="chronopost">Livraison par Chronopost (+ 20 &euro;)</label><br />
 <h3>Choisissez l'adresse de livraison</h3>
 <?php
-	$infos=RequeteSQL("SELECT `client_adresse`,`client_codepostal`,`client_ville`,`client_cartebancaire` FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
-	if($adresse=mysql_result($infos,0,"client_adresse")){
-		$adresse.=" ";
-		$adresse.=mysql_result($infos,0,"client_codepostal");
-		$adresse.=" ";
-		$adresse.=mysql_result($infos,0,"client_ville");
-	}
-		echo '<input type="radio" name="adresse" value="'.$adresse.'" id="adresse1" /> <label for="adresse1">'.$adresse.'</label><br />';
-?>	
-	<input type="radio" name="adresse" value="" id="adresse2" /> <label for="adresse2">Choisir adresse</label><br />
-		
+	$infos=RequeteSQL("SELECT `client_adresse`,`client_nom`,`client_prenom`,`client_codepostal`,`client_ville`,`client_cartebancaire` FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
+
+	echo '<label for="nom">Nom</label><br />';
+	echo '<input type="text" name="nom" value="'.mysql_result($infos,0,"client_nom").'" style="width:300px;" /><br />';
+	echo '<label for="prenom">Prénom</label><br />';
+	echo '<input type="text" name="prenom" value="'.mysql_result($infos,0,"client_prenom").'" style="width:300px;" /><br />';
+	echo '<label for="adresse">Adresse</label><br />';
+	echo '<input type="text" name="adresse" value="'.mysql_result($infos,0,"client_adresse").'" style="width:300px;" /><br />';
+	echo '<label for="codepostal">Code Postal</label><br />';
+	echo '<input type="text" name="codepostal" value="'.mysql_result($infos,0,"client_codepostal").'" style="width:300px;" /><br />';
+	echo '<label for="ville">Ville</label><br />';
+	echo '<input type="text" name="ville" value="'.mysql_result($infos,0,"client_ville").'" style="width:300px;" /><br />';
+	
+?>			
 <h3>Choisissez le type de paiement</h3>
 <?php 
 	if($carte=mysql_result($infos,0,"client_cartebancaire"))
-		echo '<input type="radio" name="carte" value="'.$carte.'" id="carte1" /> <label for="carte1">'.$carte.'</label><br />';
+		echo '<input type="text" name="carte" value="'.$carte.'" style="width:300px;" />';
 ?>
-	<input type="radio" name="carte" value="" id="carte2" /> <label for="carte1">Choisir carte</label><br />
-</form>
-
 <h1>
-	
+	<input type='submit' value='Valider la commande'/>
 </form>
 </h1>
 <?php 
