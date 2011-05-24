@@ -5,7 +5,10 @@
 <?php 
 	//On vérifie que le client est loggué avant de le laisser finaliser sa commande
 	if (isset($_SESSION['login'])){
-		
+		$nbArticles=count($_SESSION['panier']['produits_Reference']);
+		if ($nbArticles <= 0)
+			echo "<br /><br />Votre panier est vide";
+	else{	
 ?>
 
 	<h1>Votre commande</h1>
@@ -78,7 +81,7 @@
 </form>
 </h1>
 <?php 
-	}
+	}}
 	//Si le client n'est pas logué
 	else{
 ?>

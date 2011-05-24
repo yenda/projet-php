@@ -3,6 +3,10 @@
 ?>
 
 <?php 
+$nbArticles=count($_SESSION['panier']['produits_Reference']);
+if ($nbArticles <= 0)
+	echo "<br /><br />Votre panier est vide";
+else{
 //On vérifie que tout les champs on bien été remplis correctement par l'utilisateur
 $validation=false;
 echo "<div class='alert'>";
@@ -117,9 +121,9 @@ if ($validation){
 	$ville = mysql_real_escape_string($_POST['ville']);
 	$carte = mysql_real_escape_string($_POST['carte']);
 	$livraison = mysql_real_escape_string($_POST['livraison']);
-	$Date = date("Y-m-d");
+	$date = date("Y-m-d");
 	//On ajoute le panier à la base
-	RequeteSQL("INSERT INTO `geekproduct`.`panier_client` VALUES (NULL, '$total', '$login', '$nom', '$prenom', '$adresse', '$codepostal', '$ville', '$carte', '$livraison','$sate');");
+	RequeteSQL("INSERT INTO `geekproduct`.`panier_client` VALUES (NULL, '$total', '$login', '$nom', '$prenom', '$adresse', '$codepostal', '$ville', '$carte', '$livraison','$date');");
 	$id=mysql_insert_id();
 	foreach ($_SESSION['panier']['produits_Reference'] as $i=>$produit){
 		$produit;
@@ -142,5 +146,5 @@ else{
 ?>
 		<h4><a href="index.php?type=finalisation_commande">Retourner à la confirmation de la commande</a><br /></h4>
 <?php
-}
+}}
 ?>
