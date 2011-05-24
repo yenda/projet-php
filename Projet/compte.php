@@ -4,19 +4,72 @@
 		exit();
 	}
 	else{
+		
+function VerifierAdresseMail($adresse) 
+{ 
+   $Syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#'; 
+   if(preg_match($Syntaxe,$adresse)) 
+      return true; 
+   else 
+     return false; 
+}
 
+$modification=false;
 $result = RequeteSQL("SELECT * FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
-
-while ($row = mysql_fetch_assoc($result)) { 
-	$mail=$row['client_mail'];
-	$nom=$row['client_nom'];
-	$prenom=$row['client_prenom'];
-	$adresse=$row['client_adresse'];
-	$cp=$row['client_codepostal'];
-	$ville=$row['client_ville'];
-	$tel=$row['client_telephone'];
-	$cb=$row['client_cartebancaire'];
-	$date=$row['client_datenaissance'];
+if (isset($_POST['pass']))
+{
+		echo"<div class='alert'>";
+		if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
+			echo "Le mot de passe n'est pas correctement saisi";
+		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
+			echo "Le champ adresse e-mail n'est pas correctement rempli";
+		else if (empty($_POST['telmain']))
+			echo "Le champ numéro de téléphone n'est pas correctement rempli";
+		else if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
+			echo "Le champ nom n'est pas correctement rempli";
+		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
+			echo "Le champ prenom n'est pas correctement rempli";
+		else if((empty($_POST['adresse'])) || (!is_string($_POST['adresse'])))
+			echo "Le champ adresse n'est pas correctement rempli";
+		else if((empty($_POST['cp'])) || (!is_numeric($_POST['cp'])))
+			echo "Le champ code postal n'est pas correctement rempli";
+		else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
+			echo "Le champ ville n'est pas correctement rempli";
+		else if (!isset($_POST['verif']))
+			echo "Vous devez cocher la case pour certifier l'exactitude des renseignements fournis";
+		else 
+		{
+			$pass=$_POST['pass'];
+			$mail=$_POST['mail'];
+			$telmain=$_POST['telmain'];
+			$nom=$_POST['nom'];
+			$prenom=$_POST['prenom'];
+			$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
+			$adresse=$_POST['adresse'];
+			$cp=$_POST['cp'];
+			$ville=$_POST['ville'];
+			$cb=$_POST['cartebancaire'];
+			$modification=true;
+			
+			//Ajout de l'utilisateur à la base de données
+			$result=RequeteSQL("UPDATE `geekproduct`.clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', clent_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login="$_POST['login']";");
+			echo "\nLa modification a été effectuée";
+		}
+		echo"</div>";
+	}
+}
+	if($modification==false)
+	{
+		while ($row = mysql_fetch_assoc($result)) { 
+			$mail=$row['client_mail'];
+			$nom=$row['client_nom'];
+			$prenom=$row['client_prenom'];
+			$adresse=$row['client_adresse'];
+			$cp=$row['client_codepostal'];
+			$ville=$row['client_ville'];
+			$tel=$row['client_telephone'];
+			$cb=$row['client_cartebancaire'];
+			$date=$row['client_datenaissance'];
 ?>
 
 <form method="post" action="index.php?type=compte">
