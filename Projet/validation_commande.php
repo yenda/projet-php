@@ -117,8 +117,9 @@ if ($validation){
 	$ville = mysql_real_escape_string($_POST['ville']);
 	$carte = mysql_real_escape_string($_POST['carte']);
 	$livraison = mysql_real_escape_string($_POST['livraison']);
+	$Date = date("Y-m-d");
 	//On ajoute le panier à la base
-	RequeteSQL("INSERT INTO `geekproduct`.`panier_client` VALUES (NULL, '$total', '$login', '$nom', '$prenom', '$adresse', '$codepostal', '$ville', '$carte', '$livraison');");
+	RequeteSQL("INSERT INTO `geekproduct`.`panier_client` VALUES (NULL, '$total', '$login', '$nom', '$prenom', '$adresse', '$codepostal', '$ville', '$carte', '$livraison','$sate');");
 	$id=mysql_insert_id();
 	foreach ($_SESSION['panier']['produits_Reference'] as $i=>$produit){
 		$produit;

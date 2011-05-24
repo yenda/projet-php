@@ -14,6 +14,7 @@
 	<br /><br />
 	
 	<ul>
+		<li><a href='index.php?type=visualiser_commandes'><b>Visualiser les commandes des clients</b></a></li>
 		<li><a href='index.php?type=initialiser'><b>Initialiser la base</b></a></li>
 		<li><a href='index.php?type=remplir_base'><b>Remplir la base</b></a></li>
 		<li><a href='index.php?type=supprimer_produit'><b>Supprimer un produit</b></a></li>			
