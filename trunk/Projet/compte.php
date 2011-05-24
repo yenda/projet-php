@@ -99,7 +99,7 @@ if (isset($_POST['pass']))
 									<div class="ElemtFac">Date de naissance</div>
 									<select name="dnjour" id="dnjour">
 									<?php
-									$jours = "option value='".$jour[2]."' selected></option>";
+									$jours = "<option value='".$jour[2]."' selected>".$jour[2]."</option>";
 											for($i=1;$i<=31;$i++){
 												$jours .= "\t\t\t\t\t\t\t\t\t\t<option value='".$i."'>".$i."</option>\n";
 											}
@@ -108,7 +108,33 @@ if (isset($_POST['pass']))
 									</select>
 									
 									<select name="dnmois" id="dnmois">
-										<option></option>
+									<?php
+									$mois = $jour[1];
+									if ($mois==01)
+										echo "<option value='".$jour[1]."' selected>Janvier</option>";
+									else if ($mois==02)
+										echo "<option value='".$jour[1]."' selected>Février</option>";
+									else if ($mois==03)
+										echo "<option value='".$jour[1]."' selected>Mars</option>";
+									else if ($mois==04)
+										echo "<option value='".$jour[1]."' selected>Avril</option>";
+									else if ($mois==05)
+										echo "<option value='".$jour[1]."' selected>Mai</option>";
+									else if ($mois==06)
+										echo "<option value='".$jour[1]."' selected>Juin</option>";
+									else if ($mois==07)
+										echo "<option value='".$jour[1]."' selected>Juillet</option>";
+									else if ($mois==08)
+										echo "<option value='".$jour[1]."' selected>Août</option>";
+									else if ($mois==09)
+										echo "<option value='".$jour[1]."' selected>Septembre</option>";
+									else if ($mois==10)
+										echo "<option value='".$jour[1]."' selected>Octobre</option>";
+									else if ($mois==11)
+										echo "<option value='".$jour[1]."' selected>Novembre</option>";
+									else if ($mois==12)
+										echo "<option value='".$jour[1]."' selected>Décembre</option>";	
+									?>
 										<option value="1">Janvier</option>
 										<option value="2">Février</option>
 										<option value="3">Mars</option>
@@ -116,16 +142,15 @@ if (isset($_POST['pass']))
 										<option value="5">Mai</option>
 										<option value="6">Juin</option>
 										<option value="7">Juillet</option>
-										<option value="8">Aout</option>
+										<option value="8">Août</option>
 										<option value="9">Septembre</option>
 										<option value="10">Octobre</option>
 										<option value="11">Novembre</option>
 										<option value="12">Décembre</option>
-
 									</select>
 									<select name="dnannee" id="dnannee">
 										<?php 
-											$annees = "<option></option>\n";
+											$annees = "<option value='".$jour[0]."' selected>".$jour[0]."</option>\n";
 											for($i=date("Y");$i>=1900;$i--){
 												$annees .= "\t\t\t\t\t\t\t\t\t\t<option value='".$i."'>".$i."</option>\n";
 											}
