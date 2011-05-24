@@ -42,7 +42,7 @@ if (isset($_POST['login']))
 		else if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
 			echo "Le champ nom n'est pas correctement rempli";
 		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
-			echo "Le champ prenom n'est pas correctement rempli";
+			echo "Le champ prénom n'est pas correctement rempli";
 		else if((empty($_POST['adresse'])) || (!is_string($_POST['adresse'])))
 			echo "Le champ adresse n'est pas correctement rempli";
 		else if((empty($_POST['cp'])) || (!is_numeric($_POST['cp'])))
