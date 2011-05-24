@@ -68,7 +68,7 @@ if (isset($_POST['login']))
 			
 			//Ajout de l'utilisateur à la base de données
 			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail', '$cb');");
-			echo "\nL'inscription est bonne";
+			echo "\nVous êtes inscrit";
 		}
 		echo"</div>";
 	}
