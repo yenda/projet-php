@@ -35,11 +35,9 @@ if (isset($_POST['pass']))
 			echo "Le champ code postal n'est pas correctement rempli";
 		else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
 			echo "Le champ ville n'est pas correctement rempli";
-		else if (!isset($_POST['verif']))
-			echo "Vous devez cocher la case pour certifier l'exactitude des renseignements fournis";
 		else 
 		{
-			$login=$_POST['login'];
+			$login=$_SESSION['login'];
 			$pass=$_POST['pass'];
 			$mail=$_POST['mail'];
 			$telmain=$_POST['telmain'];
@@ -53,7 +51,7 @@ if (isset($_POST['pass']))
 			$modification=true;
 			
 			//Ajout de l'utilisateur à la base de données
-			$result=RequeteSQL("UPDATE `geekproduct`.`clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', clent_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login='$login';");
+			$result=RequeteSQL("UPDATE `geekproduct`.`clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', client_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login='$login';");
 			echo "\nLa modification a été effectuée";
 		}
 		echo"</div>";
@@ -194,7 +192,7 @@ if (isset($_POST['pass']))
 
 									<div class="ElemtMandat">Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
 									<div>
-										<input name="rue1" type="text" id="rue1" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="<?php echo $adresse;?>" />
+										<input name="adresse" type="text" id="adresse" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="<?php echo $adresse;?>" />
 									</div>
 									<div class="ElemtMandat">Code postal</div>
 									<div>
