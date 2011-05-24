@@ -39,6 +39,7 @@ if (isset($_POST['pass']))
 			echo "Vous devez cocher la case pour certifier l'exactitude des renseignements fournis";
 		else 
 		{
+			$login=$_POST['login'];
 			$pass=$_POST['pass'];
 			$mail=$_POST['mail'];
 			$telmain=$_POST['telmain'];
@@ -52,7 +53,7 @@ if (isset($_POST['pass']))
 			$modification=true;
 			
 			//Ajout de l'utilisateur à la base de données
-			$result=RequeteSQL("UPDATE `geekproduct`.clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', clent_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login="$_POST['login']";");
+			$result=RequeteSQL("UPDATE `geekproduct`.`clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', clent_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login="$login";");
 			echo "\nLa modification a été effectuée";
 		}
 		echo"</div>";
