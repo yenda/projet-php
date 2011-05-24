@@ -30,6 +30,7 @@ if (isset($_POST['login']))
 			echo "Login non disponible, veuillez en choisir un autre";
 	else 
 	{
+		echo"<div class='alert'>";
 		if ((empty($_POST['login'])) || (!is_string($_POST['login'])))
 			echo "Le champ nom d'utilisateur n'est pas correctement rempli";
 		else if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
@@ -42,7 +43,7 @@ if (isset($_POST['login']))
 			echo "Le champ nom n'est pas correctement rempli";
 		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
 			echo "Le champ prenom n'est pas correctement rempli";
-		else if((empty($_POST['rue1'])) || (!is_string($_POST['rue1'])) || (isset($_POST['rue2']) and (!is_string($_POST['rue2']))) || (strlen($_POST['rue2'])>35))
+		else if((empty($_POST['adresse'])) || (!is_string($_POST['adresse'])))
 			echo "Le champ adresse n'est pas correctement rempli";
 		else if((empty($_POST['cp'])) || (!is_numeric($_POST['cp'])))
 			echo "Le champ code postal n'est pas correctement rempli";
@@ -59,7 +60,7 @@ if (isset($_POST['login']))
 			$nom=$_POST['nom'];
 			$prenom=$_POST['prenom'];
 			$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
-			$adresse=$_POST['rue1'];
+			$adresse=$_POST['adresse'];
 			$cp=$_POST['cp'];
 			$ville=$_POST['ville'];
 			$cb=$_POST['cartebancaire'];
@@ -67,8 +68,9 @@ if (isset($_POST['login']))
 			
 			//Ajout de l'utilisateur à la base de données
 			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail', '$cb');");
-			echo "L\'inscription est bonne";
+			echo "\nL'inscription est bonne";
 		}
+		echo"</div>";
 	}
 }
 	if($inscrit==false)
@@ -174,7 +176,7 @@ if (isset($_POST['login']))
 
 									<div class="ElemtMandat">Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
 									<div>
-										<input name="rue1" type="text" id="rue1" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="" />
+										<input name="adresse" type="text" id="adresse" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="" />
 									</div>
 									<div class="ElemtMandat">Code postal</div>
 									<div>
