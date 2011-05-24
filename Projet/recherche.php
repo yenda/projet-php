@@ -14,8 +14,8 @@ if(!isset($_POST['recherche']))
 		<form method="post" action="index.php?type=recherche">
 			<input name="recherche" type="text" id="recherche" style="height:20px; font-size:13px; width:200px;" value="" maxlength="50" />
 				<select name="tri_recherche" size="1">
-				    <option value="produits_Prix" selected>trier par prix</option>
-				    <option value="produits_Libelle">trier par nom de produit</option>
+				    <option value="produits_Prix" selected>Trier par prix</option>
+				    <option value="produits_Libelle">Trier par nom de produit</option>
 				</select>
 			<input type="submit" name="Submit" value="Rechercher"/> 
 		</form>
