@@ -5,16 +5,9 @@
 <?php 
 	//On vérifie que le client est loggué avant de le laisser finaliser sa commande
 	if (isset($_SESSION['login'])){
-		//
+		
 ?>
 
-<?php	
-	//On affiche le panier sauf si il est vide
-	$nbArticles=count($_SESSION['panier']['produits_Reference']);
-	if ($nbArticles <= 0)
-		echo "<br /><br />Il n'y a aucun produit dans le panier";
-	else{
-?>
 	<h1>Votre commande</h1>
 	<table class="caddie">
 		<tr>
@@ -77,15 +70,15 @@
 ?>			
 <h3>Choisissez le type de paiement</h3>
 <?php 
-	if($carte=mysql_result($infos,0,"client_cartebancaire"))
-		echo '<input type="text" name="carte" value="'.$carte.'" style="width:300px;" />';
+	$carte=mysql_result($infos,0,"client_cartebancaire");
+	echo '<input type="text" name="carte" value="'.$carte.'" style="width:300px;" />';
 ?>
 <h1>
 	<input type='submit' value='Valider la commande'/>
 </form>
 </h1>
 <?php 
-	}}
+	}
 	//Si le client n'est pas logué
 	else{
 ?>
