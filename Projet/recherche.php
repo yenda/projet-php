@@ -16,6 +16,7 @@ if(!isset($_POST['recherche']))
 				<select name="tri_recherche" size="1">
 				    <option value="produits_Prix" selected>Trier par prix</option>
 				    <option value="produits_Libelle">Trier par nom de produit</option>
+				    <option value="rubrique_id">Trier par rubrique</option>
 				</select>
 			<input type="submit" name="Submit" value="Rechercher"/> 
 		</form>
@@ -34,7 +35,7 @@ else if (isset($_POST['recherche']))
 		//faire une requête MySQL qui trouve les produits dont le nom contient un ou plusieurs
 		//mot(s)-clé(s) et les afficher
 		$recherche=mysql_real_escape_string($_POST['recherche']);
-		$result_produit = RequeteSQL("SELECT `produits_Reference`,`produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits` WHERE `produits_Libelle` LIKE '%$recherche%' OR `produits_Descriptif` LIKE '%$recherche' ORDER BY ".$_REQUEST["tri_recherche"]." ASC;");
+		$result_produit = RequeteSQL("SELECT `produits_Reference`,`produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits` INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference` = `produit_rubrique`.`produit_reference` WHERE `produits_Libelle` LIKE '%$recherche%' OR `produits_Descriptif` LIKE '%$recherche' ORDER BY ".$_REQUEST["tri_recherche"]." ASC;");
 		if (mysql_fetch_assoc($result_produit)){
 			mysql_data_seek($result_produit,0);
 			echo "<table class = 'liste_produits'><tr><th></th><th>Nom</th><th>Prix TTC</th></tr>";
@@ -46,6 +47,8 @@ else if (isset($_POST['recherche']))
 			}
 			echo "</table>";
 		}
+		else 	
+			echo "<div class='alert'>Votre recherche n'a retourné aucun résultat. Veuillez réessayer avec d'autres mots-clés</div>";
 	}
 }
 ?>
