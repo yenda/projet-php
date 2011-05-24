@@ -39,7 +39,7 @@
 							<?php if (!isset($_SESSION['login'])){?>
 							<a href="index.php?type=inscription">Inscription</a> | 
 							<a href="index.php?type=login">Connexion</a>
-							<?php } else {if ($_SESSION['login']="admin"){?>
+							<?php } else {if ($_SESSION['login']=="admin"){?>
 							<a href="index.php?type=admin">Administration</a>
 							<?php } else { ?>
 							<a href="index.php?type=compte">Mon Compte</a>
