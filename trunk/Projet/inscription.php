@@ -1,5 +1,6 @@
 <?php
 	include ("redirection.php");
+	$inscrit=false;
 ?>
 
 <?php 
@@ -62,6 +63,7 @@ if (isset($_POST['login']))
 			$cp=$_POST['cp'];
 			$ville=$_POST['ville'];
 			$cb=$_POST['cartebancaire'];
+			$inscrit=true;
 			
 			//Ajout de l'utilisateur à la base de données
 			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail', '$cb');");
@@ -69,7 +71,8 @@ if (isset($_POST['login']))
 		}
 	}
 }
-
+	if($inscrit==false)
+	{
 
 ?>
 			<form method="post" action="index.php?type=inscription">
@@ -220,3 +223,4 @@ if (isset($_POST['login']))
 			</table>
 
 		</form>
+<?php }?>
