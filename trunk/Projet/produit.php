@@ -20,7 +20,7 @@
 		echo "<tr><th>Date d'ajout au catalogue</th><td>".$produit["produits_DateAjout"]."</td></tr>\n\t\t\t";
 		echo "</table>\n\t\t\t";
 		echo "<h4><a href='index.php?type=panier&produit=".$produit['produits_Reference']."'>Ajouter au panier<br /><img src='images/minipanier.jpg'></a></h4>";
-		if ((isset($_SESSION['login']))&&($_SESSION['login']="admin")){
+		if ((isset($_SESSION['login']))&&($_SESSION['login']=="admin")){
 	?>		
 	<h4>
 		<form method="get" action="index.php">
