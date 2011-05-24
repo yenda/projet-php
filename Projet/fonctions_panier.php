@@ -25,45 +25,24 @@ function ajouterArticle($produits_Reference,$produits_Quantite=1){
 	}
 }
 
-function modifierQTeArticle($produits_Reference,$produits_Quantite){
-	//Si la quantité est positive on modifie sinon on supprime l'article
-	if ($produits_Quantite > 0){
-		//Recherche du produit dans le panier
-		$positionProduit = array_search($produits_Reference,  $_SESSION['panier']['produits_Reference']);
-
-		if ($positionProduit !== false){
-			$_SESSION['panier']['produits_Quantite'][$positionProduit] = $produits_Quantite;
-		}
-	}
-	else
-	supprimerArticle($produits_Reference);
+//Fonction de modification de la quantité d'un article
+//Produit position est la position du produit dans le tableau panier
+function modifierQTeArticle($produits_Position,$produits_Quantite){
+	//Si la quantité est positive on modifie
+	if ($produits_Quantite > 0)
+		$_SESSION['panier']['produits_Quantite'][$produits_Position] = $produits_Quantite;
 }
 
+//Fonction de suppression d'un article du panier
 function supprimerArticle($i){
  	unset($_SESSION['panier']['produits_Reference'][$i]);
  	unset($_SESSION['panier']['produits_Quantite'][$i]);
 }
 
-/*function MontantGlobal(){
-   $total=0;
-   for($i = 0; $i < count($_SESSION['panier']['produits_Reference']); $i++)
-   {
-      $total += $_SESSION['panier']['produits_Quantite'][$i] * $_SESSION['panier']['produits_Prix'][$i];
-   }
-   return $total;
-}*/
 
+//Fonction de suppression du panier
 function supprimePanier(){
    unset($_SESSION['panier']);
-}
-
-
-function compterArticles()
-{
-   if (isset($_SESSION['panier']))
-   return count($_SESSION['panier']['produits_Reference']);
-   else
-   return 0;
 }
 
 ?>
