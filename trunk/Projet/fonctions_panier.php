@@ -4,7 +4,6 @@ function creationPanier(){
    if (!isset($_SESSION['panier'])){
       $_SESSION['panier']=array();
       $_SESSION['panier']['total'] = 0;
-      $_SESSION['panier']['quant'] = 0;
       $_SESSION['panier']['produits_Reference'] = array();
       $_SESSION['panier']['produits_Quantite'] = array();
    }

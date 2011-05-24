@@ -71,10 +71,18 @@
 		
 		//Création de la table Panier_Client
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_client` (
-					`panier_id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-					`client_login` VARCHAR(20) NOT NULL) ENGINE = MyISAM;");
+					`panier_id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+					`total` FLOAT NOT NULL,
+					`client_login` VARCHAR(20) NOT NULL,
+					`client_nom` VARCHAR(30) NOT NULL, 
+					`client_prenom` VARCHAR(30) NOT NULL,
+					`client_adresse` VARCHAR(100) NOT NULL, 
+					`client_codepostal` INT NOT NULL,
+					`client_ville` VARCHAR(30) NOT NULL,  
+					`client_cartebancaire` INT NOT NULL,
+					`livraison` VARCHAR(10) NOT NULL) ENGINE = MyISAM;");
 		
-		//Création de la table Panier_Client
+		//Création de la table Panier_Produit
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_produit` (
 					`panier_id` BIGINT NOT NULL, 
 					`produits_Reference` BIGINT NOT NULL,
