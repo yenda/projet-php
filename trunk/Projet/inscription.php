@@ -58,15 +58,14 @@ if (isset($_POST['login']))
 			$nom=$_POST['nom'];
 			$prenom=$_POST['prenom'];
 			$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
-			$rue1=$_POST['rue1'];
-			$rue2=$_POST['rue2'];
-			$adresse=$rue1." ".$rue2;
+			$adresse=$_POST['rue1'];
 			$cp=$_POST['cp'];
 			$ville=$_POST['ville'];
 			$cb=$_POST['cartebancaire'];
 			
 			//Ajout de l'utilisateur à la base de données
 			$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('$login', '$pass', '$nom', '$prenom', '$date_naissance', '$adresse', '$cp', '$ville', '$telmain', '$mail', '$cb');");
+			echo "L\'inscription est bonne";
 		}
 	}
 }
@@ -174,11 +173,6 @@ if (isset($_POST['login']))
 									<div>
 										<input name="rue1" type="text" id="rue1" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="" />
 									</div>
-									<div class="ElemtFac">Complément d'adresse<br />(N° bât, étage, appt, digicode...)</div>
-									<div>
-										<input name="rue2" type="text" id="rue2" style="height:12px; font-size:10px; width:150px;" maxlength="35" value="" />
-									</div>
-									<div style="color:#888888; margin-top:1px;">(35 caractères max.)</div>
 									<div class="ElemtMandat">Code postal</div>
 									<div>
 										<input name="cp" type="text" id="cp" style="height:12px; font-size:10px; width:150px;" value="" maxlength="5" />

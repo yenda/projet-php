@@ -6,7 +6,17 @@
 	else{
 
 $result = RequeteSQL("SELECT * FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
-$row=mysql_fetch_assoc($result);
+
+while ($row = mysql_fetch_assoc($result)) { 
+	$mail=$row['client_mail'];
+	$nom=$row['client_nom'];
+	$prenom=$row['client_prenom'];
+	$adresse=$row['client_adresse'];
+	$cp=$row['client_codepostal'];
+	$ville=$row['client_ville'];
+	$tel=$row['client_telephone'];
+	$cb=$row['client_cartebancaire'];
+	$date=$row['client_datenaissance'];
 ?>
 
 <form method="post" action="index.php?type=compte">
@@ -17,7 +27,7 @@ $row=mysql_fetch_assoc($result);
 							<tr>
 								<td class="Inner" width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;">
 
-									<div class="ElemtMandat">Mon mot de passe</div>
+									<div class="ElemtMandat">Mon nouveau mot de passe</div>
 									<div>
 										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" />
 										<div id="PassMessage"></div>
@@ -29,12 +39,14 @@ $row=mysql_fetch_assoc($result);
 									</div>
 									<div class="ElemtMandat">Mon adresse e-mail : </div>
 									<div>
-										<input name="mail" type="text" id="mail" style="height:12px; font-size:10px; width:150px;" value="" /> 									
+										<input name="mail" type="text" id="mail" style="height:12px; font-size:10px; width:150px;" value="<?php echo $mail;?>" /> 									
 									</div>
+									<?php $jour=explode("-" ,$date);?>
 									<div class="ElemtFac">Date de naissance</div>
 									<select name="dnjour" id="dnjour">';
 									<?php
-											$jours = "<option></option>\n";
+									echo "<option value='".$jour[2]."' selected></option>";		
+									//$jours = "<option></option>\n";
 											for($i=1;$i<=31;$i++){
 												$jours .= "\t\t\t\t\t\t\t\t\t\t<option value='".$i."'>".$i."</option>\n";
 											}
@@ -70,7 +82,7 @@ $row=mysql_fetch_assoc($result);
 																																							
 										<div class="ElemtMandat">Téléphone : </div>
 										<div>
-											<input name="telmain" type="text" id="telmain" style="height:12px; font-size:10px; width:150px;" value="" />
+											<input name="telmain" type="text" id="telmain" style="height:12px; font-size:10px; width:150px;" value="<?php echo $tel ?>" />
 										</div>
 
 									</td>
@@ -88,11 +100,11 @@ $row=mysql_fetch_assoc($result);
 
 									<div class="ElemtMandat">Nom</div>
 									<div>
-										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="" /> 									</div>
+										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="<?php echo $nom;?>" /> 									</div>
 
 									<div class="ElemtMandat">Prénom</div>
 									<div>
-										<input name="prenom" type="text" id="prenom" style="height:12px; font-size:10px; width:150px;" value="" /> 									</div>
+										<input name="prenom" type="text" id="prenom" style="height:12px; font-size:10px; width:150px;" value="<?php echo $prenom;?>" /> 									</div>
 
 									<div class="ElemtMandat" id="SocieteBlock" style="display:none;">
 										<div class="ElemtFac"  id="labelsociete"></div>
@@ -104,31 +116,27 @@ $row=mysql_fetch_assoc($result);
 
 									<div class="ElemtMandat">Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
 									<div>
-										<input name="rue1" type="text" id="rue1" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="" />
+										<input name="rue1" type="text" id="rue1" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="<?php echo $adresse;?>" />
 									</div>
-									<div class="ElemtFac">Complément d'adresse<br />(N° bât, étage, appt, digicode...)</div>
-									<div>
-										<input name="rue2" type="text" id="rue2" style="height:12px; font-size:10px; width:150px;" maxlength="35" value="" />
-									</div>
-									<div style="color:#888888; margin-top:1px;">(35 caractères max.)</div>
 									<div class="ElemtMandat">Code postal</div>
 									<div>
-										<input name="cp" type="text" id="cp" style="height:12px; font-size:10px; width:150px;" value="" maxlength="5" />
+										<input name="cp" type="text" id="cp" style="height:12px; font-size:10px; width:150px;" value="<?php echo $cp;?>" maxlength="5" />
 									</div>
 
 									<div class="ElemtMandat">Ville</div>
 									<div>
-										<input name="ville" type="text" id="ville" style="height:12px; font-size:10px; width:150px;" value="" />
+										<input name="ville" type="text" id="ville" style="height:12px; font-size:10px; width:150px;" value="<?php echo $ville;?>" />
 									</div>
 									
 									<div class="ElemtMandat">Numéro de carte bancaire</div>
 									<div>
-										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" value="" />
+										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" value=<?php echo $cb;?> />
 									</div>
 
 								</td>
 							</tr>
 						</table>
+						<?php }?>
 
 						<table class="ToolBox2" style="margin-top:10px;" width="350px" border="0" cellspacing="0" cellpadding="0">
 
