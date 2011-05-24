@@ -97,7 +97,7 @@ if (isset($_POST['pass']))
 									</div>
 									<?php $jour=explode("-" ,$date);?>
 									<div class="ElemtFac">Date de naissance</div>
-									<select name="dnjour" id="dnjour">';
+									<select name="dnjour" id="dnjour">
 									<?php
 									$jours = "option value='".$jour[2]."' selected></option>";
 											for($i=1;$i<=31;$i++){
