@@ -16,8 +16,7 @@
 <?php 
 include_once 'fonctions.php';
 $req = RequeteSQL ("SELECT * FROM `rubriques`");
- 
-if(!isset($_POST['recherche'])){
+//On affiche le formulairede recherche, si l'utilisateur vient de faire une recherche il est déjà pré-rempli avec ses critères
 ?>
 <h1>Recherche</h1>
 <p>Saisissez les termes à rechercher sur le site (vous pouvez réduire la recherche à une catégorie, choisir un prix maximum et ordonner les résultats)</p>
@@ -27,7 +26,7 @@ if(!isset($_POST['recherche'])){
 		<td colspan='2'>
 				<form method="post" action="index.php?type=recherche">
 					<label for="recherche">Mot clés</label><br />
-					<input name="recherche" type="text" id="recherche" style="height:20px; font-size:13px; width:200px;" value="" maxlength="50" />
+					<input name="recherche" type="text" id="recherche" style="height:20px; font-size:13px; width:200px;" value="<?php if (!empty($_POST['recherche'])) echo htmlentities($_POST['recherche']);?>" maxlength="50" />
 		</td>
 	</tr>
 		<td>
@@ -40,7 +39,7 @@ if(!isset($_POST['recherche'])){
 		<td>
 					<label for="categorie_recherche">Catégorie</label><br />
 					<select name="categorie_recherche" size="1">
-						<option value="" selected></option>
+						<option value="<?php if (!empty($_POST['categorie_recherche'])) echo intval($_POST['categorie_recherche']);?>" selected><?php if (!empty($_POST['categorie_recherche'])) echo mysql_result($req,intval($_POST['categorie_recherche']-1),"rubrique_nom");?></option>
 	<?php
 						while($row=mysql_fetch_assoc($req)){
 							echo'<option value='.$row["rubrique_id"].'>'.$row["rubrique_nom"].'</option>';
@@ -50,24 +49,28 @@ if(!isset($_POST['recherche'])){
 		</td>
 	<tr>
 		<td>
-					<label for="prix_max">Prix maximum</label><br />
-					<input name="prix_max" type="text" id="prix_max" style="height:20px; font-size:13px; width:100px;" value="" maxlength="5" />
+					<label for="prix_min">Prix minimum</label><br />
+					<input name="prix_min" type="text" id="prix_max" style="height:20px; font-size:13px; width:100px;" value="<?php if (!empty($_POST['prix_min'])) echo intval($_POST['prix_min']);?>" maxlength="5" />
 		</td>
 		<td>
-					<label for="prix_min">Prix minimum</label><br />
-					<input name="prix_min" type="text" id="prix_max" style="height:20px; font-size:13px; width:100px;" value="" maxlength="5" />
+					<label for="prix_max">Prix maximum</label><br />
+					<input name="prix_max" type="text" id="prix_max" style="height:20px; font-size:13px; width:100px;" value="<?php if (!empty($_POST['prix_max'])) echo intval($_POST['prix_max']);?>" maxlength="5" />
 		</td>
 	</tr>
 	<tr>
-		<td colspan='2'>
+		<td>
 					<input type="submit" name="Submit" value="Rechercher"/> 
+				</form>
+		</td>
+		<td>
+				<form method=post action="index.php?type=recherche">
+					<input type="submit" name="" value="Remettre à zéro"/> 
 				</form>
 		</td>
 	</tr>
 </table>
 <?php
-}
-else{
+if(isset($_POST['recherche'])){
 	echo "<h1>Résultat de la recherche</h1>";
 	if (empty($_POST['recherche'])){
 		echo "<div class='alert'>Vous devez saisir des mots clés pour votre recherche</div>";
@@ -88,7 +91,7 @@ else{
 			$rubriques = "AND (".substr(sous_rubriques(intval($_POST['categorie_recherche'])),0,-4).")";
 		else
 			$rubriques = "";
-		if ((isset($_POST['tri_recherche']))&&($_POST['tri_recherche']=="produit_Libelle"))
+		if ((isset($_POST['tri_recherche']))&&($_POST['tri_recherche']=="produits_Libelle"))
 			$tri = "ORDER BY `produits_Libelle`";
 		else
 			$tri = "ORDER BY `produits_Prix`";
@@ -104,7 +107,7 @@ else{
 		
 		//Si la requête ne retourne pas de résultat
 		if ($nb==0){
-			//On regarde si il n'y a pas de résultats dans prendre en compte les mots clés à condition que l'utilisateur ait choisi une rubrique et un critère de prix
+			//On regarde si il n'y a pas de résultats sans prendre en compte les mots clés à condition que l'utilisateur ait choisi une rubrique et un critère de prix
 			if ((!empty($prix_max)||(!empty($prix_min)))&&(!empty($rubriques))&&($nb=mysql_num_rows($result=RequeteSQL("SELECT `produits_Reference`,`produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits` INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference` = `produit_rubrique`.`produit_reference` WHERE 1 $rubriques $prix_max $prix_min GROUP BY `produits`.`produits_Reference` $tri"))))
 				echo "$nb résultat$s trouvé$s parmis les produits de la rubrique que vous avez choisi dans vos critères de prix<br /><br />\n";
 			//Sinon on regarde si il y a un produit correspondant aux mots clés mais en dehors des critères de prix dans la rubrique
