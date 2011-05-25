@@ -41,7 +41,7 @@ else if (isset($_POST['recherche']))
 	}
 	else 
 	{
-		//faire une requête MySQL qui trouve les produits dont le nom contient un ou plusieurs
+		//requête MySQL qui trouve les produits dont le nom contient un ou plusieurs
 		//mot(s)-clé(s) et les afficher
 		$recherche=mysql_real_escape_string($_POST['recherche']);
 		if ($_POST['categorie_recherche']=="" and $_POST['prix_max']=="")
