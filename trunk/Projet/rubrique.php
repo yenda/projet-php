@@ -33,7 +33,7 @@
 ?>
 <br /><h4>Produits</h4>
 <?php
-	//cherche si des produits appartiennent à la rubrique et les affiche
+	//on cherche si des produits appartiennent à la rubrique et on les affiche
 	if (isset($_GET['ordre'])&&($_GET['ordre']="prix"))
 		$ordre="`produits_Prix`";
 	else 
