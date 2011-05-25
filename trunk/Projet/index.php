@@ -56,8 +56,8 @@
 		<tr>
 			<td>
 				<table>			
-					<tr height="1px">
-						<td height="1px">
+					<tr>
+						<td>
 							<div id="menu">
 								<div class="menu"><a href="index.php" class="menu-special">Menu</a></div>
 								<ul>
