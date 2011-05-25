@@ -74,7 +74,7 @@
 <h3>Choisissez le type de paiement</h3>
 <?php 
 	$carte=mysql_result($infos,0,"client_cartebancaire");
-	echo '<input type="text" name="carte" value="'.$carte.'" style="width:300px;" />';
+	echo '<input type="text" name="carte" value="'.$carte.'" maxlength="16" style="width:300px;" />';
 ?>
 <h1>
 	<input type='submit' value='Valider la commande'/>

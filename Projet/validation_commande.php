@@ -22,7 +22,7 @@ else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
 	echo "Le champ ville n'est pas correctement rempli";
 else if((empty($_POST['livraison'])))
 	echo "Vous n'avez pas choisi de type de livraison";
-else if((empty($_POST['carte'])) || (!is_numeric($_POST['carte'])))
+else if((!isset($_POST['carte'])) || (!preg_match('#^([0-9]{16})$#',$_POST['carte'])))
 	echo "Le champ carte bancaire n'est pas correctement rempli";
 else
 	$validation=true;
