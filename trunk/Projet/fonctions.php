@@ -16,7 +16,7 @@
 			or die(mysql_error());
 	}
 	
-	//Requete SQL retournant un message en cas d'erreur
+	//Requête SQL retournant un message en cas d'erreur
 	function RequeteSQL($query){
 		$result = mysql_query($query)
 			or die("$query :".mysql_error());

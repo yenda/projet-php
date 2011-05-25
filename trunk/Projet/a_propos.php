@@ -1,5 +1,6 @@
 <?php
 	include ("redirection.php");
+	//Informations concernant le site de vente en ligne
 ?>
 
 <h1>Informations légales</h1><dl> </dl><p>La conception, la forme, le titre et l'ensemble des éléments contenus sur le site www.GeekProducts.fr sont protégés à l'échelle mondiale au titre du droit d'auteur et des marques.</p>

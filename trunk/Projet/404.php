@@ -1,5 +1,6 @@
 <?php
 	include ("redirection.php");
+	//Page affichée en cas d'erreur
 ?>
 
 <div align = "center">

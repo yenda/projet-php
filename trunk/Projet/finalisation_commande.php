@@ -82,7 +82,7 @@
 </h1>
 <?php 
 	}}
-	//Si le client n'est pas logué
+	//Si le client n'est pas loggué
 	else{
 ?>
 		<div class='alert'>Vous devez être loggué pour pouvoir finaliser la commande</div>
