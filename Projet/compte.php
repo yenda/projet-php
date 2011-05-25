@@ -45,7 +45,10 @@ function VerifierAdresseMail($adresse)
 						$pass = md5($pass);
 					}
 					else 
-						$pass = $_SESSION['pass'];
+					{
+						$pass = $_POST['pass_actuel'].$login.'geekproduct';
+						$pass = md5($pass);
+					}
 					$mail=$_POST['mail'];
 					$telmain=$_POST['telmain'];
 					$nom=$_POST['nom'];
@@ -87,8 +90,12 @@ if($modification==false)
 						<table style="margin:0;" width="350px" border="0" cellspacing="0" cellpadding="0" class="ToolBox2">
 							<tr>
 								<td class="Inner" width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;">
-
-									<div class="ElemtMandat">Mon nouveau mot de passe</div>
+									<div class="ElemtMandat">Mot de passe actuel</div>
+									<div>
+										<input name="pass_actuel" type="password" id="pass_actuel" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" />
+										<div id="PassMessage"></div>
+									</div>
+									<div class="ElemtMandat">Mon nouveau mot de passe (facultatif)</div>
 									<div>
 										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" />
 										<div id="PassMessage"></div>
