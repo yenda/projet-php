@@ -23,6 +23,7 @@
 		<div id="page">
 				
 		<div id="haut">
+		
 			<table  class="tableau_entete">
 				<tr>
 					<td width="100px">
@@ -50,76 +51,81 @@
 				</tr>
 			</table>
 		</div>
+		
 		<table class="tableau_page">
 		<tr>
-			<td height="1px">
-				<div id="menu">
-					<div class="menu"><a href="index.php" class="menu-special">Menu</a></div>
-					<ul>
-						<li><a href='index.php'><b>Accueil</b></a></li>
-						<li><a href='index.php?type=recherche'><b>Recherche</b></a></li>
-						<li><a href='index.php?type=conditions_de_vente'><b>Conditions de Vente</b></a></li>
-						<li><a href='index.php?type=a_propos'><b>À Propos</b></a></li>					
-					</ul>
-				</div>				
+			<td>
+				<table>			
+					<tr height="1px">
+						<td height="1px">
+							<div id="menu">
+								<div class="menu"><a href="index.php" class="menu-special">Menu</a></div>
+								<ul>
+									<li><a href='index.php'><b>Accueil</b></a></li>
+									<li><a href='index.php?type=recherche'><b>Recherche</b></a></li>
+									<li><a href='index.php?type=conditions_de_vente'><b>Conditions de Vente</b></a></li>
+									<li><a href='index.php?type=a_propos'><b>À Propos</b></a></li>					
+								</ul>
+							</div>				
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id="menu">
+								<div class="menu"><a href="index.php?type=rubrique" class="menu-special">Catégories</a></div>
+								<?php
+									echo Menu();
+								?> 
+							</div>
+						</td>
+					</tr>
+				</table>
 			</td>
-	
-			<td rowspan="2">	
-						
+			<td>							
 			<?php 
 				if ($_ENV['type']!="panier"){
 			?>
-			<div class="panier">
-				<table cellpadding="0" cellspacing="0" class="tableaupanier">
-					<tr>
-						<td>
-							<strong>Panier</strong>
-						</td>								
-						<td>
-							<div align="right"><?php echo "Total panier : ".$_SESSION['panier']['total']." &euro;";?></div>
-						</td>
-						
-						<td>									
-							<div align="right"><a href="index.php?type=panier">Afficher le panier <img src="images/fleche2.gif" class="fleche"></a></div>	
-						</td>			
-					</tr>				
-				</table>
-			</div>
+				<div class="panier">
+					<table cellpadding="0" cellspacing="0" class="tableaupanier">
+						<tr>
+							<td>
+								<strong>Panier</strong>
+							</td>								
+							<td>
+								<div align="right"><?php echo "Total panier : ".$_SESSION['panier']['total']." &euro;";?></div>
+							</td>
+							
+							<td>									
+								<div align="right"><a href="index.php?type=panier">Afficher le panier <img src="images/fleche2.gif" class="fleche"></a></div>	
+							</td>			
+						</tr>				
+					</table>
+				</div>
 			<?php 
 				}	
 			?>
 		
 		
-		<div id="contenu">
-		
-			<?php
-				if ($_ENV['type']=="produit")
-					$chemin = CheminProduit($_ENV['id']);
-				else
-					$chemin = Chemin($_ENV['rubrique_id']);
-				echo substr($chemin,6);
-				if ($_ENV['type']=="index")
-					$contenu ="accueil";
-				else
-					$contenu = $_ENV['type'];
-				$contenu .= ".php";
-				include ("$contenu");
+				<div id="contenu">
 				
-			?>	
-		</div>
-		</td>
-		</tr>
-		
-		<tr>
-			<td>
-				<div id="menu">
-					<div class="menu"><a href="index.php?type=rubrique" class="menu-special">Catégories</a></div>
 					<?php
-						echo Menu();
-					?> 
+						if ($_ENV['type']=="produit")
+							$chemin = CheminProduit($_ENV['id']);
+						else
+							$chemin = Chemin($_ENV['rubrique_id']);
+						echo substr($chemin,6);
+						if ($_ENV['type']=="index")
+							$contenu ="accueil";
+						else
+							$contenu = $_ENV['type'];
+						$contenu .= ".php";
+						include ("$contenu");
+						
+					?>	
 				</div>
 			</td>
-		</tr></table>
+		</tr>
+	</table>
 
 		
 		<div id="bas" align="center">
