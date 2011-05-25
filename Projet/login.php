@@ -3,6 +3,7 @@
 ?>
 
 <?php
+//Fonction qui vérifie que le login choisit n'est pas déjà utilisé par quelqu'un d'autre
 function VerifierExistenceLogin ($login)
 {
 	$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$login'");
@@ -12,6 +13,7 @@ function VerifierExistenceLogin ($login)
 		return false;
 }
 
+//Fonction qui teste si le mot de passe correspond au login
 function TesterMotDePasse ($login,$pass)
 {
 	$pass = $pass.$login.'geekproduct';
