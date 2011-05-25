@@ -162,7 +162,7 @@ ol, ul {
 }
 
 .tableau_page {
-	padding:2px;	
+	padding:1px;
 }
 
 .tableau_page td {
@@ -252,7 +252,15 @@ ol, ul {
 	padding:5px;
 	width:200px;
 }
-	
-#recherche {
+
+.recherche {
+	padding-left:150px;
+	padding-right:150px;
+	width:100%;
+}
+
+.recherche tr td{
+	height:75px;
+	align:center;
 	text-align:center;
 }
