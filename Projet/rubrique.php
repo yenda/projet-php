@@ -42,14 +42,14 @@
 	$result_produit = RequeteSQL("SELECT `produits_Reference`,`produits_Libelle`,`produits_Prix`,`produits_Photo` FROM `produits`INNER JOIN `produit_rubrique` ON `produits`.`produits_Reference`=`produit_rubrique`.`produit_reference` WHERE `rubrique_id`=".$_ENV['rubrique_id']." ORDER BY ".$ordre);
 	if (mysql_fetch_assoc($result_produit)){
 		mysql_data_seek($result_produit,0);
-		echo "<table class = 'liste_produits'>";
-		echo "<tr><th></th>";
-		echo "<th><a href='index.php?type=rubrique&id=".$_ENV['rubrique_id']."'>Nom</a></th>";
-		echo "<th><a href='index.php?type=rubrique&id=".$_ENV['rubrique_id']."&ordre=prix'>Prix TTC</a></th></tr>";
+		echo "<table class = 'liste_produits'>\n\t";
+		echo "<tr>\n\t\t<th></th>\n\t\t";
+		echo "<th><a href='index.php?type=rubrique&id=".$_ENV['rubrique_id']."'>Nom</a></th>\n\t\t";
+		echo "<th><a href='index.php?type=rubrique&id=".$_ENV['rubrique_id']."&ordre=prix'>Prix TTC</a></th>\n\t</tr>\n";
 		while($row=mysql_fetch_assoc($result_produit)){
-			echo "<tr><td class='photo'><a href='index.php?type=produit&id=".$row["produits_Reference"]."'><img src='images/thumbs/".$row["produits_Photo"]."'></a></td>";
-			echo "<td><a href='index.php?type=produit&id=".$row["produits_Reference"]."'>".$row["produits_Libelle"]."</a></td>";
-			echo "<td class='prix'>".$row["produits_Prix"]." &euro;<a href='index.php?type=panier&produit=".$row['produits_Reference']."'><br /><img src='images/minipanier.jpg'></a></td></tr>";
+			echo "\t<tr>\n\t\t<td class='photo'><a href='index.php?type=produit&id=".$row["produits_Reference"]."'><img src='images/thumbs/".$row["produits_Photo"]."'></a></td>\n\t\t";
+			echo "<td><a href='index.php?type=produit&id=".$row["produits_Reference"]."'>".$row["produits_Libelle"]."</a></td>\n\t\t";
+			echo "<td class='prix'>".$row["produits_Prix"]." &euro;<a href='index.php?type=panier&produit=".$row['produits_Reference']."'><br /><img src='images/minipanier.jpg'></a></td></tr>\n";
 		}
 		echo "</table>";
 	}
