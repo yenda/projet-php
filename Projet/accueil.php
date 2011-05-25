@@ -4,6 +4,7 @@
 
 <h1>Bienvenue sur notre site</h1>
 <?php 
+	//Sélection de tous les produits et de toutes les rubriques de la base
 	$resultproduit= RequeteSQL("SELECT * FROM `produits`");
 	$nbproduit = mysql_num_rows($resultproduit);
 	$resultrubrique = RequeteSQL("SELECT * FROM `rubriques`");
@@ -23,7 +24,8 @@
 <p>Pour commencer à naviguer dans notre boutique choisissez une rubrique dans le menu latéral où cliquez sur la photographie du produit qui vous intéresse ci dessous</p>
 
 <table class = 'liste_photos'>
-<?php 
+<?php
+//Affichage aléatoire de produits du site sur la page d'accueil 
 	if ($nbproduit>0){
 		for($i=0; $i<5;$i++){
 			echo "<tr>";

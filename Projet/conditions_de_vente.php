@@ -1,5 +1,6 @@
 <?php
 	include ("redirection.php");
+	//Conditions de vente des produits du site
 ?>
 
 <h1>Conditions générales de vente</h1>

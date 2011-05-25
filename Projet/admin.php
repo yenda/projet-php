@@ -5,6 +5,7 @@
 		exit();
 	}
 	else{
+	//Permettre à l'administrateur de gérer la base de données et les commandes
 ?>
 
 	<h1>Administration</h1>

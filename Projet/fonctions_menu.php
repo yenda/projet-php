@@ -34,7 +34,7 @@
 			$chemin = Chemin(0);
 		return $chemin;
 	}
-	
+	//Fonction qui affiche l'arborescence des catégories du produit
 	function Chemin($rubrique_id){
 		if (($_ENV['type']=="rubrique")||($_ENV['type']=="produit")){
 			if ($rubrique_id != 0) {

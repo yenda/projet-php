@@ -1,10 +1,5 @@
 <?php
-	if (!isset($_SESSION['login'])){
-		header('Location: index.php&type=404');  
-		exit();
-	}
-	else{
-		
+
 function VerifierAdresseMail($adresse) 
 { 
    $Syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#'; 
@@ -13,65 +8,73 @@ function VerifierAdresseMail($adresse)
    else 
      return false; 
 }
-
-$modification=false;
-$result = RequeteSQL("SELECT * FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
-if (isset($_POST['pass']))
-{
-		echo"<div class='alert'>";
-		if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
-			echo "Le mot de passe n'est pas correctement saisi";
-		else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
-			echo "Le champ adresse e-mail n'est pas correctement rempli";
-		else if (empty($_POST['telmain']))
-			echo "Le champ numéro de téléphone n'est pas correctement rempli";
-		else if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
-			echo "Le champ nom n'est pas correctement rempli";
-		else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
-			echo "Le champ prénom n'est pas correctement rempli";
-		else if((empty($_POST['adresse'])) || (!is_string($_POST['adresse'])))
-			echo "Le champ adresse n'est pas correctement rempli";
-		else if((empty($_POST['cp'])) || (!is_numeric($_POST['cp'])))
-			echo "Le champ code postal n'est pas correctement rempli";
-		else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
-			echo "Le champ ville n'est pas correctement rempli";
-		else 
-		{
-			$login=$_SESSION['login'];
-			$pass = $_POST['pass'].$login.'geekproduct';
-			$pass = md5($pass);
-			$mail=$_POST['mail'];
-			$telmain=$_POST['telmain'];
-			$nom=$_POST['nom'];
-			$prenom=$_POST['prenom'];
-			$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
-			$adresse=$_POST['adresse'];
-			$cp=$_POST['cp'];
-			$ville=$_POST['ville'];
-			$cb=$_POST['cartebancaire'];
-			$modification=true;
-			
-			//Ajout de l'utilisateur à la base de données
-			$result=RequeteSQL("UPDATE `geekproduct`.`clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', client_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login='$login';");
-			echo "\nLa modification a été effectuée";
-		}
-		echo"</div>";
+	//Si l'utilisateur n'est pas connecté, redirection vers erreur 404
+	if (!isset($_SESSION['login'])){
+		header('Location: index.php&type=404');  
+		exit();
 	}
+	else{
+		$modification=false; //Booléen pour dire si la modification des données utilisateur est effective
+		$result = RequeteSQL("SELECT * FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
+		if (isset($_POST['pass']))
+		{
+			//Vérification de la saisie des champs du formulaire
+				echo"<div class='alert'>";
+				if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
+					echo "Le mot de passe n'est pas correctement saisi";
+				else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
+					echo "Le champ adresse e-mail n'est pas correctement rempli";
+				else if (empty($_POST['telmain']))
+					echo "Le champ numéro de téléphone n'est pas correctement rempli";
+				else if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
+					echo "Le champ nom n'est pas correctement rempli";
+				else if((empty($_POST['prenom'])) || (!is_string($_POST['prenom'])))
+					echo "Le champ prénom n'est pas correctement rempli";
+				else if((empty($_POST['adresse'])) || (!is_string($_POST['adresse'])))
+					echo "Le champ adresse n'est pas correctement rempli";
+				else if((empty($_POST['cp'])) || (!is_numeric($_POST['cp'])))
+					echo "Le champ code postal n'est pas correctement rempli";
+				else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
+					echo "Le champ ville n'est pas correctement rempli";
+				else 
+				{
+					$login=$_SESSION['login'];
+					$pass = $_POST['pass'].$login.'geekproduct';
+					$pass = md5($pass);
+					$mail=$_POST['mail'];
+					$telmain=$_POST['telmain'];
+					$nom=$_POST['nom'];
+					$prenom=$_POST['prenom'];
+					$date_naissance=$_POST['dnannee']."-".$_POST['dnmois']."-".$_POST['dnjour'];
+					$adresse=$_POST['adresse'];
+					$cp=$_POST['cp'];
+					$ville=$_POST['ville'];
+					$cb=$_POST['cartebancaire'];
+					$modification=true;
+					
+					//Ajout de l'utilisateur à la base de données
+					$result=RequeteSQL("UPDATE `geekproduct`.`clients` SET client_mdp='$pass', client_nom='$nom', client_prenom='$prenom', client_datenaissance='$date_naissance', client_adresse='$adresse', client_codepostal='$cp', client_ville='$ville', client_telephone='$telmain', client_mail='$mail', client_cartebancaire='$cb' WHERE client_login='$login';");
+					echo "\nLa modification a été effectuée";
+				}
+				echo"</div>";
+			}
 }
-	if($modification==false)
-	{
-		while ($row = mysql_fetch_assoc($result)) { 
-			$mail=$row['client_mail'];
-			$nom=$row['client_nom'];
-			$prenom=$row['client_prenom'];
-			$adresse=$row['client_adresse'];
-			$cp=$row['client_codepostal'];
-			$ville=$row['client_ville'];
-			$tel=$row['client_telephone'];
-			$cb=$row['client_cartebancaire'];
-			$date=$row['client_datenaissance'];
+if($modification==false)
+{
+	//Si les données sont erronnées, on réaffiche les données utilisateur contenues dans la base
+	while ($row = mysql_fetch_assoc($result)) { 
+		$mail=$row['client_mail'];
+		$nom=$row['client_nom'];
+		$prenom=$row['client_prenom'];
+		$adresse=$row['client_adresse'];
+		$cp=$row['client_codepostal'];
+		$ville=$row['client_ville'];
+		$tel=$row['client_telephone'];
+		$cb=$row['client_cartebancaire'];
+		$date=$row['client_datenaissance'];
 ?>
 
+<!-- Formulaire d'inscription -->
 <form method="post" action="index.php?type=compte">
 			<table style="margin-left:10px;" width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
@@ -94,7 +97,7 @@ if (isset($_POST['pass']))
 									<div>
 										<input name="mail" type="text" id="mail" style="height:12px; font-size:10px; width:150px;" value="<?php echo $mail;?>" /> 									
 									</div>
-									<?php $jour=explode("-" ,$date);?>
+									<?php $jour=explode("-" ,$date); //on explose la date en trois parties?>
 									<div class="ElemtFac">Date de naissance</div>
 									<select name="dnjour" id="dnjour">
 									<?php
