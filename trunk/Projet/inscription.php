@@ -1,6 +1,6 @@
 <?php
 	include ("redirection.php");
-	$inscrit=false;
+	$inscrit=false;//Booléen passé à vrai si les informations saisies sont exactes
 ?>
 
 <?php 
@@ -77,7 +77,7 @@ if (isset($_POST['login']))
 }
 	if($inscrit==false)
 	{
-
+	//Si l'utilisateur a mal renseigné ses informations, il doit recommencer
 ?>
 			<form method="post" action="index.php?type=inscription">
 			<table style="margin-left:10px;" width="100%" border="0" cellspacing="0" cellpadding="0">
