@@ -16,7 +16,9 @@ function VerifierAdresseMail($adresse)
 	else{
 		$modification=false; //Booléen pour dire si la modification des données utilisateur est effective
 		$result = RequeteSQL("SELECT * FROM `clients` WHERE `client_login` = '".$_SESSION['login']."'");
-		if (isset($_POST['pass']))
+		if (!isset($_POST['pass_actuel']))
+			echo "<div class='alert'>Vous devez saisir votre mot de passe actuel pour modifier vos informations!</div>";
+		else if (isset($_POST['pass']))
 		{
 			//Vérification de la saisie des champs du formulaire
 				echo"<div class='alert'>";
