@@ -20,7 +20,7 @@ function VerifierAdresseMail($adresse)
 		{
 			//Vérification de la saisie des champs du formulaire
 				echo"<div class='alert'>";
-				if ((empty($_POST['pass'])) || (empty($_POST['pass2'])) || ($_POST['pass']!=$_POST['pass2']))
+				if (($_POST['pass']!=$_POST['pass2']))
 					echo "Le mot de passe n'est pas correctement saisi";
 				else if ((empty($_POST['mail'])) || (VerifierAdresseMail($_POST['mail']==false)))
 					echo "Le champ adresse e-mail n'est pas correctement rempli";
@@ -39,8 +39,13 @@ function VerifierAdresseMail($adresse)
 				else 
 				{
 					$login=$_SESSION['login'];
-					$pass = $_POST['pass'].$login.'geekproduct';
-					$pass = md5($pass);
+					if (!empty($_POST['pass']))
+					{
+						$pass = $_POST['pass'].$login.'geekproduct';
+						$pass = md5($pass);
+					}
+					else 
+						$pass = $_SESSION['pass'];
 					$mail=$_POST['mail'];
 					$telmain=$_POST['telmain'];
 					$nom=$_POST['nom'];
