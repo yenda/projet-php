@@ -14,6 +14,8 @@ function VerifierExistenceLogin ($login)
 
 function TesterMotDePasse ($login,$pass)
 {
+	$pass = $pass.$login.'geekproduct';
+	$pass = md5($pass);
 	$result = RequeteSQL("SELECT * FROM clients WHERE client_login='$login'&&client_mdp='$pass'");
 	if (mysql_num_rows($result)==1)
 		return true;

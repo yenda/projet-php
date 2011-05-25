@@ -1,3 +1,5 @@
 <?php
-		echo $_SESSION['login'];
+					$pass = 'admin'.'admin'.'geekproduct';
+			$pass = md5($pass);
+			echo $pass;
 ?>
