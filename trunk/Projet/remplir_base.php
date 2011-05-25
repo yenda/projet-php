@@ -167,7 +167,10 @@
 						AjouterProduitBase($Produit);
 					}
 				}
-			
+				//on supprime les éventuelles rubriques de plus haut niveau de la table rubrique rubrique sup car elles ne le sont peut-être plus
+				//si le xml contient des rubriques de niveau supérieur
+				$result=RequeteSQL("DELETE FROM  `rubrique_rubriquesup` WHERE `rubriquesup_id` = 0");
+				
 				//on détermine les rubrique de plus haut niveau dans la hierarchie et on leur attribue 0 comme id de rubrique supérieure dans la table rubrique_rubriquesup
 				$result=RequeteSQL("SELECT rubriques.rubrique_id FROM rubriques LEFT JOIN rubrique_rubriquesup ON rubriques.rubrique_id = rubrique_rubriquesup.rubrique_id WHERE rubrique_rubriquesup.rubrique_id IS NULL");
 				
@@ -196,7 +199,7 @@
 ?>
 	<form method="get" action="index.php">
 		<input type='hidden' value="remplir_base" name="type" />
-		<input type='file' name='xml' />
+		<input type='file' name='xml'/>
 		<input type='submit' value='Remplir la base' />
 	</form>
 
