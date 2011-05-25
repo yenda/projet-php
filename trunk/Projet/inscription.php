@@ -142,7 +142,7 @@ if (isset($_POST['login']))
 										?>										
 									</select>
 																																							
-										<div class="ElemtMandat">Téléphone : </div>
+										<div>Téléphone : </div>
 										<div>
 											<input name="telmain" type="text" id="telmain" style="height:12px; font-size:10px; width:150px;" value="" />
 										</div>
@@ -153,66 +153,59 @@ if (isset($_POST['login']))
 						</table>
 					</td>
 					<td width="50%" style="vertical-align:top;padding-left:2px">
-						<table class="ToolBox2" width="350px" border="0" cellspacing="0" cellpadding="0" style="margin:0;">
+						<table width="350px" border="0" cellspacing="0" cellpadding="0" style="margin:0;">
 							<tr>
 							
 							</tr>
 							<tr>
-								<td class="Inner" width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;background:url(/images/gui/main/CptAddrIco.jpg) center right no-repeat;">
-
-									<div class="ElemtMandat">Nom</div>
+								<td>
+									<div>Nom</div>
 									<div>
-										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="" /> 									</div>
-
-									<div class="ElemtMandat">Prénom</div>
-									<div>
-										<input name="prenom" type="text" id="prenom" style="height:12px; font-size:10px; width:150px;" value="" /> 									</div>
-
-									<div class="ElemtMandat" id="SocieteBlock" style="display:none;">
-										<div class="ElemtFac"  id="labelsociete"></div>
-										<div>
-											<input name="societe" type="text" id="societe" style="height:12px; font-size:10px; width:150px;" value="" />
-
-										</div>
+										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="" /> 
 									</div>
 
-									<div class="ElemtMandat">Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
+									<div>Prénom</div>
+									<div>
+										<input name="prenom" type="text" id="prenom" style="height:12px; font-size:10px; width:150px;" value="" />
+									</div>
+
+									<div>Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
 									<div>
 										<input name="adresse" type="text" id="adresse" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="" />
 									</div>
-									<div class="ElemtMandat">Code postal</div>
+									<div>Code postal</div>
 									<div>
 										<input name="cp" type="text" id="cp" style="height:12px; font-size:10px; width:150px;" value="" maxlength="5" />
 									</div>
 
-									<div class="ElemtMandat">Ville</div>
+									<div>Ville</div>
 									<div>
 										<input name="ville" type="text" id="ville" style="height:12px; font-size:10px; width:150px;" value="" />
 									</div>
 									
-									<div class="ElemtMandat">Numéro de carte bancaire</div>
+									<div>Numéro de carte bancaire</div>
 									<div>
-										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" value="" />
+										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" maxlength="16" value="" />
 									</div>
 
 								</td>
 							</tr>
 						</table>
 
-						<table class="ToolBox2" style="margin-top:10px;" width="350px" border="0" cellspacing="0" cellpadding="0">
+						<table style="margin-top:10px;" width="350px" border="0" cellspacing="0" cellpadding="0">
 
 						</table>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<table class="ToolBox2" width="725px" cellspacing="0" cellpadding="0" border="0" style="margin-top: 10px;">
+						<table width="725px" cellspacing="0" cellpadding="0" border="0" style="margin-top: 10px;">
 
 							<tr>
 								<th width="715" align="left">Validation <img width="8" height="11" alt="" style="display: inline;"/></th>
 							</tr>
 							<tr>
-								<td class="Inner" width="625" valign="top" height="100" align="left" style="padding: 10px;" colspan="3">
+								<td>
 									<input type="checkbox" name="verif" id="verif"/><label for="verif"> Je certifie exactes les informations renseignées dans les champs ci-dessus.</label>
 									<br/>
 

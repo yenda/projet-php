@@ -40,6 +40,9 @@ function VerifierAdresseMail($adresse)
 					echo "Le champ code postal n'est pas correctement rempli";
 				else if((empty($_POST['ville'])) || (!is_string($_POST['ville'])))
 					echo "Le champ ville n'est pas correctement rempli";
+				//la carte n'est pas obligatoire mais doit être une nombre à 16 chiffres
+				else if((!empty($_POST['cartebancaire'])) && ((!preg_match('#^([0-9]{16})$#',$_POST['cartebancaire']))))
+					echo "Le champ carte bancaire n'est pas correctement rempli";
 				else 
 				{
 					$login=$_SESSION['login'];
@@ -94,23 +97,22 @@ if($modification==false)
 					<td width="50%" style="vertical-align:top;">
 						<table style="margin:0;" width="350px" border="0" cellspacing="0" cellpadding="0" class="ToolBox2">
 							<tr>
-								<td class="Inner" width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;">
-									<div class="ElemtMandat">Mot de passe actuel</div>
+								<td width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;">
+									<div>Mot de passe actuel</div>
 									<div>
 										<input name="pass_actuel" type="password" id="pass_actuel" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" />
 										<div id="PassMessage"></div>
 									</div>
-									<div class="ElemtMandat">Mon nouveau mot de passe (facultatif)</div>
+									<div>Mon nouveau mot de passe (facultatif)</div>
 									<div>
 										<input name="pass" type="password" id="pass" style="height:12px; font-size:10px; width:150px;" value="" maxlength="30" />
-										<div id="PassMessage"></div>
 									</div>
-									<div class="ElemtMandat">Confirmation du mot de passe</div>
+									<div>Confirmation du mot de passe</div>
 									<div>
 										<input name="pass2" type="password" id="pass2" style="height:12px; font-size:10px; width:150px;"value="" maxlength="30" />
 
 									</div>
-									<div class="ElemtMandat">Mon adresse e-mail : </div>
+									<div>Mon adresse e-mail : </div>
 									<div>
 										<input name="mail" type="text" id="mail" style="height:12px; font-size:10px; width:150px;" value="<?php echo $mail;?>" /> 									
 									</div>
@@ -177,7 +179,7 @@ if($modification==false)
 										?>										
 									</select>
 																																							
-										<div class="ElemtMandat">Téléphone : </div>
+										<div>Téléphone : </div>
 										<div>
 											<input name="telmain" type="text" id="telmain" style="height:12px; font-size:10px; width:150px;" value="<?php echo $tel ?>" />
 										</div>
@@ -193,56 +195,46 @@ if($modification==false)
 							
 							</tr>
 							<tr>
-								<td class="Inner" width="100%" height="100" colspan="3" align="left" valign="top" style="padding:5px 10px 10px 10px;background:url(/images/gui/main/CptAddrIco.jpg) center right no-repeat;">
+								<td>
 
-									<div class="ElemtMandat">Nom</div>
+									<div>Nom</div>
 									<div>
-										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="<?php echo $nom;?>" /> 									</div>
-
-									<div class="ElemtMandat">Prénom</div>
-									<div>
-										<input name="prenom" type="text" id="prenom" style="height:12px; font-size:10px; width:150px;" value="<?php echo $prenom;?>" /> 									</div>
-
-									<div class="ElemtMandat" id="SocieteBlock" style="display:none;">
-										<div class="ElemtFac"  id="labelsociete"></div>
-										<div>
-											<input name="societe" type="text" id="societe" style="height:12px; font-size:10px; width:150px;" value="" />
-
-										</div>
+										<input name="nom" type="text" id="nom" style="height:12px; font-size:10px; width:150px;" value="<?php echo $nom;?>" />
 									</div>
 
-									<div class="ElemtMandat">Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
+									<div>Prénom</div>
+									<div>
+										<input name="prenom" type="text" id="prenom" style="height:12px; font-size:10px; width:150px;" value="<?php echo $prenom;?>" />
+									</div>
+
+									<div>Adresse <br /> <span class="ElemtFac">(n° rue et libellé rue)</span></div>
 									<div>
 										<input name="adresse" type="text" id="adresse" style="height:12px; font-size:10px; width:150px;" maxlength="60" value="<?php echo $adresse;?>" />
 									</div>
-									<div class="ElemtMandat">Code postal</div>
+									<div>Code postal</div>
 									<div>
 										<input name="cp" type="text" id="cp" style="height:12px; font-size:10px; width:150px;" value="<?php echo $cp;?>" maxlength="5" />
 									</div>
 
-									<div class="ElemtMandat">Ville</div>
+									<div>Ville</div>
 									<div>
 										<input name="ville" type="text" id="ville" style="height:12px; font-size:10px; width:150px;" value="<?php echo $ville;?>" />
 									</div>
 									
-									<div class="ElemtMandat">Numéro de carte bancaire</div>
+									<div>Numéro de carte bancaire</div>
 									<div>
-										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" value=<?php echo $cb;?> />
+										<input name="cartebancaire" type="text" id="cartebancaire" style="height:12px; font-size:10px; width:150px;" maxlength="16" value=<?php echo $cb;?> />
 									</div>
 
 								</td>
 							</tr>
 						</table>
 						<?php }?>
-
-						<table class="ToolBox2" style="margin-top:10px;" width="350px" border="0" cellspacing="0" cellpadding="0">
-
-						</table>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<table class="ToolBox2" width="725px" cellspacing="0" cellpadding="0" border="0" style="margin-top: 10px;">
+						<table width="725px" cellspacing="0" cellpadding="0" border="0" style="margin-top: 10px;">
 							<tr>
 								<td>
 									<input name="back" type="hidden" id="back" value="">
