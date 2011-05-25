@@ -7,7 +7,7 @@ $nbArticles=count($_SESSION['panier']['produits_Reference']);
 if ($nbArticles <= 0)
 	echo "<br /><br />Votre panier est vide";
 else{
-//On vérifie que tout les champs on bien été remplis correctement par l'utilisateur
+//On vérifie que tout les champs on été remplis correctement par l'utilisateur
 $validation=false;
 echo "<div class='alert'>";
 if((empty($_POST['nom'])) || (!is_string($_POST['nom'])))
