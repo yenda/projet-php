@@ -68,7 +68,6 @@
 					`client_mail` VARCHAR(50) NOT NULL,
 					`client_cartebancaire` INT NOT NULL) ENGINE = MyISAM;");
 		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('admin', '086dc9e4cda177fbc6272f7c9cdeaab9', '', '', '', '', '', '', '', '', '');");
-		$result=RequeteSQL("INSERT INTO `geekproduct`.`clients` VALUES ('yenda', 'caca', 'Eric', 'Dvorsak', '1989-12-28', '40 en Chaplerue', '57000', 'Metz', '0387486878', 'yenda1@gmail.com', '53414545211547');");
 		
 		//Création de la table Panier_Client
 		$result=RequeteSQL("CREATE TABLE `geekproduct`.`panier_client` (
