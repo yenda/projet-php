@@ -38,7 +38,8 @@ if (isset($_POST['pass']))
 		else 
 		{
 			$login=$_SESSION['login'];
-			$pass=$_POST['pass'];
+			$pass = $_POST['pass'].$login.'geekproduct';
+			$pass = md5($pass);
 			$mail=$_POST['mail'];
 			$telmain=$_POST['telmain'];
 			$nom=$_POST['nom'];

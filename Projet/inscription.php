@@ -54,7 +54,9 @@ if (isset($_POST['login']))
 		else 
 		{
 			$login=$_POST['login'];
-			$pass=$_POST['pass'];
+			//On ajoute le login du client et un salt avant de crypter le mot de passe pour éviter que le hash soit plus difficile à contourner
+			$pass = $_POST['pass'].$login.'geekproduct';
+			$pass = md5($pass);
 			$mail=$_POST['mail'];
 			$telmain=$_POST['telmain'];
 			$nom=$_POST['nom'];
