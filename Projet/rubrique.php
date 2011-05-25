@@ -49,7 +49,7 @@
 		while($row=mysql_fetch_assoc($result_produit)){
 			echo "<tr><td class='photo'><a href='index.php?type=produit&id=".$row["produits_Reference"]."'><img src='images/thumbs/".$row["produits_Photo"]."'></a></td>";
 			echo "<td><a href='index.php?type=produit&id=".$row["produits_Reference"]."'>".$row["produits_Libelle"]."</a></td>";
-			echo "<td class='prix'>".$row["produits_Prix"]." &euro;<a href='index.php?type=panier&produit=".$row['produits_Reference']."'><img src='images/minipanier.jpg'></a></td></tr>";
+			echo "<td class='prix'>".$row["produits_Prix"]." &euro;<a href='index.php?type=panier&produit=".$row['produits_Reference']."'><br /><img src='images/minipanier.jpg'></a></td></tr>";
 		}
 		echo "</table>";
 	}
